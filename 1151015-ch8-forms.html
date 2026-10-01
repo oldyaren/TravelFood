@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch8. Forms</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+
+<style>
+    /* 設定外框為紅色與圓角 */
+.custom-fieldset {
+  border: 2px solid rgb(211, 206, 206);     /* 紅色邊框 */
+  border-radius: 6px;        /* 圓角效果 */
+  padding: 15px 20px 20px;   /* 內距，讓內文與紅框有呼吸空間 */
+  margin-top: 10px;
+}
+
+/* 設定嵌入線上表頭的樣式 */
+.custom-legend {
+  width: auto;               /* 寬度自適應，文字多長就占多大 */
+  padding: 0 10px;           /* 左右留白，才不會讓紅框線緊貼文字 */
+  font-size: 1.25rem;        /* 字體大小 */
+  font-weight: 500;
+  float: none;               /* 確保相容性，防止瀏覽器預設浮動影響排版 */
+}
+
+</style>
+    
+</head>
+<body>
+    <div class="container py-5">
+        <div class="display-2 fw-900 text-bg-success p-3">ch8. Forms(表單)</div> <!-- 修正 text-bgsuccess 拼字為 text-bg-success -->
+        <div class="display-5 fw-900 mt-3 text-primary p-3">1. 基本表單樣式</div> <!-- 沒bg會字上色 -->
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="username" class="form-label">帳號</label>
+                    <input type="text" class="form-control" id="username">
+                </div>
+                <!-- </div> --> <!-- 這裡提前把 col-12 關掉了！ -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">密碼</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <!-- </div> -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control form-control-lg" id="email">
+                </div>
+                <!-- </div> -->
+                <div class="mb-3">
+                    <label for="num" class="form-label">人數</label>
+                    <input type="number" class="form-control form-control-lg" id="num" min="0" max="10" value="1"> <!-- lg較好看，有num須加min、max、vlue -->
+                </div>
+                <!-- </div> -->
+                <div class="mb-3">
+                    <label for="formfile" class="form-label">檔案</label>
+                    <input type="file" class="form-control form-control-lg" id="formfile">
+                </div>
+                <!-- </div> -->
+
+                <div>
+                    <label class="form-label" for="foodlist">點餐(推薦)</label>
+                    <input type="text" class="form-control" id="foodlist" list="datalistOption">
+                    <datalist id="datalistOption"> <!-- menu推薦下是假推薦，真推薦須連結後端統計，是前端介面API連結後端就是全端 -->
+                        <option value="漢堡"></option>
+                        <option value="拉麵"></option>
+                        <option value="壽司"></option>
+                        <option value="牛肉麵"></option>
+                    </datalist>
+                </div>
+            </div> <!-- 這裡才是正確關閉 col-12 的地方 -->
+        </div> <!-- 這裡才是正確關閉 row 的地方 -->
+
+        <div class="display-5 fw-900 mt-3 text-primary p-3">2. select</div>
+        <div class="row">
+            <div class="col-12">
+                <!-- <label for="" class="form-label">請選擇縣市</label> 老師覺得醜，因在表格外面，可比較 -->
+                <select name="" id="" class="form-select form-select-lg">
+                    <option value="" class="text-center" disabled selected>---請選擇縣市---</option> <!-- 放在這較直覺也漂亮 -->
+                    <option value="臺中市">臺中市</option>
+                    <option value="彰化縣">彰化縣</option>
+                    <option value="雲林縣">雲林縣</option>
+                    <option value="嘉義縣">嘉義縣</option>
+                    <option value="臺南縣">臺南縣</option>
+                </select>
+            </div>
+        </div>
+
+
+        <!-- 3. checkbox(複選)，radio(單選)之前都缺少觸發 -->
+        <div class="display-5 fw-900 mt-3 text-primary p-3">3. checkbox(複選)，radio(單選)</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-check form-check-inline"> <!-- 修正：將 input 的外層 <div> 改為正確的標籤結構，且input無結尾 -->
+                    <input type="checkbox" class="form-check-input" name="" id="chk01"> <!-- 修正：將 input 的外層 <div> 改為正確的標籤結構 -->
+                    <!-- <div type="checkbox" class="form-check-input" name="" id="chk01"> -->
+                    <label for="chk01" class="form-check-label">選項01</label>
+                    <!-- </div> -->
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" name="" id="chk02">
+                    <label for="chk02" class="form-check-label">選項02</label>
+                </div>
+                <!-- </div> -->
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" name="" id="chk03">
+                    <label for="chk03" class="form-check-label">選項03</label>
+                </div>
+                <!-- </div> -->
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" class="form-check-input" name="" id="chk04">
+                    <label for="chk04" class="form-check-label">選項04</label>
+                </div>
+                <!-- </div> -->
+                <!-- 修正：拼字 form-checke 改為 form-check -->
+                <hr class="my-3"> <!-- <hr> 是空元素，代表主題的轉折或分割，例如故事場景的切換或文章段落的轉折。空元素還有圖片<img>、換行<br>、分隔線<hr>、輸入框<input>、網頁屬性<meta> -->
+                <!-- <div class="col-12">  --><!-- 多了刪掉 -->
+                <div class="form-check"> <!-- 少了form-check-inlin -->
+                    <input type="radio" class="form-check-input" name="myradio" id="rad01">
+                    <label for="rad01" class="form-check-label">選項01</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="myradio" id="rad02">
+                    <label for="rad02" class="form-check-label">選項02</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="myradio" id="rad03">
+                    <label for="rad03" class="form-check-label">選項03</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="myradio" id="rad04">
+                    <label for="rad04" class="form-check-label">選項04</label>
+                </div>
+                <!-- </div>這是98行col-12的刪 -->
+            </div>
+        </div>
+    
+
+        <div class="display-5 fw-900 mt-3 text-primary p-3">4. switch</div> <!-- 後台最須要switch -->
+        <div class="row">
+            <div class="col-12">
+                <div class="form-check form-switch">
+                    <input type="checkbox" class="form-check-input" name="" id="">
+                    <label for="" class="form-check-label">開燈/關燈</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="display-5 fw-900 mt-3 text-primary p-3">5. range</div> <!-- display修成display-5 -->
+        <div class="mb-3">
+            <label for="range01" class="form-label">數量: 99個</label>
+            <input type="range" class="form-range" min="1" max="100" step="1" value="50" id="range01">
+        </div>
+    
+        <!-- 與3. 比較可節省畫面 -->
+        <div class="display-5 fw-900 mt-3 text-primary p-3">6. input-group</div> <!-- diskplay-5修成display-5 -->
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3 input-group">
+                    <span class="input-group-text">帳號</span>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="mb-3 input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-text">@gami.com</span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="mb-3 input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" min="1" max="1000" step="1" value="100" class="form-control">
+                    <span class="input-group-text">NT</span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="mb-3 input-group">
+                    <input type="text" class="form-control form-control-lg" name="" id="">
+                    <button class="btn btn-primary">搜尋</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="display-5 fw-900 mt-3 text-primary">7. Floating Labels(浮動標籤)</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3 form-floating">
+                    <input type="text" class="form-control form-control-lg" placeholder="XXXXXX"> <!-- form-floating配合placeholder，才會出現漂浮提醒，如輸入某資料 -->
+                    <label for="username" class="form-label">帳號</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="display-5 fw-900 mt-3 text-primary">8. 表單驗證</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="username" class="form-label">帳號</label>
+                    <input type="text" class="form-control is-valid" id="username" placeholder="請輸入一個大寫英文......"> <!-- 補上 is-valid -->
+                    <div class="valid-feedback">帳號輸入符合規定</div>
+                    <div class="invalid-feedback">帳號輸入不符合規定</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">密碼</label>
+                    <input type="password" class="form-control is-invalid" id="password" placeholder="請輸入中英文共12碼"> <!-- 多留 placeholder="請輸入中英文共12碼" -->
+                    <div class="valid-feedback">密碼輸入符合規定</div>
+                    <div class="invalid-feedback">密碼輸入不符合規定</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 使用 fieldset 作為外框 -->
+        <fieldset class="custom-fieldset">
+        <!-- legend 會自動嵌入在邊框線上 -->
+        <legend class="custom-legend">Radios</legend>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+            <label class="form-check-label" for="radioDefault1">
+            Default radio
+            </label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
+            <label class="form-check-label" for="radioDefault2">
+            Default checked radio
+            </label>
+        </div>
+        </fieldset>
+
+        
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

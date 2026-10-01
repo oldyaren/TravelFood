@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習01，使用CSS語法配版面</title>
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+       
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        body{
+            background-color: var(--body-bgcolor);
+        }
+        .wrapper{
+            width: 1024px;
+            margin-top: 5;
+            margin-bottom: 5;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .logo{
+            width: 1024px;
+            height: 180px;
+            background-color: var(--logo-bgcolor);
+            background-image: url(images/photo1.avif);
+        }
+
+        .nav{
+            background-color: var(--nav-bgcolor);
+            text-align: center; 
+            padding-top: 20px;
+            padding-bottom: 10px;
+            /*margin-top: 10px; */
+        }
+        .nav ul{
+            display: inline-block;  /*橫向顯示*/
+        }
+        .nav ul li{
+            float: left;
+            list-style-type: none;
+        }
+        .nav ul li a{
+            text-decoration: none;
+            background-color: var(--nav-link-bgcolor);
+            color: var(--nav-link-color);
+            padding-top: 5px;   /*padding配合.nav ul{inline-block}使用*/
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 3px 4px var(--nav-shadow-color);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav ul li a:hover{
+            border-radius: 0px;
+            box-shadow: 4px 4px 4px 4px var(--nav-hover-shadow-color);
+            box-shadow: 4px 4px 4px 4px var(--nav-shadow-color);
+        }
+
+        .content{
+            padding: 30px 80px;
+            background-color: var(--content-bgcolor);
+        }
+        .content h1{
+            text-align: center;
+            color: var(--content-title-color);
+            font-size: 48px;
+        }
+        .content  p{
+            text-align: left;
+            margin-top: 10px;
+            color: var(--content-text-color);
+            font-size: 22px;
+        }
+        .content a{
+            display: block;
+            background-color: var(--content-link-bgcolor);
+            width: 40;
+            height: 40;
+            margin-top: 20px;
+            margin-bottom: 0;
+            margin-left: 300px;
+            margin-right: 300px;
+            text-decoration: none;
+            color: var(--content-link-color);
+            text-align: center;
+            font-size: 20px;
+            line-height: 40px;
+            font-weight: bold;
+            box-shadow: 2px 2px 2px 2px var(--content-link-shadow-color);
+            border-radius: 5px ;
+        }
+
+        .footer{
+            background-color: var(--footer-bgcolor);
+            color: var(--footer-color);
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        /* 響應式RWD */
+        @media screen and (max-width:1024px){
+            .wrapper{
+                width:95%;
+            }
+            .logo{
+                width:100%;
+                height:120px;
+                background-image: url(images/photo5.avif);
+            }
+
+            .nav ul{
+                /* display: block; */
+                /* display: flex;
+                justify-content: center;  水平置中，無法依序顯示2個 2個 1個，且最後1個變寬，放在.nav會變垂直， */
+            }
+            .nav ul li{
+                float:none;
+                width: 120px;
+            }
+            .nav ul li a{
+                display:block;
+                margin-top: 20px;   /*沒反應? */
+                margin-left: 0;
+                margin-bottom: 5px;
+                padding-top: 5px;
+                padding-bottom: 10px;   /*沒反應 */
+                border-radius: 2px;
+                box-shadow: none;
+            }
+                
+            .content{
+                padding: 25px 30px;
+            }
+            .content h1{
+                font-size: 36px;
+            }
+            .content  p{
+                font-size: 18px;
+            }
+            
+            .footer{
+                font-size: 18px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        
+        }
+        
+        
+      
+    </style>
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <div class="logo bg-img"></div>
+            <div class="nav">
+                <ul>
+                    <li><a href="">首頁</a></li>
+                    <li><a href="">最新消息</a></li>
+                    <li><a href="">合作店家</a></li>
+                    <li><a href="">關於我們</a></li>
+                    <li><a href="">連絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <h1>歡迎光臨</h1>
+            <div class="mytitle-01">歡迎光臨</div>
+            <div class="mytitle-02">歡迎光臨</div>
+            <div class="mytitle-03">歡迎光臨</div>
+            <p class="fw-300">自從國語功能營銷竟然說過，一旦便利商店代理你的大門可以犯罪，構成維修地下部落格百萬，意識你看行情小區能不能持續，上來提升消失一支瀏覽次數一些各國本報烏日等級國內，健康預期安徽平均監督照片語言然而，投資者目錄電子商務台中當你相冊，基礎上建設科技有限公司，自。</p>
+
+            <p class="fw-500">自從國語功能營銷竟然說過，一旦便利商店代理你的大門可以犯罪，構成維修地下部落格百萬，意識你看行情小區能不能持續，上來提升消失一支瀏覽次數一些各國本報烏日等級國內，健康預期安徽平均監督照片語言然而，投資者目錄電子商務台中當你相冊，基礎上建設科技有限公司，自。</p>
+            <p class="fw-700">確實競爭力，證書具備主體之處結婚釣魚線上機制味道主流第二天，商務藝術人間招商最好，成員經銷商高雄經濟品種都不在此本來添加便是支持不久，時候一款斗內為此身上客人十二證實理念依法，人體主要嚴重，情況一張房產合適，回覆一番成績擁有一會兒呼吸最好版本石油小孩地面治療，人事發展現實開通優化我也一部分終於，機制由此業績距離損失球隊工資下來天堂，醫學通過隨後已被近年來有一些管理系統，一面沒想到，適用繼續不少中間網域名稱類型，作業透明網際網路促進學習對象我國，遇到天空都會超市請教失去及時群眾真正，點點溫暖大廈趕緊，望着三。</p>
+            <p class="fw-900">自從國語功能營銷竟然說過，一旦便利商店代理你的大門可以犯罪，構成維修地下部落格百萬，意識你看行情小區能不能持續，上來提升消失一支瀏覽次數一些各國本報烏日等級國內，健康預期安徽平均監督照片語言然而，投資者目錄電子商務台中當你相冊，基礎上建設科技有限公司，自。</p>
+            <a href="">了解更多</a>
+
+        </div>
+        <div class="footer">PowerBY XXX 20260923</div>
+    </div>
+
+</body>
+
+</html>

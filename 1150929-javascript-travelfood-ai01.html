@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenData - 地方美食資料練習</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 1024px;
+            /* margin: 50px 0 auto auto;//測試可用嗎? */
+            margin-top: 50px;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 2px 2px 2px 2px #ccc;
+            padding: 15px;
+            overflow:hidden;
+        }
+        .demo{
+            width: 32%;
+            box-shadow: 2px 2px 1px 1px #727171;
+            margin-top: 15px;
+            float:left;
+            margin-right: 1%; /* 配合width:32%*3=96%,餘4%是間隔 */
+        }
+        .demo .logo{
+            width:100%;
+            height:220px;
+            background-image: url(images/photo5.avif);
+        }
+        @media screen and (max-width: 1024px){
+            .wrapper{
+                width: 94%;
+                padding: 15px;
+            }
+            .demo{
+                width: 100%;
+            }
+        }
+
+
+    :root {
+    /* ===== Zelda / Hyrule 色彩 ===== */
+    --hyrule-green: #183c2d;
+    --forest-green: #2f6548;
+    --leaf-green: #5f8f52;
+
+    --ancient-gold: #c7a64a;
+    --light-gold: #e7ca72;
+    --dark-gold: #80651f;
+
+    --parchment: #f3e8c5;
+    --parchment-light: #fff8df;
+    --parchment-dark: #d8c58e;
+
+    --stone: #26352f;
+    --stone-light: #50635a;
+
+    --text-dark: #26352c;
+    --text-light: #fff8df;
+
+    --shadow: rgba(20, 35, 27, 0.35);
+
+    /* ===== 共用尺寸 ===== */
+    --radius: 10px;
+    --border-size: 2px;
+    --transition: 0.3s ease;
+}
+
+
+/* =========================
+   全域設定
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    /* 草原 + 古代遺跡感 */
+    background:
+        linear-gradient(
+            rgba(20, 55, 40, 0.78),
+            rgba(20, 55, 40, 0.78)
+        ),
+        radial-gradient(
+            circle at top,
+            var(--forest-green),
+            var(--hyrule-green)
+        );
+
+    color: var(--text-dark);
+
+    font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        sans-serif;
+
+    padding-bottom: 50px;
+}
+
+
+/* =========================
+   網頁主標題
+   ========================= */
+
+.mytitle-01 {
+    width: 100%;
+    max-width: 1054px;
+
+    margin: 45px auto 25px;
+
+    padding: 20px 30px;
+
+    text-align: center;
+
+    color: var(--light-gold);
+
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 5px;
+
+    /* 古代石碑風 */
+    background:
+        linear-gradient(
+            135deg,
+            rgba(25, 55, 42, 0.98),
+            rgba(45, 75, 57, 0.98)
+        );
+
+    border:
+        3px solid var(--ancient-gold);
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 5px 0 var(--dark-gold),
+        0 10px 20px var(--shadow);
+
+    text-shadow:
+        2px 2px 0 #493d1d,
+        0 0 10px rgba(231, 202, 114, 0.25);
+
+    position: relative;
+}
+
+
+/* 標題左右裝飾線 */
+
+.mytitle-01::before,
+.mytitle-01::after {
+    content: "◆";
+
+    color: var(--ancient-gold);
+
+    margin: 0 20px;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   主要內容區
+   ========================= */
+
+.wrapper {
+    width: 1024px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    /* 羊皮紙 */
+    background:
+        linear-gradient(
+            135deg,
+            var(--parchment-light),
+            var(--parchment)
+        );
+
+    border:
+        4px solid var(--ancient-gold);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 0 5px rgba(24, 60, 45, 0.8),
+        0 10px 30px rgba(0, 0, 0, 0.45);
+
+    position: relative;
+}
+
+
+/* 古代符文裝飾 */
+
+.wrapper::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 8px;
+    left: 12px;
+
+    color: var(--ancient-gold);
+
+    font-size: 20px;
+}
+
+.wrapper::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: 12px;
+    bottom: 8px;
+
+    color: var(--ancient-gold);
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   餐廳卡片
+   ========================= */
+
+.demo {
+    width: 32%;
+
+    margin-top: 15px;
+    margin-right: 1%;
+
+    float: left;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--parchment-light),
+            #ead9a8
+        );
+
+    border:
+        2px solid var(--dark-gold);
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 4px 0 rgba(128, 101, 31, 0.5),
+        0 8px 15px var(--shadow);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+
+/* 卡片滑過效果 */
+
+.demo:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--ancient-gold);
+
+    box-shadow:
+        0 8px 0 var(--dark-gold),
+        0 15px 25px rgba(20, 35, 27, 0.4);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   餐廳圖片
+   ========================= */
+
+.demo .logo {
+    width: 100%;
+    height: 220px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-bottom:
+        3px solid var(--ancient-gold);
+
+    position: relative;
+
+    transition:
+        transform var(--transition);
+}
+
+
+/* 圖片上方半透明效果 */
+
+.demo .logo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 60%,
+            rgba(20, 45, 34, 0.4)
+        );
+
+    pointer-events: none;
+}
+
+
+/* 滑過卡片時圖片放大 */
+
+.demo:hover .logo {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   店家資訊
+   ========================= */
+
+.mytitle-04 {
+    padding: 12px 15px;
+
+    color: var(--text-dark);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    line-height: 1.6;
+
+    border-bottom:
+        1px dashed var(--parchment-dark);
+}
+
+
+/* 店家名稱 */
+
+.demo .mytitle-04:first-of-type {
+    color: var(--hyrule-green);
+
+    font-size: 19px;
+
+    padding-top: 16px;
+}
+
+
+/* 電話 */
+
+.demo .mytitle-04:last-of-type {
+    color: var(--stone-light);
+
+    padding-bottom: 16px;
+
+    border-bottom: none;
+}
+
+
+/* =========================
+   RWD
+   ========================= */
+
+@media screen and (max-width: 1024px) {
+
+    .mytitle-01 {
+        width: 94%;
+
+        font-size: 30px;
+
+        letter-spacing: 3px;
+
+        padding: 18px;
+    }
+
+    .mytitle-01::before,
+    .mytitle-01::after {
+        margin: 0 10px;
+    }
+
+    .wrapper {
+        width: 94%;
+
+        padding: 15px;
+    }
+
+    .demo {
+        width: 100%;
+
+        margin-right: 0;
+
+        margin-bottom: 20px;
+    }
+
+    .demo .logo {
+        height: 260px;
+    }
+}
+
+
+/* =========================
+   手機版
+   ========================= */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding-bottom: 20px;
+    }
+
+    .mytitle-01 {
+        margin-top: 20px;
+        margin-bottom: 15px;
+
+        font-size: 23px;
+
+        letter-spacing: 2px;
+    }
+
+    .mytitle-01::before,
+    .mytitle-01::after {
+        display: none;
+    }
+
+    .wrapper {
+        width: 94%;
+
+        padding: 10px;
+
+        border-width: 3px;
+    }
+
+    .demo {
+        margin-top: 12px;
+    }
+
+    .demo .logo {
+        height: 210px;
+    }
+
+    .mytitle-04 {
+        font-size: 15px;
+    }
+
+    .demo .mytitle-04:first-of-type {
+        font-size: 18px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="display-1 fw-900 mytitle-01">地方美食餐廳列表</div>
+    <div class="wrapper" id="foodlist">
+        <div class="demo">
+            <div class="logo bg-img" style="background-image: url(images/photo6.avif);"></div>
+            <p class="mytitle-04">店家:XXX</p>
+            <p class="mytitle-04">電話:XXXXXX</p>
+        </div>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/TravelFood.js"></script>
+    <script>
+        console.log(food);
+        food.forEach(function(item){
+            /* console.log(item.Name);
+            console.log(item.City);
+            console.log(item.Email); */ /* console.log(item.Name +"，"+ item.City +"，"+ item.Email); 同行顯示，用"，"隔開*/
+            $("#foodlist").append('<div class="demo" id="foodlist"><div class="logo bg-img" style="background-image: url(' + item.PicURL + ');"></div><p class="mytitle-04">店家:'+item.Name+'</p><p class="mytitle-04">電話:'+item.Tel+'</p></div>');
+        });
+        //html顯示每個logo、店家、電話。
+        food.forEach(function(item){
+            $("#demo").append('<div class="logo bg-img" style="url('+ item.PicURL+ ');"></div>'+ '店家: '+ item.Name+ '電話: '+ item.Tel);
+
+            /* <p class="mytitle-04">店家:XXX</p>
+            <p class="mytitle-04">電話:XXXXXX</p> code後刪除*/
+        });
+    </script>
+
+    <!-- <div id="demo09">
+        <p class="mytitle-04">餐廳名稱</p>
+    </div>
+    <script>
+        persons.forEach(function(item,index)=> {
+            
+        });
+    </script> -->
+    
+</body>
+</html>

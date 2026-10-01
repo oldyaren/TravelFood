@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch6. Bootstrap 切版</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .box01{
+            height: 120px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container pb-5"> <!-- 在container容器pb-5讓底部有空間，避免貼在一起 -->
+        <div class="display-1 fw-900 text-center">ch6. Bootstrap 切版</div> <!-- display-1極巨大的標題字體，比一般的 h1 還要大很多，通常用於網頁首頁最顯眼的大標題 -->
+        <div class="mytitle-04 text-start fw-900 mt-3">1.基本版 col-1~12</div> 
+        <div class="row"> <!-- 快速命令 .row>.col-6.mt-3*3>.box01.bg-primary -->
+            <div class="col-6 "> <!-- mt-3 Margin Top 3 的縮寫，少寫此行mt-3，view時看差異，意思是對該元素的上方加入外距（空間）；與前面style\box01用margin-top:15px加在所有box01的不同。 -->
+                <div class="box01 bg-primary"></div> <!-- primary 預設值為純藍色或深藍色。bg-success (成功/安全)通常為綠色。warning (警告/注意)通常為黃色/橘黃色。danger (危險/錯誤)：通常為紅色。info (資訊/提示)通常為青藍色/亮藍色。light (淺色背景)通常為極淺灰色或白色。dark (深色背景)通常為深灰色或接近黑色。 -->
+            </div>
+            <div class="col-6 mt-3">
+                <div class="box01 bg-primary"></div>
+            </div>
+            <div class="col-6 mt-3"> 
+                <div class="box01 bg-primary"></div>
+            </div>
+        </div>
+        
+        <!-- .row >.col-4.mt-3*6 >.box01.bg-success row一層，col-4加mt-3有6個，box01加bg-success-->
+        <div class="row">
+            <div class="col-4 "> <!-- 少寫此行mt-3，view時看差異 -->
+                <div class="box01 bg-success"></div>
+            </div>
+            <div class="col-4 mt-3">
+                <div class="box01 bg-success"></div>
+            </div>
+            <div class="col-4 mt-3">
+                <div class="box01 bg-success"></div>
+            </div>
+            <div class="col-4 mt-3">
+                <div class="box01 bg-success"></div>
+            </div>
+        </div>
+         <!-- 快速命令.row>.col-3.mt-3*4>.box01.bg-warning -->
+        <div class="row">
+            <div class="col-3 mt-3">
+                <div class="box01 bg-warning"></div>
+            </div>
+            <div class="col-3 "> <!-- 少寫此行mt-3，view時看差異 -->
+                <div class="box01 bg-warning"></div>
+            </div>
+            <div class="col-3 mt-3">
+                <div class="box01 bg-warning"></div>
+            </div>
+            <div class="col-3 mt-3">
+                <div class="box01 bg-warning"></div>
+            </div>
+            <div class="col-3 mt-3">
+                <div class="box01 bg-warning"></div>
+            </div>
+        </div>
+
+         <!-- 快速命令.row>.col-2.mt-3*6>.box01.bg-danger row一層，col-2有6個加mt-3，box01加bg-danger -->
+        <div class="row">
+            <div class="col-2 mt-3">
+                <div class="box01 bg-danger"></div>
+            </div>
+            <div class="col-2 mt-3">
+                <div class="box01 bg-danger"></div>
+            </div>
+            <div class="col-2 mt-3">
+                <div class="box01 bg-danger"></div>
+            </div>
+            <div class="col-2 mt-3">
+                <div class="box01 bg-danger"></div>
+            </div>
+            <div class="col-2 mt-3">
+                <div class="box01 bg-danger"></div>
+            </div>
+            <div class="col-2 mt-3">
+                <div class="box01 bg-danger"></div>
+            </div>
+        </div>
+            
+        <div class="mytitle-04 text-start fw-900 mt-3">2. RWD排版 (sm, md, lg, xl, xxl, )</div>
+        <div class="row">
+            <div class="col-sm-6 mt-3">
+                <div class="box01 bg-info"></div>
+            </div>
+            <div class="col-sm-6 mt-3">
+                <div class="box01 bg-info"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <div class="box01 bg-dark"></div>
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="box01 bg-dark"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>            
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 mt-3">
+                <div class="box01 bg-secondary"></div>
+            </div>
+        </div>
+
+        <div class="mytitle-04 text-start fw-900 mt-3">3. 顯示d-block，隱藏 d-none</div>
+        <div class="row">
+            <div class="col-3 d-sm-none d-lg-block text-center"> <!-- sm時消失，lg時打開，改md則768顥示 -->
+                <div class="box01 bg-warning"> <!-- row>col>box01是依序的三層或大中小盒子，text-center放那都可顯示，純看需求。 -->
+                    <div class="display-1">01</div>
+                </div>
+            </div>
+            <div class="col-3 d-sm-none d-lg-block">
+                <div class="box01 bg-warning">
+                    <div class="display-1">02</div>
+                </div>
+            </div>
+            <div class="col-3 d-sm-none d-lg-block">
+                <div class="box01 bg-warning">
+                    <div class="display-1">03</div>
+                </div>
+            </div>
+            <div class="col-3 d-sm-none d-lg-block">
+                <div class="box01 bg-warning">
+                    <div class="display-1">04</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mytitle-04 text-start fw-900 mt-3">4. 推移(offset)</div>
+        <div class="row">
+            <div class="col-6 offset-1"> <!-- 6小格成一群，推一格(3小格 -->
+                <div class="box01 bg-primary"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-xl-6"> <!-- 6小格成一群，螢幕寬xl時推六格 -->
+                <div class="box01 bg-primary"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 mt-3 offset-lg-4 offset-xxl-8"> <!-- 4小格成一群，上外距3，offset-lg-4大螢幕（寬度 ≥ 992px） 時，向右位移（增加左外邊距）4 欄 的寬度。offset-xxl-8：超特大螢幕（寬度 ≥ 1400px） 時，覆蓋並改為向右位移 8 欄 的寬度。 -->
+                <div class="box01 bg-danger"></div>
+            </div>
+        </div>
+<!-- 以下這段是三層階梯，心先有圖，才產生代碼。 -->
+        <div class="row">
+            <div class="col-lg-4 mt-3">
+                <div class="box01 bg-success"></div>
+            </div>
+            <div class="col-lg-4 mt-3 d-none d-lg-block">
+                <div class="box01 bg-warning">反而嘗試就好原理是什麼感染，廣告宣傳，採購多次壓力文字想要一次歡迎出版社不明白證書全家英雄，有效很有提到知識辦理各種房地產另外對不起藝術，受傷創造導演觀看未經主題，一下子告知是由現在程度概念產生哪些。</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mt-3 offset-lg-4"> <!-- 最左欄往右推，是推整列。 -->
+                <div class="box01 bg-success"></div>
+            </div>
+            <div class="col-lg-4 mt-3 d-none d-lg-block">
+                <div class="box01 bg-danger">調查事項自由，但是批評果然技能挑戰言論付出擔心取得技巧或是開口基金，一聲招聘加速，神經關於開了大會科技有限公司，你不我很走了發送，群發懂得塑膠這麼藝術說法以外安裝避免現在，市委只好意識記錄監管收入很。</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mt-3 offset-lg-8">
+                <div class="box01 bg-success"></div>
+            </div>
+        </div>
+
+        <div class="mytitle-04 text-start fw-900 mt-3">5. Gutter(g-0~5,gx-0~5,gy-0~5)</div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box01 bg-info"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="box01 bg-info"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="box01 bg-info"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="box01 bg-info"></div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-2"> <!-- 12等分佔2欄的欄位 -->
+                <div class="box01 bg-primary" style="height:500px;"></div>
+            </div>
+            <div class="col-10"> <!-- 12等分佔10欄的欄位 -->
+                <div class="row g-1"> <!-- 一列間距1約4px -->
+                    <div class="col-3 mt-3"> <!-- 加個mt-3標示那一欄，一定要寫在col，box01無效 -->
+                        <div class="box01 bg-danger">01</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="box01 bg-danger"></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="box01 bg-danger"></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="box01 bg-danger"></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="box01 bg-danger">05</div>
+                    </div>
+                    <div class="col-3 mt-3"> <!-- 加個mt-3標示那一欄，一定要寫在col，box01無效 -->
+                        <div class="box01 bg-danger"></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="box01 bg-danger"></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="box01 bg-danger"></div>
+                    </div>
+                    <div class="col-3 mt-3">
+                        <div class="box01 bg-danger">09</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="box01 bg-danger"></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="box01 bg-danger"></div>
+                    </div>
+                    <div class="col-3">
+                        <div class="box01 bg-danger"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mytitle-04 text-start fw-900 mt-3">6. row-cols-{中斷點}-{欄數}</div>
+        <div class="row g-2 row-cols-2 row-cols-md-5 row-cols-xl-6"> <!-- row-cols-2：小螢幕(寬度 < 768px)時，顯示2欄；row-cols-md-5：中螢幕(寬度 ≥ 768px)時，顯示5欄；row-cols-xl-6：大螢幕(寬度 ≥ 1200px)時，顯示6欄 -->
+            <div class="col">
+                <div class="box01 bg-warning"></div>
+            </div>
+            <div class="col">
+                <div class="box01 bg-warning"></div>
+            </div>
+            <div class="col">
+                <div class="box01 bg-warning"></div>
+            </div>
+            <div class="col">
+                <div class="box01 bg-warning"></div>
+            </div>
+            <div class="col">
+                <div class="box01 bg-warning"></div>
+            </div>
+            <div class="col">
+                <div class="box01 bg-warning"></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

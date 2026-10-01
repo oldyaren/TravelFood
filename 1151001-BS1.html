@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    </nav>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 g-4 mt-1" id="foodlist"> <!-- 增foodlist讓forEach可連結 -->
+            <div class="col">
+                <div class="card p-1"> <!-- 內距5 -->
+                    <img src="images/photo4.avif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="display-6 fw-700 text-center">餐廳名稱</div>
+                        <div class="h5 text-end">地址:xxxxx</div>
+                        <div class="h5 text-start">電話:xxxxx</div>
+                        <p class="card-text text-truncate" >This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    
+    <ul class="nav justify-content-center"> <!-- //justify-content-center 置中 -->
+        <li class="nav-item">
+            <a class="nav-link disabled fw-900" >power by XXX 2026.10.01</a> <!-- //fw-900 文字加粗 -->
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled fw-900">Disabled</a>
+        </li>
+    </ul>
+    <script src="js/bootstrap.bundle.min.js"></script> <!-- 輸入script:src才會出現閉合標籤<script src=""></script> -->
+    <script src="js/jquery-4.0.0.js"></script> <!-- $才能使用 -->
+    <script src="js/TravelFood.js"></script>
+    <script>
+        console.log(food);
+
+        $("#foodlist").empty(); /* 呼叫區圥並清空 */
+        food.forEach(function(item){
+            const strHTML = `<div class="col">
+                    <div class="card p-1">
+                        <img src="${item.PicURL}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="display-6 fw-700 text-center my-2">餐廳名稱:${item.Name}</div>
+                            <div class="h5 text-end mb-2">地址:${item.City} ${item.Town} ${item.Address}</div>
+                            <div class="h5 text-start mb-2">電話:${item.Tel}</div>
+                            <p class="card-text text-truncate" >${item.HostWords}</p>
+                        </div>
+                    </div>
+                </div>`; /* `是反引號 */
+            $("#foodlist").append(strHTML);
+        });
+        
+        
+    </script>
+
+</body>
+</html>

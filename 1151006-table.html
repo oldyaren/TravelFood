@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opendata - 地方美食餐廳列表</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        @media screen and (max-width: 768px){
+            .table-rwd thead{
+                display: none;
+                /* border:2px solid ;
+                margin-top: 15px; */
+            }
+            .table-rwd tbody tr{
+                display: block;
+                border: 2px solid #d16464;
+                margin-top: 15px;
+                /* border-radius: 5px; */
+            }
+            .table-rwd tbody tr td{
+                display: block;
+                overflow: hidden; /* 跑版時用 */
+            }
+            /* 偽元素 */
+            .table-rwd tbody tr td::before{
+                /* content: "XXXXXXX"; */
+                content: attr(data-th)":";
+                font-size: 20px;
+                font-weight: 900;
+                display: block;
+                float: left;
+                width: 30%;
+                text-align: right;
+                padding-right: 15px;
+                color: #d16464;
+            }
+            .table-rwd tbody tr td span{
+                display: block;
+                float: left;
+                width: 70%;/* 
+                font-size: 18px; */
+            }
+        }
+    </style>
+    <style id="ne-bg-override" data-night-eye="bg-override"></style>
+</head>
+<body>
+    <div class="container">
+        <div class="display-2 fw-900 text-center mt-4">地方美食餐廳列表</div>
+        <table class="table table-bordered table-rwd <!-- mt-4 table-sm --> ">
+            <thead class="table-dark">
+                <tr>
+                    <th width="10%">餐廳名稱</th>
+                    <th width="25%">餐廳圖片</th>
+                    <th width="20%">餐廳地址</th>
+                    <th width="20%">餐廳電話</th>
+                    <th width="15%">餐廳信箱</th>
+                    <th width="20%">餐廳簡介</th>
+                </tr>
+            </thead>
+            <tbody id="mytbody">
+                <tr>
+                    <td data-th="餐廳名稱"><span>xxxxx</span></td>
+                    <td data-th="餐廳圖片"><span><img src="images/landspace01.avif" class="img-fluid" alt=""></span></td>
+                    <td data-th="餐廳地址"><span>xxxxx</span></td>
+                    <td data-th="餐廳電話"><span>xxxxx</span></td>
+                    <td data-th="餐廳信箱"><span>xxxxx</span></td>
+                    <td data-th="餐廳簡介"><span class="text-truncate" style="max-width: 450px; display: block;">xxxxx</span></td>
+                    
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script> //這段是 API 非常重要的程式碼，最好背起來，請勿刪除
+        //主程式:開始必定執行的地方
+        $(function(){
+            //抓取外部資料，農村地方美食小吃特色料理。是 jQuery 的簡寫形式，代表「當整份 HTML 網頁載入並準備就緒（DOM Ready）後」，才執行裡面的程式碼，確保抓資料的動作不會在網頁元素還沒出現時就執行。
+            $.ajax({ //jQuery 提供的 AJAX 非同步傳輸核心函式，用來在不重新整理網頁的情況下，向伺服器發送請求並取得資料。
+                type: "GET", //指定這次請求的動作是「讀取」資料（GET 請求）。
+                url: "https://data.moa.gov.tw/Service/OpenData/ODwsv/ODwsvtravelFood.aspx?IsTransData=1&UnitId=193", //存放資料的目標 API 連結（這裡指向政府資料開放平臺的農村美食小吃特色料理數據）。
+                dataType: "json", //告訴瀏覽器遠端傳回來的資料是 JSON 格式，jQuery 會自動幫我們把它轉成 JavaScript 可以直接操作的物件或陣列。
+                success: showdata, //核心回調函式（Callback）。當資料成功抓回來之後，會把資料傳進 showdata 這個函式裡，通常我們會在 showdata 裡面寫程式碼去把美食資料畫面上架（例如用 for 迴圈產生卡片或表格）。
+                error: function(){ //異常處理機制。如果因為網路問題、伺服器掛掉或網址失效導致抓取失敗，就會執行這裡的程式碼，通常會用 console.log 在控制台留下紀錄，方便開發者除錯。
+                    console.log("抓取資料外部資料，農村地方美食小吃特色料理，失敗！");
+                }
+            });
+        });
+
+        //自訂函式 副程式，用來接收遠端 JSON 資料並將其透過迴圈動態渲染到網頁 HTML 表格中的 JavaScript (jQuery) 自訂函式：
+        function showdata(data){ //接續上一段 AJAX 成功後的回調函式。參數 data 就是從伺服器抓回來的陣列資料。
+            console.log(data); //用於在開發者工具（F12）的 Console 中檢視資料結構與內容，確保有成功拿到預期的欄位。
+            //$("#mytbody").empty(); //清空表格內容，如果解開執行這個函式時，會先把表格原本的內容清空，避免重複載入時資料一直往下疊加。
+            data.forEach(function(item){ //迴圈處理器。陣列裡有多少筆資料，這個迴圈就會跑幾次。變數 item 代表目前正在跑的那一筆餐廳資料物件。
+                console.log(item.Name);
+
+ //使用樣板字面字串（`...`）組裝 strHTML，反單引號。
+ //1.利用 ${item.欄位名稱} 的方式，把抓到的 JSON 屬性（如 Name、PicURL、City 等）動態塞進 HTML 的 <tr> 和 <td> 標籤中。
+ //2.其中圖片加上了 Bootstrap 的 class="img-fluid"，讓圖片具備響應式效果（不會超出格子）。
+ //3.屬性 data-th="..." 通常是搭配 CSS 做成手機版響應式表格（RWD Table）時非常好用的標籤。
+                const strHTML= `<tr>
+                                    <td data-th="餐廳名稱"><span>${item.Name}</span></td>
+                                    <td data-th="餐廳圖片"><span><img src="${item.PicURL}" class="img-fluid" alt=""></span></td>
+                                    <td data-th="餐廳地址"><span>${item.City}${item.Town}${item.Address}</span></td>
+                                    <td data-th="餐廳電話"><span>${item.Tel}</span></td>
+                                    <td data-th="餐廳信箱"><span>${item.Email}</span></td>
+                                    <td data-th="餐廳簡介"><span>${item.FoodFeature}</span></td>
+                                </tr>`;
+                $("#mytbody").append(strHTML); //使用 jQuery 的 append() 方法，把剛剛組好的那一列 HTML 逐筆塞到網頁的 <tbody id="mytbody"> 裡面，完成畫面的動態渲染。
+            });
+            //* //將資料放入表格中
+        }
+    </script>
+    
+    
+</body>
+</html>

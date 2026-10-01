@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS切版練 ex02 </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .box01{
+            height: 120px;
+            background-image: url(images/landspace01.avif);
+        }
+        .box02{
+            height: 180px;
+            margin-top: 5px;
+            line-height: 180px;
+            background-color: var(--mycolor01);
+            color: var(--textcolor04);            
+        }
+        .box03{
+            border: 2px solid var(--mycolor05);/* 設定 2 像素寬的solid實線邊框，顏色使用 CSS 變數 */
+            padding: 10px;                     /* 設定內距為 10 像素（讓內容與邊框保持距離） */
+            border-radius: 10px;               /* 設定邊框圓角半徑為 10 像素 */
+            box-shadow: 2px 2px 5px 5px var(--mycolor05); /* 設定陰影：水平偏移、垂直偏移、模糊距離、擴散半徑與陰影顏色 */
+
+        }
+        .box03 .h4 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        /* 顯示3個點：有2個方法，這是方案一，加上這段設定顯示最多 2 行，超出部分顯示省略號。方案二在item.HostWords後加一串代碼可控制大於30字時，只顯示15個字。 */
+        /* 網路還有2招1個太複雜沒試1個沒用：1.封裝成處理函式（維護性較佳），在腳本中先定義一個截斷函式：在拼接 HTML 時調用。2.Bootstrap 內建類別（僅限單行），若只想保留 單行 並截斷，可以使用 Bootstrap 5 的文字截斷類別 text-truncate。 */
+        /* .box03 .h3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;          
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        } */
+
+
+/* 此段是配合RWD，@media screen：指定當裝置是螢幕（如電腦、平板、手機）時才生效。前面是CSS */
+/* 1. 手機版樣式設定 (螢幕寬度最大為 768px 時觸發)  */
+        @media screen and (max-width: 768px) {   
+            .box02 {
+                height: 100px;          /* 設定區塊高度為 100 像素 */
+                line-height: 100px;     /* 設定行高為 100 像素（讓單行文字垂直置中） */
+            }
+        }
+/* 2. 平板/小筆電版樣式設定 (螢幕寬度最小從 992px 開始觸發)      */
+        @media screen and (min-width: 992px) {
+            .box02 {
+                width: 200px;          /* 設定區塊寬度為 200 像素 */
+                height: 200px;         /* 設定區塊高度為 200 像素 */
+                border-radius: 50%;    /* 邊框圓角設為 50%，讓正方形變成圓形 */
+                line-height: 220px;    /* 設定行高為 220 像素（微調垂直置中位置） */
+                background-color: var(--mycolor05); /* 使用 CSS 變數設定背景顏色 */
+                margin-top: 15px;      /* 設定上方外邊距為 15 像素 */
+                margin-bottom: 15px;   /* 設定下方外邊距為 15 像素 */
+            }
+
+            .box02:hover {
+                background-color: var(--mycolor02); /* 當滑鼠懸停時，改變背景顏色 */
+                color: var(--textcolor02);          /* 當滑鼠懸停時，改變文字顏色 */
+            }
+        }
+/* 3. 電腦大螢幕版樣式設定 (螢幕寬度最小從 1200px 開始觸發)     */
+        @media screen and (min-width: 1200px) {
+            .box02 {
+                width: 220px;          /* 將區塊寬度放大為 220 像素 */
+                height: 260px;         /* 將區塊高度放大為 260 像素（變成圓角長方形） */
+                line-height: 260px;    /* 設定行高配合高度維持 260 像素垂直置中 */
+                background-color: var(--mycolor02); /* 切換為另一種背景顏色變數 */
+                margin-top: 25px;      /* 增加上方外邊距至 25 像素 */
+                margin-bottom: 25px;   /* 增加下方外邊距至 25 像素 */
+            }
+
+            .box02:hover {
+                background-color: var(--textcolor02); /* 滑鼠懸停時的背景色變數切換 */
+                color: var(--mycolor01);              /* 滑鼠懸停時的文字顏色變數切換 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-3 ">
+        <div class="row">
+            <div class="col-12 d-none d-sm-block">
+                <div class="box01 bg-info bg-img"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3 mt-3 ">
+                <div class="box02 bg-success h1 fw-900 text-center">
+                    選單01  
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 mt-3 ">
+                <div class="box02 bg-success h1 fw-900 text-center">
+                    選單02
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 mt-3 ">
+                <div class="box02 bg-success h1 fw-900 text-center">
+                    選單03
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 mt-3 ">
+                <div class="box02 bg-success h1 fw-900 text-center">
+                    選單04
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row g-3" id="teavelfood-list"> <!-- 這少了id="teavelfood-list 給 AJAX 動態載入資料使用。" -->
+            <div class="col-sm-12 col-md-6 col-lg-4 mt-3">
+                <div class="box03 text-center">
+                    <img src="images/landspace01.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">旅遊景點介紹001</div> <!-- 缺少了 < 開頭與正確標籤，且沒有閉合。 -->
+                    <div class="h3">地址：ＸＸＸＸ</div>
+                    <div class="h3">電話：ＸＸＸＸ</div>
+                    <div class="h3">簡介：ＸＸＸＸ</div>
+                    
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-3">
+                <div class="box03 text-center">
+                    <img src="images/landspace01.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">旅遊景點介紹001</div>
+                    <p>不說設為報紙標準下載次數味道降價，不能下載滑鼠表面維持和我死了輕易通過最為青年，玩具開放在這個手中評論投入，新人試驗，找到百萬格式品質還沒。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-3">
+                <div class="box03 text-center">
+                    <img src="images/landspace01.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3"></div><div class="div fw-900">旅遊景點介紹001</div>
+                    <p>不說設為報紙標準下載次數味道降價，不能下載滑鼠表面維持和我死了輕易通過最為青年，玩具開放在這個手中評論投入，新人試驗，找到百萬格式品質還沒。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-3">
+                <div class="box03 text-center">
+                    <img src="images/landspace01.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">旅遊景點介紹001</div>
+                    <p>不說設為報紙標準下載次數味道降價，不能下載滑鼠表面維持和我死了輕易通過最為青年，玩具開放在這個手中評論投入，新人試驗，找到百萬格式品質還沒。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-3">
+                <div class="box03 text-center">
+                    <img src="images/landspace01.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">旅遊景點介紹001</div>
+                    <p>不說設為報紙標準下載次數味道降價，不能下載滑鼠表面維持和我死了輕易通過最為青年，玩具開放在這個手中評論投入，新人試驗，找到百萬格式品質還沒。</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-3">
+                <div class="box03 text-center">
+                    <img src="images/landspace01.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">旅遊景點介紹001</div>
+                    <p>不說設為報紙標準下載次數味道降價，不能下載滑鼠表面維持和我死了輕易通過最為青年，玩具開放在這個手中評論投入，新人試驗，找到百萬格式品質還沒。</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-3 bg-secondary d-none d-md-block fw-900 text-center py-2 h4">
+                POWER BY xxx 2026.10
+            </div>
+        </div>
+
+    
+
+        <div class="row col-12">
+            <div class="box01">連絡我們</div>
+        </div>
+    </div>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        $(function(){
+            //介接資料
+            $.ajax({
+                type:"GET",
+                url:"http://localhost:3000/travelfood",
+                datatype:"json",
+                success:showdata,
+                error:function(){
+                    console.log("介接失敗");
+                    alert("介接失敗");
+                }
+            });
+        });
+
+        function showdata(data){ /* 宣告一個名為 showdata 的函式，並接收一個參數 data。這個 data 通常是從伺服器（API / JSON）抓取回來的資料陣列（Array）。 */
+            console.log(data);
+            $("#teavelfood-list").empty();  /* 忘加 #。使用 jQuery 選取 ID 為 teavelfood-list 的 HTML 元素，並清空該元素內原本的所有內容。避免重複載入或殘留之前的舊資料。 */
+            // 如果你希望「強制最多只顯示10個」，可以加上 slice(0, 10)
+            data.forEach(function(item){ /* 使用 JavaScript 的 forEach 陣列迴圈，逐一處理 data 陣列裡的每一筆景點資料（每一筆物件會暫時存入 item 變數中 */
+                /* 利用 ES6 的樣板字串（Template Literals，使用反引號 `），結合卡片 HTML 結構與 item.屬性，拼湊出每一張景點卡片的 HTML 碼。 */
+                const strHTML=`<div class="col-md-6 col-lg-4 mt-3"> 
+                                <div class="box03 text-center">
+                                    <img src="images/landspace01.avif" class="img-fluid" alt="">
+                                    <div class="h4 fw-900 text-center mt-3">${item.Name}</div>
+                                    <div class="h3 text-start">${item.City}${item.Town}${item.Address}</div>
+                                    <div class="h3 text-start">${item.Tel}</div>
+                                    <div class="h3 text-start">${item.HostWords  &&                    item.HostWords.length > 30 
+                                        ? item.HostWords.substring(0, 15) + '~~~...' 
+                                        : item.HostWords}</div>
+                                    
+                                </div>
+                            </div>
+                `;
+                $("#teavelfood-list").append(strHTML); /* 這裏少了#。將剛才拼好的卡片 HTML (strHTML)，動態插入（附加） 到畫面上記錄 ID 為 teavelfood-list 的容器（通常是 <div class="row" id="teavelfood-list">）裡面。 */
+            });
+        }
+    </script>
+</body>
+</html>

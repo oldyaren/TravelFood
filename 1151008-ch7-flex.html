@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch7. flex</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .box01{
+            height: 120px;
+            line-height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mytitle-01 text-start">ch7. Flex></div>
+
+        <div class="display-5 fw-900">1. flex-row</div>
+        <div class="row flex-row">
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">03</div>
+            </div>
+        </div>
+
+        <div class="display-5 fw-900">2. flex-row-reverse翻轉可加斷點，如-lg</div>
+        <div class="row flex-row-reverse">
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">03</div>
+            </div>
+        </div>
+
+        <div class="display-5 fw-900">3. flex-column垂直出現</div>
+        <div class="row flex-column">
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">03</div>
+            </div>
+        </div>
+        <div class="display-5 fw-900">4. flex-column-reverse垂直出現並翻轉</div>
+        <div class="row flex-column-reverse">
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-success display-2 text-center fw-900">03</div>
+            </div>
+        </div>
+        
+        <div class="display-5 fw-900">5. justify-content-start水平排版靠左</div>
+        <div class="row justify-content-start">
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">03</div>
+            </div>
+        </div>
+        <div class="display-5 fw-900">6. justify-content-center水平排版靠中</div>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">03</div>
+            </div>
+        </div>
+        <div class="display-5 fw-900">7. justify-content-end水平排版靠右</div>
+        <div class="row justify-content-end">
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">03</div>
+            </div>
+        </div>
+        <div class="display-5 fw-900">8. justify-content-around水平排版，左右都有內距，最左右空一格，中間空二格</div>
+        <div class="row justify-content-around">
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">03</div>
+            </div>
+        </div>
+        <div class="display-5 fw-900">9. justify-content-between水平排版，平均排左右靠邊</div>
+        <div class="row justify-content-between">
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning display-2 text-center fw-900">03</div>
+            </div>
+        </div>
+        
+        <div class="display-5 fw-900 mt-4">10. align-items-start,center,end;align-self-start,center,end</div>
+        <div class="row flex-md-column align-items-center"> <!-- -md加與不加各view乙次看效果，沒加 -md-一律縱排；有加 -md-在手機版/小螢幕（< 768px）預設橫向排列（Row）。此時align-items-center 會控制「垂直居中」。在平板與大螢幕（≥ 768px）： 容器切換為 縱向排列（Column）。此時 align-items-center 會變成控制「水平居中」。align-items-xl-center：當螢幕寬度1200px（xl 斷點）。align-items-xxl-end：當螢幕寬度1400px（xxl 斷點）時， -->
+            <div class="col-2 align-self-lg-start"> <!-- 用來覆蓋（Override）父層 align-items 設定。如：大部份子元素都依父層置中，唯獨其中某個元素其他對齊時使用。 -->
+                <div class="box01 bg-primary display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-2">
+                <div class="box01 bg-primary display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-2 align-self-lg-end"> <!-- key成aligh產生錯誤 -->
+                <div class="box01 bg-primary display-2 text-center fw-900">03</div>
+            </div>
+            <div class="col-2">
+                <div class="box01 bg-primary display-2 text-center fw-900">04</div>
+            </div>
+            <div class="col-2 align-self-lg-start">
+                <div class="box01 bg-primary display-2 text-center fw-900">05</div>
+            </div>
+        </div>
+        
+        <!-- 隨螢變大依序變成12345、51234、45123、34512、23451、12345 -->
+        <!-- order預設xs尺寸顯示12345，sm>=576顯示51234，md>=768顯示45123，lg>=992顯示34512，xl>=1200顯示23451，筆電只有1300px，xxl>=1400無法顯示12345。 -->
+        <div class="display-5 fw-900">11. order</div>
+        <div class="row flex-row">
+            <div class="col-2 order-sm-1 order-md-2 order-lg-3 order-xl-4 order-xxl-0">　<!-- col-2在 12 等分網格系統中佔據 2 個欄位 的寬度。order-sm-1（手機/小螢幕尺寸＞＝576px）當螢幕達到 sm 尺寸時，將這個區塊的排序順序改為 第 1 個。order-md-2（平板尺寸＞＝768px）當螢幕達到 md 尺寸時，將排序順序改為 第 2 個。order-lg-3（一般電腦螢幕＞＝992px）當螢幕達到 lg 尺寸時，將排序順序改為 第 3 個。order-xl-4（大螢幕尺寸＞＝1200px）當螢幕達到 xl 尺寸時，將排序順序改為 第 4 個。order-xxl-0（超大螢幕尺寸＞＝1400px）當螢幕達到 xxl 尺寸時，將排序順序重設為 第 0 個（通常代表回到最前端或預設流動順序）。 -->
+                <div class="box01 bg-secondary display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-2 order-sm-2 order-md-3 order-lg-4 order-xl-0 order-xxl-1">
+                <div class="box01 bg-secondary display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-2 order-sm-3 order-md-4 order-lg-0 order-xl-1 order-xxl-2">
+                <div class="box01 bg-secondary display-2 text-center fw-900">03</div>
+            </div>
+            <div class="col-2 order-sm-4 order-md-0 order-lg-1 order-xl-2 order-xxl-3">
+                <div class="box01 bg-secondary display-2 text-center fw-900">04</div>
+            </div>
+            <div class="col-2 order-sm-0 order-md-1 order-lg-2 order-xl-3 order-xxl-4">
+                <div class="box01 bg-secondary display-2 text-center fw-900">05</div>
+            </div>
+        </div>
+        
+        <div class="row flex-row mt-3"> <!-- bg-info寫在這，全列與欄都同色，欄與欄間隔會看不到 -->
+            <div class="col-2 order-sm-1 order-md-2 order-lg-3 order-xl-4 order-xxl-0">
+                <div class="box01 bg-info display-2 text-center fw-900">01</div>
+            </div>
+            <div class="col-2 order-sm-2 order-md-3 order-lg-4 order-xl-0 order-xxl-1">
+                <div class="box01 bg-info display-2 text-center fw-900">02</div>
+            </div>
+            <div class="col-2 order-sm-3 order-md-4 order-lg-0 order-xl-1 order-xxl-2">
+                <div class="box01 bg-info display-2 text-center fw-900">03</div>
+            </div>
+            <div class="col-2 order-sm-4 order-md-0 order-lg-1 order-xl-2 order-xxl-3">
+                <div class="box01 bg-info display-2 text-center fw-900">04</div>
+            </div>
+            <div class="col-2 order-sm-0 order-md-1 order-lg-2 order-xl-3 order-xxl-4">
+                <div class="box01 bg-info display-2 text-center fw-900">05</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習01，使用CSS語法配版面</title>
+    <style>
+        :root{
+            --body-bgcolor:#d4e9d4; /* 頁面背景色 */
+            --logo-bgcolor:#00704a; /* Logo區域背景色 */
+            --nav-bgcolor:#00704a; /* 導覽列背景色 */
+            --nav-link-bgcolor:#00704a; /* 導覽連結背景色 */
+            --nav-link-color:#f1f8f5; /* 導覽連結文字色 */
+            --nav-shadow-color:#1e3932; /* 導覽列陰影色 */
+            --nav-hover-shadow-color:#a5d6b8; /* 導覽滑入陰影色 */
+            --content-bgcolor:#1e3932; /* 內容區背景色 */
+            --content-title-color:#f1f8f5; /* 內容標題文字色 */
+            --content-text-color:#d4e9d4; /* 內容文字色 */
+            --content-link-bgcolor:#00704a; /* 內容按鈕背景色 */
+            --content-link-color:#ffffff; /* 內容按鈕文字色 */
+            --content-link-shadow-color:#666666; /* 內容按鈕陰影色 */
+            --footer-bgcolor:#1e3932; /* 頁尾背景色 */
+            --footer-color:#f1f8f5; /* 頁尾文字色 */
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        body{
+            background-color: var(--body-bgcolor);
+        }
+
+        .wrapper{
+            width: 1024px;
+            margin-top: 5;
+            margin-bottom: 5;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .logo{
+            width: 1024px;
+            height: 180px;
+            background-color: var(--logo-bgcolor);
+            background-image: url(images/photo1.avif);
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .nav{
+            background-color: var(--nav-bgcolor);
+            text-align: center; 
+            padding-top: 20px;
+        }
+
+        .nav ul{
+            display: inline-block;  /*橫向顯示*/
+        }
+
+        .nav ul li{
+            float: left;
+            list-style-type: none;
+        }
+
+        .nav ul li a{
+            text-decoration: none;
+            background-color: var(--nav-link-bgcolor);
+            color: var(--nav-link-color);
+            padding-top: 5px;   /*padding配合.nav ul{inline-block}使用*/
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 3px 4px var(--nav-shadow-color);
+            font-size: 20px;
+            font-weight: bol;
+        }
+
+        .nav ul li a:hover{
+            border-radius: 0px;
+            box-shadow: 4px 4px 4px 4px var(--nav-hover-shadow-color);
+            box-shadow: 4px 4px 4px 4px var(--nav-shadow-color);
+        }
+
+        .content{
+            padding: 30px 80px;
+            background-color: var(--content-bgcolor);
+        }
+
+        .content h1{
+            text-align: center;
+            color: var(--content-title-color);
+            font-size: 48px;
+        }
+
+        .content p{
+            text-align: left;
+            color: var(--content-text-color);
+            font-size: 22px;
+        }
+
+        .content a{
+            display: block;
+            background-color: var(--content-link-bgcolor);
+            width: 40;
+            height: 40;
+            margin-top: 20px;
+            margin-bottom: 0;
+            margin-left: 300px;
+            margin-right: 300px;
+            text-decoration: none;
+            color: var(--content-link-color);
+            text-align: center;
+            font-size: 20px;
+            line-height: 40px;
+            font-weight: bold;
+            box-shadow: 2px 2px 2px 2px var(--content-link-shadow-color);
+            border-radius: 5px ;
+        }
+
+        .footer{
+            background-color: var(--footer-bgcolor);
+            color: var(--footer-color);
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+
+        /* ========================================
+           平板版 RWD
+           1024px 以下
+           ======================================== */
+        @media screen and (max-width:1024px){
+
+            .wrapper{
+                width:95%;
+            }
+
+            .logo{
+                width:100%;
+                height:120px;
+                background-image: url(images/photo5.avif);
+            }
+
+            .nav ul{
+                display: block;
+            }
+
+            .nav ul li{
+                float:none;
+            }
+
+            .nav ul li a{
+                display:block;
+                margin-top: 20px;   /*沒反應? */
+                margin-left: 0;
+                margin-bottom: 5px;
+                padding-top: 5px;
+                padding-bottom: 10px;   /*沒反應 */
+                border-radius: 2px;
+                box-shadow: none;
+            }
+
+
+        /*這段是自己寫的參考            
+        .content{
+            padding: 5px 5px;
+        }
+        .content h1{
+            font-size: 48px;
+        }
+        .content  p{
+            font-size: 22px;
+        }
+        .content a{
+            margin-top: 20px;
+            margin-bottom: 0;
+            margin-left: 300px;
+            margin-right: 300px;
+            box-shadow: 2px 2px 2px 2px ;
+            border-radius: 3px ;
+        }
+        .footer{
+            background-color: var(--footer-bgcolor);
+            color: var(--footer-color);
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }*/
+
+
+            .content{
+                padding: 25px 30px;
+            }
+
+            .content h1{
+                font-size: 36px;
+            }
+
+            .content p{
+                font-size: 18px;
+            }
+
+            .footer{
+                font-size: 18px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+        }
+
+
+        /* ========================================
+           手機版 RWD
+           600px 以下
+           商業風格 WebApp
+           ======================================== */
+        @media screen and (max-width:600px){
+
+            /* 網頁背景 */
+            body{
+                background-color: #f4f7f5;
+            }
+
+            /* WebApp 主容器 */
+            .wrapper{
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* WebApp 頂端 Logo */
+            .logo{
+                width: 100%;
+                height: 100px;
+                background-image: url(images/photo5.avif);
+                background-position: center center;
+                background-size: cover;
+            }
+
+            /* 手機版導覽列 */
+            .nav{
+                background-color: var(--nav-bgcolor);
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+
+            /* 導覽選單滿版 */
+            .nav ul{
+                display: block;
+                width: 100%;
+            }
+
+            /* 導覽項目 */
+            .nav ul li{
+                float: none;
+                width: 100%;
+            }
+
+            /* WebApp 導覽按鈕 */
+            .nav ul li a{
+                display: block;
+                margin-top: 4px;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 4px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                padding-left: 10px;
+                padding-right: 10px;
+                background-color: var(--nav-link-bgcolor);
+                color: var(--nav-link-color);
+                border-radius: 6px;
+                box-shadow: 0px 2px 5px var(--nav-shadow-color);
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            /* 手機版導覽滑入 */
+            .nav ul li a:hover{
+                border-radius: 6px;
+                background-color: var(--nav-shadow-color);
+                box-shadow: 0px 2px 5px var(--nav-hover-shadow-color);
+            }
+
+            /* WebApp 內容卡片 */
+            .content{
+                margin: 12px;
+                padding: 25px 20px;
+                background-color: var(--content-bgcolor);
+                border-radius: 10px;
+                box-shadow: 0px 3px 10px var(--nav-shadow-color);
+            }
+
+            /* WebApp 標題 */
+            .content h1{
+                margin-bottom: 20px;
+                color: var(--content-title-color);
+                font-size: 30px;
+                line-height: 1.4;
+            }
+
+            /* WebApp 文字 */
+            .content p{
+                margin-bottom: 18px;
+                color: var(--content-text-color);
+                font-size: 16px;
+                line-height: 1.8;
+                text-align: left;
+            }
+
+            /* WebApp 主要操作按鈕 */
+            .content a{
+                display: block;
+                width: auto;
+                height: 48px;
+                margin-top: 25px;
+                margin-bottom: 5px;
+                margin-left: 0;
+                margin-right: 0;
+                background-color: var(--content-link-bgcolor);
+                color: var(--content-link-color);
+                font-size: 18px;
+                line-height: 48px;
+                font-weight: bold;
+                text-align: center;
+                box-shadow: 0px 3px 8px var(--content-link-shadow-color);
+                border-radius: 6px;
+            }
+
+            /* WebApp 按鈕滑入 */
+            .content a:hover{
+                background-color: var(--nav-shadow-color);
+            }
+
+            /* 手機版頁尾 */
+            .footer{
+                background-color: var(--footer-bgcolor);
+                color: var(--footer-color);
+                font-size: 14px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+        }
+      
+    </style>
+</head>
+
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="banner">
+
+            <div class="logo"></div>
+
+            <div class="nav">
+                <ul>
+                    <li><a href="">首頁</a></li>
+                    <li><a href="">最新消息</a></li>
+                    <li><a href="">合作店家</a></li>
+                    <li><a href="">關於我們</a></li>
+                    <li><a href="">連絡我們</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="content">
+
+            <h1>歡迎光臨</h1>
+
+            <p>自從國語功能營銷竟然說過，一旦便利商店代理你的大門可以犯罪，構成維修地下部落格百萬，意識你看行情小區能不能持續，上來提升消失一支瀏覽次數一些各國本報烏日等級國內，健康預期安徽平均監督照片語言然而，投資者目錄電子商務台中當你相冊，基礎上建設科技有限公司，自。</p>
+
+            <p>確實競爭力，證書具備主體之處結婚釣魚線上機制味道主流第二天，商務藝術人間招商最好，成員經銷商高雄經濟品種都不在此本來添加便是支持不久，時候一款斗內為此身上客人十二證實理念依法，人體主要嚴重，情況一張房產合適，回覆一番成績擁有一會兒呼吸最好版本石油小孩地面治療，人事發展現實開通優化我也一部分終於，機制由此業績距離損失球隊工資下來天堂，醫學通過隨後已被近年來有一些管理系統，一面沒想到，適用繼續不少中間網域名稱類型，作業透明網際網路促進學習對象我國，遇到天空都會超市請教失去及時群眾真正，點點溫暖大廈趕緊，望着三。</p>
+
+            <a href="">了解更多</a>
+
+        </div>
+
+        <div class="footer">PowerBY XXX 20260923</div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卷軸roller</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .box{
+            height: 180px;
+        }
+
+        /* 此段以下可加入myall.css，上下左右進入，甚至先給AI修飾，增圓角。 */
+        /* roller top */
+        .roller-t{
+            position: relative;
+            overflow: hidden; /* 加此行覆蓋色塊會先隱藏 */
+        }
+        .roller-t .rollerbox-t{ /* 不會捲動的錯誤多X */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(223, 126, 126, 0.3);
+            /* transform: translateY(-100%); */ /* 只加此行會暴力切換，測試後可關掉，加下行2S才有感覺 */
+            transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);  /* cubic-bezier速度變化貝茲曲線 */
+            display: flex; /* 這三行測試 */
+            justify-content: center;
+            align-items: center;
+        }
+        .roller-t:hover .rollerbox-t{
+            transform: translateY(0); /* 配合前個translateX(-100%)，負是左及上進入 */
+        }
+        /* roller bottom */
+        .roller-b{
+            position: relative;
+            overflow: hidden; /* 加此行復蓋色圥會先隱藏 */
+        }
+        .roller-b .rollerbox-b{ /* 不會捲動的錯誤多X */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(223, 126, 126, 0.3);
+            transform: translateY(100%); /* 只加此行會暴力切換，加下行2S才有感覺 */
+            transition: transform 2s;
+            display: flex; /* 這三行測試 */
+            justify-content: center;
+            align-items: center;
+        }
+        .roller-b:hover .rollerbox-b{
+            transform: translateY(0); /* 配合前個translateX(-100%)，負是左及上進入 */
+        }
+        /* roller left */
+        .roller-l{
+            position: relative;
+            overflow: hidden; /* 加此行復蓋色圥會先隱藏 */
+        }
+        .roller-l .rollerbox-l{ /* 不會捲動的錯誤多X */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(223, 126, 126, 0.3);
+            transform: translateX(-100%); /* 只加此行會暴力切換，加下行2S才有感覺 */
+            transition: transform 2s;
+            display: flex; /* 這三行測試 */
+            justify-content: center;
+            align-items: center;
+        }
+        .roller-l:hover .rollerbox-l{
+            transform: translateX(0); /* 配合前個translateX(-100%)，負是左及上進入 */
+        }
+        /* roller right */
+        .roller-r{
+            position: relative;
+            overflow: hidden; /* 加此行復蓋色圥會先隱藏 */
+        }
+        .roller-r .rollerbox-r{ /* 不會捲動的錯誤多X */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(223, 126, 126, 0.3);
+            transform: translateX(100%); /* 只加此行會暴力切換，加下行2S才有感覺 */
+            transition: transform 2s;
+            display: flex; /* 這三行測試 */
+            justify-content: center;
+            align-items: center;
+        }
+        .roller-r:hover .rollerbox-r{
+            transform: translateX(0); /* 配合前個translateX(-100%)，負是左及上進入 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mt-3">
+                <div class="box bg-info roller-b"> <!-- 少寫roller不會捲動 -->
+                    <div class="rollerbox-b">前往批准下去於是給。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

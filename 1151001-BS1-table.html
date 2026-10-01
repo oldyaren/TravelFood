@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap-table(表格)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        @media screen and (max-width: 768px){ /* 當螢幕寬度最大為 768px 時觸發（通常用於手機或平版等行動裝置） */
+/* 1. 隱藏表格的標題列（thead） */
+            .table-rwd thead{ 
+                display: none;
+            }
+/* 2. 將每一列（tr）轉為區塊元素（block），當作獨立的卡片 */
+            .table-rwd tbody tr{
+                display: block;margin-top: 15px;   /* 卡片與卡片之間的間距 */
+                border: 1px solid var(--border01); /* 卡片邊框顏色 */
+                border-radius: 5px;                /* 卡片圓角 */
+            }
+/* 3. 將每一個儲存格（td）也轉為區塊元素，讓它們各自獨立成一行 */
+            .table-rwd tbody tr td{
+                display: block;
+                overflow: hidden; /* 跑版時用 *//* 清除浮動（Float）造成的跑版問題 */
+            }
+/* ============= 4. 利用「偽元素（::before）」來動態顯示欄位名稱 ============= */
+            /* 偽元素 */
+            .table-rwd tbody tr td::before{
+                /* content: "XXXXXXX"; */          /* 註解：也可以寫死固定文字，但實務上推薦下面動態抓取的方式 */
+                content: attr(data-th)":";        /* 動態讀取 HTML 中設定的 data-th 屬性值，並在結尾加上冒號 */
+                font-weight: 900;                 /* 字體加粗 */
+                color: #9e18a5;                   /* 標題文字顏色（紫色） */
+                font-size: 20px;                  /* 標題文字大小 */
+                display: block;                   /* 設為區塊元素 */
+                float: left;                      /* 靠左浮動，與右側內容並排 */
+                width: 30%;                       /* 標題佔總寬度的 30% */
+                text-align: right;                /* 文字靠右對齊 */
+                padding-right: 10px;              /* 右側內距，與內容保持距離 */
+            }
+/* 5. 針對儲存格內包覆的 span（實際資料內容）進行排版 */
+            .table-rwd tbody tr td span{
+                display: block;                   /* 設為區塊元素 */
+                float: left;                      /* 靠左浮動，接在標題旁邊 */
+                width: 70%;                       /* 內容佔總寬度的 70%（與上方 30% 加起來剛好 100%） */
+                font-size: 18px;                  /* 內容文字大小 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="display-2 fw-900 text-center mt-4">飲料產品列表</div>
+
+        <table class="table mt-4 table-bordered table-sm table-rwd ">
+            <thead class="table-dark">
+                <tr>
+                    <th >產品編號</th>
+                    <th >產品名稱</th>
+                    <th >產品價格</th>
+                    <th >產品數量</th>
+                    <th >產品備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-th="產品編號"><span>01</span></td>
+                    <td data-th="產品名稱"><span>美式咖啡</span></td>
+                    <td data-th="產品價格"><span>60</span></td>
+                    <td data-th="產品數量"><span>10</span></td>
+                    <td data-th="產品備註"><span>許多就有，提供明顯可惜激烈交通一絲往往女人文檔聯絡人中心喜愛皮膚，職位就能創建，如今不夠那是動漫設定整體便是四周，飛機評價詳細現在播放搜尋引擎，你也評分突破麻煩體現分類大幅魯蛇員工，感情角色變成在於。</span></td>
+                </tr>
+                <tr>
+                    <td >02</td>
+                    <td >拿鐵咖啡</td>
+                    <td >60</td>
+                    <td >10</td>
+                    <td >實業課程，如何老婆好像也許，公里印刷優秀出版會不會上傳逐步專欄極大無比，我的心天氣臨時，世紀美好培養郵箱保險為你，劇情呵呵組成夫人新人騎士英語花蓮外貿，效益增加苗栗平時一位本次，理念我很實用低價，擔。</td>
+                </tr>
+                <tr>
+                    <td class="table-info">03</td>
+                    <td>芬達</td>
+                    <td>25</td>
+                    <td>30</td>
+                    <td>我又基隆依然不禁風雲，改進得分收藏本頁離線給我們鄉民速度之處日月潭您現在，不禁存儲同一本地下載整理媒體推進這種依靠，此刻還沒有為止能源尋求支付這樣既然各級作者，電視台案例存儲物理近期出現在他們玩家眼中肯定，文本多少供應矛盾身體解決方案不需要第一個沒事不肯。</td>
+                </tr>
+                <tr>
+                    <td class="bg-info">04</td>
+                    <td>拿鐵咖啡</td>
+                    <td>60</td>
+                    <td>30</td>
+                    <td>無糖去冰</td>
+                </tr>
+            </tbody>
+                        
+        </table>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+        <!-- alt + 左鍵同時修改
+        shift + alt + 左鍵同時修改
+        ctrl + d按數次，按左右鍵修改前後，或ctrl + Shift + L相同的單字同時選取
+        滑鼠選取多行，按 Shift + Alt + I，一起加分號。 -->
+        
+</body>
+</html>
