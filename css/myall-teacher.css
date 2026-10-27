@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+
+:root {
+    /* 星巴克風格色系變數命名 */
+    --sb-bg-main: #f7f5f0;
+    /* 頁面背景：溫潤燕麥米白色 */
+    --sb-nav-bg: #1e3932;
+    /* 導覽列背景：經典星巴克深綠色 */
+    --sb-nav-btn-bg: #006241;
+    /* 導覽按鈕背景：星巴克翠綠色 */
+    --sb-nav-btn-color: #ffffff;
+    /* 導覽文字顏色 */
+    --sb-nav-shadow: #11221e;
+    /* 導覽陰影色 */
+    --sb-nav-hover-shadow: #d4ebd0;
+    /* 導覽懸停陰影色 */
+    --sb-content-bg: #ffffff;
+    /* 內容區塊底色：乾淨白 */
+    --sb-primary-text: #1e3932;
+    /* 主要標題與文字色：深綠色 */
+    --sb-btn-bg: #00754a;
+    /* 內容按鈕背景：鮮明綠 */
+    --sb-btn-color: #f7f5f0;
+    /* 內容按鈕文字色 */
+    --sb-btn-shadow: #889891;
+    /* 按鈕陰影色 */
+    --sb-footer-bg: #27251f;
+    /* 頁尾背景：沉穩焙煎咖啡色 */
+    --sb-footer-color: #f7f5f0;
+    /* 頁尾文字色 */
+}
+
+body {
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+
+/* 字體粗細度 */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+/* 標題 */
+.mytitle-01 {
+    font-size: 56px;
+    font-weight: 900;
+    text-align: center;
+    color: #1f3a5f;
+    letter-spacing: 15px;
+    line-height: 1.4;
+}
+
+.mytitle-02 {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    color: #44546a;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+}
+
+.mytitle-03 {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    color: #9a7b4f;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.mytitle-04 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #961be9;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+
+/* 背景圖 */
+.bg-img {
+    background-position: center center;
+    background-size: cover;
+}
+
+/* roller 圖層*/
+/* roller top */
+.roller-t {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-t .rollerbox-t {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(223, 126, 126, 0.3);
+    transform: translateY(-100%);
+    transition: transform 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roller-t:hover .rollerbox-t {
+    transform: translateY(0);
+}
+
+/* roller bottom */
+.roller-b {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-b .rollerbox-b {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(223, 126, 126, 0.3);
+    transform: translateY(100%);
+    transition: transform 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roller-b:hover .rollerbox-b {
+    transform: translateY(0);
+}
+
+/* roller left */
+.roller-l {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-l .rollerbox-l {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(223, 126, 126, 0.3);
+    transform: translateX(-100%);
+    transition: transform 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roller-l:hover .rollerbox-l {
+    transform: translateX(0);
+}
+
+/* roller right */
+.roller-r {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-r .rollerbox-r {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(223, 126, 126, 0.3);
+    transform: translateX(100%);
+    transition: transform 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roller-r:hover .rollerbox-r {
+    transform: translateX(0);
+}

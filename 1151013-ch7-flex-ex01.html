@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch7 flex - 時間軸</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css"> <!-- 可把時間軸寫入 -->
+    <style>
+        .imgbox{
+            height: 220px;
+        }
+        .timeline-section{ /* （時間軸外層容器） */
+            position: relative;
+        }
+        .timeline-section::before{ /* ::before（時間軸的「主線」） */
+            position: absolute; /* ;忘記寫時間軸出不來 */
+            content: "";
+            width: 5px;
+            background-color:   rgba(203, 161, 238, 0.3);
+            top:0;
+            bottom:0;
+            left: 50%;
+            transform:translatex(-50%); /* 與動畫有關 */
+        }
+
+        .timeline-section-pointer{
+            position: relative;
+        }
+        .timeline-section-pointer::before{ /* ::before小螢幕時須消失或調整 */
+            position: absolute;
+            content: "";
+            width: 28px;
+            height: 28px;
+            background-color: rgba(240, 241, 161, 0.3);
+            border-radius: 50%;
+            border: 8px solid rgba(245, 152, 175, 0.3);
+            left: 50%;
+            transform: translateX(-48%); /* 微調圓點本身的寬度，讓圓心剛好對準線條 */
+            top: 0; /* 讓圓點固定在每一列的頂端 */
+        }
+
+        /* 注意：and 和 ( 之間一定要有空格 */
+        @media screen and (max-width:768px) { 
+            /* 這段是小螢幕時間軸消失 */
+            /* .timeline-section::before, .timeline-section-pointer::before{ 
+                display:none
+            } */
+            /* 1. 小螢幕調整時間軸線條的位置：靠左固定 */ /* 線條可能會直接超出螢幕左邊邊界而消失，可改正數 */
+            .timeline-section::before{
+                left: -20px;
+            }
+            .timeline-section-pointer::before{
+                left:-10px;
+            }
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="display-2 text-center fw-900 my-4">時間軸timelink</div>
+        <div class=timeline-section> <!--  timeline-section拼錯時間軸出不來  -->
+            <div class="row mt-3 align-items-center timeline-section-pointer">
+                <div class="col-md-6">
+                    <div class="imgbox bg-img roller-l" style="background-image:url(images/landspace01.avif);">
+                        <div class="rollerbox-l">
+                            <div class="btn btn-warning">查看更多</div>
+                        </div>
+                    </div> <!-- avif後的分號;加不加好像沒差。圖要加文字圖文並茂，且圖要從四週飄入。 -->
+                </div>
+                <div class="col-md-6">
+                    <div class="h2 fw-900 text-center">01標題</div>
+                    <p>輕鬆有時是一種能否依靠此外一體休息用來衛生，新臺幣篇文章，不肯第一個。</p>
+                    <p>地區人物不說，名稱兒子類別，對我臺灣人下了選手結合前往原文地址權限處罰，。</p>
+                </div>
+            </div>
+            <div class="row mt-3 flex-row-reverse align-items-center timeline-section-pointer"> <!-- align-items-center垂直置中，字太多顯示不出來 -->
+                <div class="col-md-6">
+                    <div class="imgbox bg-img roller-r" style="background-image:url(images/landspace02.avif);">
+                        <div class="rollerbox-r">
+                            <div class="btn btn-warning">查看更多</div>
+                        </div></div> <!-- ;加不加好像沒差 -->
+                </div>
+                <div class="col-md-6">
+                    <div class="h2 fw-900 text-center">02標題</div>
+                    <p>xxx：ＸＸＸ</p>
+                    <p>xxx：ＸＸＸ</p>
+                    <p>xxx：ＸＸＸ</p>
+                </div>
+            </div>
+            <div class="row mt-3 align-items-center timeline-section-pointer">
+                <div class="col-md-6">
+                    <div class="imgbox bg-img roller-t" style="background-image:url(images/landspace03.avif);">
+                        <div class="rollerbox-t">
+                            <div class="btn btn-warning">查看更多</div>
+                        </div></div> <!-- ;加不加好像沒差 -->
+                </div>
+                <div class="col-md-6">
+                    <div class="h2 fw-900 text-center">03標題</div>
+                    <p>輕鬆有時是一種能否依靠此外一體休息用來衛生，新臺幣篇文章，不肯第一個眼淚上次完整，予以固定這段。</p>
+                    <p>地區人物不說，名稱兒子類別，對我臺灣人下了選手結合前往原文地址權限處罰，指標機器類似你自己一系列提交老婆關鍵具有西部，無比常常，特徵活力權限孩子，寫出來崇拜，部門避免，條件地址走向主人，想起。</p>
+                </div>
+            </div>
+            <div class="row mt-3 flex-row-reverse align-items-center timeline-section-pointer">
+                <div class="col-md-6">
+                    <div class="imgbox bg-img roller-b" style="background-image:url(images/landspace04.avif);">
+                        <div class="rollerbox-b">
+                            <div class="btn btn-warning">查看更多</div>
+                        </div></div> <!-- ;加不加好像沒差 -->
+                </div>
+                <div class="col-md-6">
+                    <div class="h2 fw-900 text-center">04標題</div>
+                    <p>輕鬆有時是一種能否依靠此外一體休息用來衛生，新臺幣篇文章，不肯第一個眼淚上次完整，予以固定這段。</p>
+                    <p>地區人物不說，名稱兒子類別，對我臺灣人下了選手結合前往原文地址權限處罰，指標機器類似你自己一系列提交老婆關鍵具有西部，無比常常，特徵活力權限孩子，寫出來崇拜，部門避免，條件地址走向主人，想起。</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

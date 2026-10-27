@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI輔助全端程式設計 - 企業教育訓練招生網(教學模擬版)</title>
+    <!-- 沿用原本的 CSS 路徑 -->
+    <link class="styles" rel="stylesheet" href="css/bootstrap.min.css">
+    <link class="styles" rel="stylesheet" href="css/myall.css">
+    <!-- 引入 SweetAlert2 用於精美提示訊息 -->
+    <script src="https://jsdelivr.net"></script>
+    
+    <style>
+        /* 集中管理：沉浸式星空、藍、紫、深灰色調 */
+        :root {
+            --space-dark: #0B0F19;      /* 深邃星空底色 */
+            --nebula-purple: #4F46E5;   /* 星雲紫 */
+            --cosmic-blue: #06B6D4;     /* 宇宙藍 */
+            --galaxy-gray: #1E293B;     /* 銀河深灰 (卡片背景) */
+            --starlight: #F8FAFC;       /* 星光白 */
+            --text-muted: #94A3B8;      /* 靜謐灰 */
+        }
+
+        body {
+            background-color: var(--space-dark);
+            color: var(--starlight);
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+        }
+
+        /* 導覽列 */
+        .navbar-custom {
+            background-color: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* 課程 Banner 區 */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+        }
+
+        /* 表單與卡片改裝 */
+        .custom-card {
+            background-color: var(--galaxy-gray);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-label {
+            color: var(--cosmic-blue);
+            font-weight: 600;
+        }
+
+        /* 輸入框微調 */
+        .form-control, .form-select {
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--starlight) !important;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: rgba(15, 23, 42, 0.8);
+            border-color: var(--cosmic-blue);
+            box-shadow: 0 0 0 0.25rem rgba(6, 182, 212, 0.25);
+        }
+
+        /* 按鈕自訂 */
+        .btn-purple {
+            background-color: var(--nebula-purple);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-purple:hover {
+            background-color: #4338CA;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 側邊欄邊框特效 */
+        .feature-item {
+            border-left: 4px solid var(--cosmic-blue);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 10px 15px;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. 品牌導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="#">
+                <span style="color: var(--cosmic-blue);">Gjun</span> 巨匠電腦 <span class="badge bg-secondary fs-7 ms-2">教學模擬版</span>
+            </a>
+            <span class="navbar-text d-none d-sm-inline-block text-muted">
+                企業教育訓練專案 / AI 導向全端人才培育
+            </span>
+        </div>
+    </nav>
+
+    <!-- 主容器 -->
+    <div class="container my-4">
+        
+        <!-- 2. AI 課程介紹 Banner -->
+        <div class="p-4 p-md-5 mb-4 hero-banner text-white">
+            <div class="col-md-10 px-0">
+                <span class="badge btn-purple mb-3 px-3 py-2">HOT! 企業熱門轉職專案</span>
+                <h1 class="display-4 fw-bold">AI 輔助全端程式設計</h1>
+                <p class="lead my-3 text-muted">結合精選主流網頁技術（HTML、CSS、JavaScript、jQuery 與 AJAX 非同步技術），並全面導入現代 AI 協作開發模式，教導學員利用生成式 AI 進行提效、架構優化與語法偵錯，高效翻倍您的開發產值與核心競爭力！</p>
+                <div class="d-flex flex-wrap gap-2 text-info fs-6">
+                    <span>#網頁前端基礎</span> | <span>#jQuery互動特效</span> | <span>#AJAX非同步資料</span> | <span>#AI指令協作</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. RWD 雙欄排版 -->
+        <div class="row g-4">
+            
+            <!-- 左側 col-lg-8：線上報名表單 -->
+            <div class="col-lg-8">
+                <div class="custom-card p-4">
+                    <h3 class="mb-4 pb-2 border-bottom border-secondary text-white fw-bold">
+                        📋 課程線上報名表
+                    </h3>
+                    
+                    <div>
+                        <!-- 姓名 -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">姓名</label>
+                            <input type="text" class="form-control form-control-lg" id="username" placeholder="姓名字串長度2~8!">
+                            <div class="valid-feedback">姓名字串長度符合規定</div>
+                            <div class="invalid-feedback">姓名字串長度不符合規定</div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control form-control-lg" id="email" placeholder="Email字串長度8~15包含 @ !">
+                            <div class="valid-feedback">Email字串長度符合規定</div>
+                            <div class="invalid-feedback">Email字串長度不符合規定</div>
+                        </div>
+
+                        <!-- 密碼 -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">密碼</label>
+                            <input type="password" class="form-control form-control-lg" id="password" placeholder="密碼字串長度8~16，必須包含一個大小字母與小寫字母，一個特殊符號(@~#$%^!)">
+                            <div class="valid-feedback">密碼格式符合規定</div>
+                            <div class="invalid-feedback">密碼格式不符合規定</div>
+                        </div>
+
+                        <!-- 手機 -->
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">手機</label>
+                            <input type="text" class="form-control form-control-lg" id="phone" placeholder="手機開頭為09-XXXXXXXX">
+                            <div class="valid-feedback">手機格式符合規定</div>
+                            <div class="invalid-feedback">手機格式不符合規定</div>
+                        </div>
+                        
+                        <!-- 居住縣市 (AJAX) -->
+                        <div class="mb-3">
+                            <label for="city" class="form-label">居住縣市</label>
+                            <select class="form-select form-select-lg is-invalid" id="city">
+                                <option value="" selected disabled class="text-center fw-900">---請選擇縣市名稱---</option>
+                                <option value="臺中市">臺中市</option>
+                            </select>
+                            <div class="valid-feedback">已選擇縣市名稱</div>
+                            <div class="invalid-feedback">未選擇縣市名稱</div>
+                        </div>
+
+                        <!-- checkbox 感興趣課程 -->
+                        <div class="mb-3">
+                            <label class="form-label">感興趣的課程(可複選)</label>
+                            <div class="p-3 rounded" style="background: rgba(0,0,0,0.2);">
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" class="form-check-input" id="chk01" value="HTML/CSS" name="interest">
+                                    <label for="chk01" class="form-check-label">HTML/CSS</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" class="form-check-input" id="chk02" value="JavaScript" name="interest">
+                                    <label for="chk02" class="form-check-label">JavaScript</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" class="form-check-input" id="chk03" value="Python" name="interest">
+                                    <label for="chk03" class="form-check-label">Python</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" class="form-check-input" id="chk04" value="AI協作開發" name="interest">
+                                    <label for="chk04" class="form-check-label">AI協作開發</label>
+                                </div>
+                            </div>
+                            <div id="interest_msg" class="text-secondary mt-1">
+                                請至少選擇一項課程
+                            </div>
+                        </div>
+
+                        <!-- radio 上課方式 -->
+                        <div class="mb-3">
+                            <label class="form-label">偏好的上課方式(單選)</label>
+                            <div class="p-3 rounded" style="background: rgba(0,0,0,0.2);">
+                                <div class="form-check mb-2">
+                                    <input type="radio" class="form-check-input" id="rad01" value="實體課程" name="classMode">
+                                    <label for="rad01" class="form-check-label">🏢 實體課程</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input type="radio" class="form-check-input" id="rad02" value="線上課程" name="classMode">
+                                    <label for="rad02" class="form-check-label">🌐 線上課程</label>
+                                </div>
+                                <div class="form-check">

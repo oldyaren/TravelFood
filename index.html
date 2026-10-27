@@ -5,12 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>學習歷程首頁</title>
     <link rel="stylesheet" href="css/myall.css">
+    
+    <style>
+        /* 在 CSS 裡 .ul 代表類別（Class），但我的 HTML 標籤是 <ul>（沒有加 class="ul"），所以 CSS 抓不到它。修正：改成對應 class="mylist" 的清單 */
+        /* .mylist {
+            font-size: 30px; */ /* 調整字體的大小 */
+        /* } */
+        /* 超連結也可變大或繼承 */
+        /* .mylist li a {
+            font-size: 22px; 
+        } */
+        
+        /* 直接對網頁中所有的清單連結調整字體大小 */
+        ul li a {
+            font-size: 22px; 
+        }
+        /*改錯，且不用.ul 及 .ul li。
+         .ul{
+            font-size: 30px;
+        }
+        .ul li{
+            font-size: 30px;
+        }
+        .ul li a{
+            font-size: 30px;    
+        } */
+    </style>
 </head>
 <body>
     <div class="mytitle-01">學習歷程筆記展示</div>
-    <ul>
-        <li><a href="1150923-ex01Ai04room.html" target="_blank">html and css 排版練習</a></li>
-        <li><a href="1150929-javascript-travelfood-ai01.html" target="_blank">JS語法練習、使用opendata travelfood(1150929)</a></li>
+
+    <ul ><!-- class="mylist" -->
+        <li><a href="1150923-ex01Ai04room.html" target="_blank" font-size:36px>HTML and CSS 排版練習</a>
+        </li>
+        <li><a href="1150929-javascript-travelfood-ai01.html" target="_blank">JS語法練習 - 使用opendata travelfood(1150929)</a>
+        </li>
+        <li><a href="1151001-BS1.html" target="_blank">Bootstrap</a>
+        </li>
+        <li><a href="1151001-BS1-table.html" target="_blank">Bootstrap-table(表格)</a>
+        </li>
+        <li><a href="1151006-ch6.html" target="_blank">Bootstrap 切版</a>
+        </li>
+        <li><a href="1151006-table.html" target="_blank" style="font-size: 24px;">opendata - 地方美食餐廳列表</a> <!-- 單行字變大 -->
+        </li>
+        <li><a href="http://127.0.0.1:5500/1151008-ch7-flex.html"  target="_blank">ch7. flex</a></li>
+        <li><a href="http://127.0.0.1:5500/1151008-ex02.html"  target="_blank">BS切版練 ex02 </a></li>
+        <li><a href="1151013-ch7-flex-roller.html"  target="_blank">卷軸roller</a></li>
+        <li><a href="1151013-ch7-flex-ex01.html"  target="_blank" style="color: rgb(255, 0, 234);">ch7 flex - 時間軸。待做個人履歷 </a></li> <!-- class="text-danger"和style=~~，前者是連結顏色，後者是字體顏色 -->
+        <li><a href="1151015-ch8-forms.html"  target="_blank">ch8. Forms</a></li>
+        <li><a href="1151015-ch8-forms-EX01.html"  target="_blank">ch8 表單排版(JS)</a></li>
+        <li><a href="" target="_blank"></a></li>
+        <li><a href="" target="_blank"></a></li>
+        <li><a href="" target="_blank"></a></li>
+        <li><a href="" target="_blank"></a></li>
+        <li><a href="" target="_blank"></a></li>
+        <li><a href="" target="_blank"></a></li>
+        
     </ul>
     <script src="js/jquery-4.0.0.js"></script>
     
