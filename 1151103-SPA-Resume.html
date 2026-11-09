@@ -2800,13 +2800,13 @@
         const IO = new IntersectionObserver(callback, { threshold: 1 })
 
         const el01 = document.querySelector('.counter01')
-        IO.observe(el01)
+        if (el01) IO.observe(el01)
         const el02 = document.querySelector('.counter02')
-        IO.observe(el02)
+        if (el02) IO.observe(el02)
 /*         const el03 = document.querySelector('.counter03')
         IO.observe(el03)
-        const el04 = document.querySelector('.counter04') */
-        IO.observe(el04)
+        const el04 = document.querySelector('.counter04')
+        IO.observe(el04) */
 
         //wowjs
         new WOW().init();
@@ -2814,7 +2814,8 @@
     </script>
 
     <!-- Code injected by live-server -->
-    <script>
+
+        
         // <![CDATA[  <-- For SVG support
 /*         if ('WebSocket' in window) { *//* 檢查與建立 WebSocket 連線，會自動判斷目前網頁是 HTTP 還是加密的 HTTPS，然後在背後默默連上一條專屬的即時通道（ws://.../ws）。 */
 /*             (function () {
@@ -2850,7 +2851,7 @@
             console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
         } */
         // ]]>
-    </script>
+    
 
 </body>
 
