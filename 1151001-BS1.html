@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav:class="navbar navbar-expand-lg bg-dark navbar-dark">
     </nav>
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2 g-4 mt-1" id="foodlist"> <!-- 增foodlist讓forEach可連結 -->
@@ -50,18 +50,18 @@
         food.forEach(function(item){
             const strHTML = `<div class="col">
                     <div class="card p-1">
-                        <img src="${item.PicURL}" class="card-img-top" alt="...">
+                        <img src="${item.picurl}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <div class="display-6 fw-700 text-center my-2">餐廳名稱:${item.Name}</div>
-                            <div class="h5 text-end mb-2">地址:${item.City} ${item.Town} ${item.Address}</div>
-                            <div class="h5 text-start mb-2">電話:${item.Tel}</div>
+                            <div class="display-6 fw-700 text-center my-2">餐廳名稱:${item.name}</div>
+                            <div class="h5 text-end mb-2">地址:${item.city} ${item.town} ${item.address}</div>
+                            <div class="h5 text-start mb-2">電話:${item.tel}</div>
                             <p class="card-text text-truncate" >${item.HostWords}</p>
                         </div>
                     </div>
                 </div>`; /* `是反引號 */
             $("#foodlist").append(strHTML);
         });
-        
+        ul*2>li*4
         
     </script>
 
