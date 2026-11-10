@@ -425,7 +425,7 @@
 </head>
 
 <body>
-
+<template>
     <!-- section01 -- 社群連結 -->
     <section id="s01" class="background-color: #f4f5f7">
         <div class="container">
@@ -601,6 +601,135 @@
             </div>
         </div> -->
     </section>
+</template>
+
+<!-- section01 -- 社群連結 -->
+    <section id="s01" style="background-color: #f4f5f7;">
+        <div class="container">
+            <div class="row">
+                <div class="text-end py-2">
+                    <!-- LINE 連結（開新分頁） -->
+                    <a href="https://line.me/ti/p/M__oAG0E90" target="_blank" rel="noopener noreferrer" class="text-success me-2">
+                        <i class="fa-brands fa-line fa-1x text-green fa-canvas-roomy"></i>
+                    </a>
+                    <!-- 電話撥號連結 -->
+                    <a href="tel:0937228149" class="link-dark text-decoration-none" style="color: #555555;">
+                        <i class="fa-solid fa-phone fa-1x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section02 -- 選單連結 navbar -->
+    <section id="s02" class="bg-dark">
+        <style>
+            /* 1. S02 容器：與 S04、S05 嚴格維持完全相同的 90% 寬度與置中 */
+            #s02 .s02-container {
+                width: 90% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            /* 2. 選單列全面強制「靠左對齊」，絕不均分、不分散 */
+            #s02 .navbar-nav {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: flex-start !important; /* 全部靠左排列 */
+                align-items: center !important;
+                width: auto !important;
+                padding-left: 0 !important;
+                margin: 0 !important;
+                list-style: none !important;
+                gap: 1.5rem !important; /* 電腦與平板的項目間距 */
+            }
+
+            #s02 .navbar-nav .nav-item {
+                flex: 0 0 auto !important;
+                text-align: left !important;
+            }
+
+            /* 3. 第一項左側邊距與內距徹底歸零，讓圖案與 S04 邊界 100% 切齊在一條垂直線上 */
+            #s02 .navbar-nav .nav-item:first-child .nav-link {
+                padding-left: 0 !important;
+            }
+
+            #s02 .nav-link {
+                white-space: nowrap !important;
+                font-size: 0.95rem;
+                padding-left: 0.3rem;
+                padding-right: 0.3rem;
+            }
+
+            /* 4. 手機版：保留圖案、依然靠左，微調字級與間距，保證絕不跑版超出右邊 */
+            @media (max-width: 575.98px) {
+                #s02 .navbar-nav {
+                    gap: 0.65rem !important;
+                }
+                #s02 .nav-link {
+                    font-size: 0.8rem !important;
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+                /* 圖案完整保留，微調手機版圖案大小與間距 */
+                #s02 .nav-link i {
+                    display: inline-block !important;
+                    font-size: 0.85rem !important;
+                    margin-right: 3px !important;
+                }
+            }
+        </style>
+
+        <div class="s02-container">
+            <nav class="navbar navbar-expand bg-dark navbar-dark py-2 px-0">
+                <div class="d-flex w-100 justify-content-start align-items-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-0">
+                        
+                        <!-- 項目 1：核心特質 (圖案留在最左側，與 S04 外框切齊) -->
+                        <li class="nav-item">
+                            <a class="nav-link active py-0 d-inline-flex align-items-center" style="line-height: 1.2;" href="#s03">
+                                <i class="fa-solid fa-user-gear fa-canvas-roomy" style="color: #b000b0; margin-right: 5px;"></i>核心特質
+                            </a>
+                        </li>
+
+                        <!-- 項目 2：核心戰力 -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle py-0 d-inline-flex align-items-center" style="line-height: 1.2;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                核心戰力
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#s04">軌跡價值定位</a></li>
+                                <li><a class="dropdown-item" href="#s05">量化數據</a></li>
+                                <li><a class="dropdown-item" href="#s06">核心能力</a></li>
+                                <li><a class="dropdown-item" href="#s07">實戰定位與求職條件</a></li>
+                                <li><a class="dropdown-item" href="#s08">全端實戰成果數據庫</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#s09">淬鍊特質 ✕ 跨界信念</a></li>
+                                <li><a class="dropdown-item" href="#s10">關於我</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- 項目 3：職涯藍圖 -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle py-0 d-inline-flex align-items-center" style="line-height: 1.2;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                職涯藍圖
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#s11">學經歷</a></li>
+                                <li><a class="dropdown-item" href="#s12">自傳</a></li>
+                                <li><a class="dropdown-item" href="#s13">未來展望</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#s14">聯絡我</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
 
 
 
@@ -632,6 +761,454 @@
 
 
 
+<!-- ========================================================
+         🌱 手機專屬：方案 B 自然生機綠 終極藤蔓時間軸 (100% 全封裝版)
+         ※ 包含切換開關、蜿蜒S藤條、葉片萌芽、折疊抽屜與深根頁尾
+         ======================================================== -->
+    <section id="mobile-vine-timeline" style="position: relative; background-color: #0b131a; overflow: hidden; padding: 20px 0 0 0;">
+        
+        <style>
+            /* ========================================================
+               🔥 手機版專屬總開關：全打包在此，不用去改 <head>
+               ======================================================== */
+            @media (max-width: 767.98px) {
+                /* 手機版隱藏原本平鋪長版 S04~S14，由藤蔓全面接手 */
+                #s04, #s05, #s06, #s07, #s08, #s09, #s10, #s11, #s12, #s13, #s14 {
+                    display: none !important;
+                }
+                #mobile-vine-timeline {
+                    display: block !important;
+                }
+            }
+            @media (min-width: 768px) {
+                /* 電腦與平板螢幕完全隱藏藤蔓，原桌面版 100% 維持原貌 */
+                #mobile-vine-timeline {
+                    display: none !important;
+                }
+            }
+
+            /* 1. 中央蜿蜒 S 型自然生機藤蔓軌道 (不筆直，生機自然彎曲) */
+            #mobile-vine-timeline .vine-trunk {
+                position: absolute;
+                top: 0;
+                bottom: 80px;
+                left: 50%;
+                width: 36px;
+                transform: translateX(-50%);
+                z-index: 1;
+                pointer-events: none;
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 120' width='36' height='120'%3E%3Cpath d='M18,0 Q30,30 18,60 T18,120' fill='none' stroke='%2334a853' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M18,25 Q26,18 28,24 Q23,30 18,25' fill='%2366bb6a'/%3E%3Cpath d='M18,85 Q10,78 8,84 Q13,90 18,85' fill='%2343a047'/%3E%3C/svg%3E") repeat-y center top;
+                filter: drop-shadow(0 0 6px rgba(72, 187, 120, 0.4));
+            }
+
+            /* S03 底部發芽點 */
+            #mobile-vine-timeline .vine-sprout-top {
+                text-align: center;
+                font-size: 26px;
+                margin-bottom: 20px;
+                position: relative;
+                z-index: 2;
+                animation: sproutPulse 2s ease-in-out infinite alternate;
+            }
+            @keyframes sproutPulse {
+                0% { transform: scale(1); filter: drop-shadow(0 0 4px #48bb78); }
+                100% { transform: scale(1.25); filter: drop-shadow(0 0 12px #38a169); }
+            }
+
+            /* 2. 樹葉節點骨架 */
+            #mobile-vine-timeline .leaf-wrapper {
+                position: relative;
+                z-index: 2;
+                margin-bottom: 35px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* 葉片本體：滑入時觸發萌芽破苞 */
+            #mobile-vine-timeline .leaf-badge {
+                width: 145px;
+                height: 105px;
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 12px rgba(72, 187, 120, 0.35);
+                border: 2.5px solid #48bb78;
+                transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+                opacity: 0;
+                transform: scale(0.3) rotate(-10deg);
+            }
+            #mobile-vine-timeline .leaf-wrapper.sprouted .leaf-badge {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+
+            /* 奇數章節：左側葉片 */
+            #mobile-vine-timeline .leaf-left {
+                align-self: flex-start;
+                margin-left: 5%;
+            }
+            #mobile-vine-timeline .leaf-left .leaf-badge {
+                border-radius: 45px 6px 45px 6px;
+            }
+            #mobile-vine-timeline .leaf-left::after {
+                content: "";
+                position: absolute;
+                top: 50px;
+                left: 148px;
+                right: 50%;
+                height: 3px;
+                background: linear-gradient(to right, #48bb78, #2e7d32);
+                border-radius: 2px;
+                z-index: -1;
+            }
+
+            /* 偶數章節：右側葉片 */
+            #mobile-vine-timeline .leaf-right {
+                align-self: flex-end;
+                margin-right: 5%;
+                align-items: flex-end;
+            }
+            #mobile-vine-timeline .leaf-right .leaf-badge {
+                border-radius: 6px 45px 6px 45px;
+            }
+            #mobile-vine-timeline .leaf-right::after {
+                content: "";
+                position: absolute;
+                top: 50px;
+                right: 148px;
+                left: 50%;
+                height: 3px;
+                background: linear-gradient(to left, #48bb78, #2e7d32);
+                border-radius: 2px;
+                z-index: -1;
+            }
+
+            /* 葉片圖片 */
+            #mobile-vine-timeline .leaf-badge img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                filter: brightness(0.85);
+            }
+
+            /* 葉片標籤 */
+            #mobile-vine-timeline .leaf-tag {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(to top, rgba(11, 19, 26, 0.95), rgba(11, 19, 26, 0.4));
+                padding: 4px 6px;
+                text-align: center;
+                font-size: 11.5px;
+                font-weight: 800;
+                color: #f0fdf4;
+                letter-spacing: 0.5px;
+            }
+
+            /* 展開指引 */
+            #mobile-vine-timeline .leaf-toggle-hint {
+                font-size: 10.5px;
+                color: #86efac;
+                margin-top: 4px;
+                display: flex;
+                align-items: center;
+                gap: 3px;
+            }
+
+            /* 3. 方案 B 核心：點擊葉片展開抽屜卡 */
+            #mobile-vine-timeline .leaf-content-card {
+                width: 90%;
+                margin: 12px auto 0;
+                background: rgba(17, 24, 39, 0.92);
+                border: 1px solid rgba(72, 187, 120, 0.4);
+                border-radius: 14px;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: max-height 0.45s ease-out, opacity 0.35s ease, padding 0.35s ease;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            }
+            #mobile-vine-timeline .leaf-wrapper.expanded .leaf-content-card {
+                max-height: 1200px;
+                opacity: 1;
+                padding: 16px;
+                margin-bottom: 15px;
+            }
+            #mobile-vine-timeline .leaf-wrapper.expanded .leaf-badge {
+                border-color: #86efac;
+                box-shadow: 0 0 18px rgba(134, 239, 172, 0.6);
+            }
+
+            /* 4. 底端樹根深扎入 S15 頁尾 */
+            #mobile-vine-timeline .vine-roots-bottom {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                padding: 30px 0 20px;
+                background: linear-gradient(to bottom, transparent, #19142b 85%);
+            }
+        </style>
+
+        <!-- 頂端發芽點 (S03 下緣破土而出) -->
+        <div class="vine-sprout-top">🌱</div>
+        
+        <!-- 中央蜿蜒 S 型自然藤蔓 -->
+        <div class="vine-trunk"></div>
+
+        <div class="container px-2">
+
+            <!-- S04 葉片 (左) -->
+            <div class="leaf-wrapper leaf-left" id="m-s04">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s04')">
+                    <img src="./images/landspace02.avif" alt="軌跡價值定位">
+                    <div class="leaf-tag">💼 S04 軌跡定位</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold text-success mb-2">💼 軌跡價值定位</h5>
+                    <ul class="list-unstyled small mb-0 lh-base text-slate-300">
+                        <li class="mb-2">✦ <strong>初級前端工程師</strong> ｜ 勞動部中彰投分署 參訓中</li>
+                        <li class="mb-2">✦ <strong>網頁設計師</strong> ｜ 獨立完成 20+ RWD 專案切版。</li>
+                        <li class="mb-2">✦ <strong>技術棧：</strong> Vue.js / Bootstrap 5 / Node.js / Git</li>
+                        <li>✦ <strong>核心突破：</strong> 導入 Tailwind 縮減 40% 冗餘代碼。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- S05 葉片 (右) -->
+            <div class="leaf-wrapper leaf-right" id="m-s05">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s05')">
+                    <img src="./images/landspace02.avif" alt="量化數據">
+                    <div class="leaf-tag">📊 S05 實戰數據</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold text-warning mb-2">📊 核心量化指標</h5>
+                    <div class="row g-2 text-center text-dark">
+                        <div class="col-6"><div class="p-2 bg-light rounded"><small>淬鍊資歷</small><div class="fw-bold text-primary fs-5">13週+</div></div></div>
+                        <div class="col-6"><div class="p-2 bg-light rounded"><small>專案引爆</small><div class="fw-bold text-danger fs-5">20件+</div></div></div>
+                        <div class="col-6"><div class="p-2 bg-light rounded"><small>代碼縮減</small><div class="fw-bold text-success fs-5">40%</div></div></div>
+                        <div class="col-6"><div class="p-2 bg-light rounded"><small>零死機率</small><div class="fw-bold text-purple fs-5">100%</div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- S06 葉片 (左) -->
+            <div class="leaf-wrapper leaf-left" id="m-s06">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s06')">
+                    <img src="./images/landspace01.avif" alt="核心能力">
+                    <div class="leaf-tag">☯ S06 核心能力</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold text-info mb-2">☯ 雙軌跨界淬鍊</h5>
+                    <p class="small mb-2 text-slate-300">✦ <strong>廿二載命理實證：</strong> 主動拆解推導根源邏輯，精準掌握複雜資料流。</p>
+                    <p class="small mb-0 text-slate-300">✦ <strong>二十載空軍紀律：</strong> 融入鋼鐵防禦流程，面對突發異常沉著處置。</p>
+                </div>
+            </div>
+
+            <!-- S07 葉片 (右) -->
+            <div class="leaf-wrapper leaf-right" id="m-s07">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s07')">
+                    <img src="./images/programmer-working01.avif" alt="求職條件">
+                    <div class="leaf-tag">🎯 S07 求職條件</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold text-success mb-2">🎯 求職意向與條件</h5>
+                    <ul class="small mb-0 list-unstyled text-slate-300 lh-base">
+                        <li>✦ <strong>應徵職務：</strong> 全端工程師 (Full-Stack)</li>
+                        <li>✦ <strong>期望地點：</strong> 台中市 / 遠端混合</li>
+                        <li>✦ <strong>上班時段：</strong> 日班彈性</li>
+                        <li>✦ <strong>期望待遇：</strong> 面議 (經常性薪資 4.5 萬+)</li>
+                        <li>✦ <strong>可上班日：</strong> 兩週內可報到</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- S08 葉片 (左) -->
+            <div class="leaf-wrapper leaf-left" id="m-s08">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s08')">
+                    <img src="./images/s08-1.png" alt="作品檔案庫">
+                    <div class="leaf-tag">🚀 S08 作品檔案</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold mb-2" style="color: #00f0ff;">🚀 實戰成果專案庫</h5>
+                    <div class="d-flex flex-column gap-2 small">
+                        <a href="https://oldyaren.github.io/TravelFood/1150923-ex01Ai04room-rwd.html" target="_blank" class="btn btn-sm btn-outline-info text-start">P1. 自適應商業風格 WebApp ↗</a>
+                        <a href="https://oldyaren.github.io/TravelFood/1150929-javascript-travelfood-ai01.html" target="_blank" class="btn btn-sm btn-outline-info text-start">P2. 非同步美食開放資料渲染 ↗</a>
+                        <a href="https://oldyaren.github.io/TravelFood/1151006-table.html" target="_blank" class="btn btn-sm btn-outline-info text-start">P3. AJAX RWD 自適應表格系統 ↗</a>
+                        <a href="https://oldyaren.github.io/TravelFood/1151008-ex02.html" target="_blank" class="btn btn-sm btn-outline-info text-start">P4. 本地端非同步數據優化 ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- S09 葉片 (右) -->
+            <div class="leaf-wrapper leaf-right" id="m-s09">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s09')">
+                    <img src="./images/landspace03.avif" alt="淬鍊信念">
+                    <div class="leaf-tag">🛡️ S09 跨界信念</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold text-warning mb-2">🛡️ 淬鍊特質 ✕ 跨界信念</h5>
+                    <ul class="small mb-0 list-unstyled text-slate-300">
+                        <li class="mb-2">✦ <strong>防衛型全端思維：</strong> 預防勝於除錯，嚴控邊界資料流。</li>
+                        <li class="mb-2">✦ <strong>AI 協作 ✕ 同理溝通：</strong> 精準將痛點解碼為可靠代碼。</li>
+                        <li>✦ <strong>極致自我迭代：</strong> 終身學習，張開雙臂擁抱創新。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- S10 葉片 (左) -->
+            <div class="leaf-wrapper leaf-left" id="m-s10">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s10')">
+                    <img src="./images/programmer-working01.avif" alt="關於我">
+                    <div class="leaf-tag">👤 S10 關於我</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold mb-1" style="color: #f3d687;">✦ ABOUT ME</h5>
+                    <p class="small text-slate-300 mb-0 lh-base">
+                        軍事級紀律 ✕ 22年系統解碼。用大局觀掌握 Vue 3 架構與 API；善用 AI 作為最強副駕駛，打造抗壓且具高度商業價值的全端系統。
+                    </p>
+                </div>
+            </div>
+
+            <!-- S11 葉片 (右) -->
+            <div class="leaf-wrapper leaf-right" id="m-s11">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s11')">
+                    <img src="./images/landspace01.avif" alt="實踐經歷">
+                    <div class="leaf-tag">📜 S11 實踐經歷</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold text-info mb-2">📜 實踐背景與技術棧</h5>
+                    <div class="d-flex flex-wrap gap-1 mb-2">
+                        <span class="badge bg-secondary">Vue 3</span>
+                        <span class="badge bg-secondary">JavaScript ES6</span>
+                        <span class="badge bg-secondary">Bootstrap 5</span>
+                        <span class="badge bg-secondary">Git Flow</span>
+                        <span class="badge bg-secondary">Prompt Eng.</span>
+                    </div>
+                    <p class="small text-slate-300 mb-0">2026 AI 輔助全端程式設計培訓實踐。</p>
+                </div>
+            </div>
+
+            <!-- S12 葉片 (左) -->
+            <div class="leaf-wrapper leaf-left" id="m-s12">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s12')">
+                    <img src="./images/landspace02.avif" alt="自傳價值">
+                    <div class="leaf-tag">💡 S12 自傳價值</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold text-warning mb-2">💡 核心價值金句</h5>
+                    <p class="small text-slate-300 mb-2 fst-italic">
+                        「從混亂中梳理出精密秩序，用軍旅淬鍊的頂級抗壓力，將複雜邏輯轉化為可靠代碼。」
+                    </p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge bg-dark border border-secondary">⚡ 逆境高AQ</span>
+                        <span class="badge bg-dark border border-secondary">🎯 痛點直擊</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- S13 葉片 (右) -->
+            <div class="leaf-wrapper leaf-right" id="m-s13">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s13')">
+                    <img src="./images/landspace03.avif" alt="未來展望">
+                    <div class="leaf-tag">🌱 S13 未來展望</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold text-success mb-2">🌱 職涯願景與迭代</h5>
+                    <p class="small text-slate-300 mb-1">✦ 深入研習 TypeScript 與 Node.js 容器化部署。</p>
+                    <p class="small text-slate-300 mb-0">✦ 站在 PM 商業視角，持續交付高價值代碼。</p>
+                </div>
+            </div>
+
+            <!-- S14 葉片 (左) -->
+            <div class="leaf-wrapper leaf-left" id="m-s14">
+                <div class="leaf-badge" onclick="toggleLeaf('m-s14')">
+                    <img src="./images/programmer-working01.avif" alt="聯絡我">
+                    <div class="leaf-tag">✉ S14 聯絡我</div>
+                </div>
+                <div class="leaf-toggle-hint">點擊展開葉片 ▼</div>
+                <div class="leaf-content-card text-white">
+                    <h5 class="fw-bold text-info mb-2">✉ 快速聯繫通道</h5>
+                    <p class="small text-slate-300 mb-3">歡迎面試邀約、專案合作洽談！</p>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="tel:0937228149" class="btn btn-sm btn-primary">📞 直接電話撥打 (0937-228149)</a>
+                        <a href="https://line.me/ti/p/M__oAG0E90" target="_blank" class="btn btn-sm text-white" style="background:#06c755;">💬 加我的 LINE 好友</a>
+                        <a href="https://maps.google.com/?q=%E8%B5%A4%E8%85%B3%E4%B8%AB%E7%94%9F%E6%85%8B%E8%BE%B2%E8%8E%8A" target="_blank" class="btn btn-sm btn-outline-light">📍 查看赤腳丫地圖位置</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 5. 最底端：樹根深扎入 S15 頁尾 -->
+        <div class="vine-roots-bottom">
+            <div class="text-secondary small mb-1" style="font-size: 11px; letter-spacing: 1px; color: #86efac !important;">
+                🪵 根深蒂固 ✕ 終身迭代
+            </div>
+            <svg viewBox="0 0 100 30" width="120" height="36" style="margin: 0 auto; display: block;">
+                <path d="M50,0 Q50,15 20,30 M50,0 Q50,15 80,30 M50,0 L50,28" stroke="#5c4033" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <div style="height: 2px; background: linear-gradient(90deg, transparent, #48bb78, transparent);"></div>
+
+        <!-- 6. 專屬折疊與萌芽 JS 引擎 -->
+        <script>
+            function toggleLeaf(wrapperId) {
+                const el = document.getElementById(wrapperId);
+                if (el) {
+                    el.classList.toggle('expanded');
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                // 滾動萌芽動畫
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('sprouted');
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                document.querySelectorAll('#mobile-vine-timeline .leaf-wrapper').forEach(leaf => {
+                    observer.observe(leaf);
+                });
+
+                // 連動 S02 導覽列：點擊頂部選單，手機版自動捲動至該樹葉並自動展開！
+                document.querySelectorAll('#s02 a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        if (window.innerWidth < 768) {
+                            const target = this.getAttribute('href');
+                            const mobileTarget = document.getElementById('m-' + target.replace('#', ''));
+                            if (mobileTarget) {
+                                e.preventDefault();
+                                mobileTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                mobileTarget.classList.add('sprouted');
+                                mobileTarget.classList.add('expanded');
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+    </section>
+
+
+
 
     <!-- section04 -- 幻燈片效果 carousel AI制作 -->
     
@@ -650,6 +1227,173 @@
         只要把它改回 'id=“s04，訪客點擊選單時就能id=“s04”精準自動捲動跳轉到這個漂亮的新輪播！
         （裡面的 輪播功能則完全不用動，依然會完美滑動切換）旋轉木馬新。 -->
         <!-- 【新版 80% 預覽測試區塊】已更換獨立 ID，絕不與舊版衝突 -->
+    
+    <!-- section04 -- 幻燈片效果 carousel (純 CSS 穩定滑入動畫版) -->
+    <section id="s04" style="background-color: #d6e1ec; padding: 40px 0;">
+        
+        <style>
+            /* 1. 左側懸浮半透明卡片 (預設隱藏，等待 active 觸發) */
+            #s04 .custom-caption {
+                position: absolute;
+                left: 6% !important;
+                top: 50% !important;
+                bottom: auto !important;
+
+                width: 540px;
+                max-width: 88%;
+                padding: 1.25rem 1.75rem !important;
+
+                background-color: rgba(15, 23, 42, 0.78) !important;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+
+                border-left: 3.5px solid #47f8ef !important;
+                border-top: none !important;
+                border-right: none !important;
+                border-bottom: none !important;
+                border-radius: 0 14px 14px 0 !important;
+
+                box-shadow:
+                    15px 0px 30px rgba(36, 187, 247, 0.2),
+                    0px 10px 25px rgba(36, 187, 247, 0.2),
+                    0px -10px 25px rgba(36, 187, 247, 0.2);
+                
+                opacity: 0; /* 預設先隱藏 */
+            }
+
+            /* ========================================================
+               🔥 核心機關：只要該張幻燈片變成 active，100% 觸發由下往上升起動畫
+               ======================================================== */
+            #s04 .carousel-item.active .custom-caption {
+                animation: s04SlideUpIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+            }
+
+            @keyframes s04SlideUpIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-28%) scale(0.96); /* 從稍微偏下方開始，帶微縮放 */
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(-50%) scale(1);    /* 精準回到置中位置 */
+                }
+            }
+
+            /* 2. 條列式文字緊湊排版 */
+            #s04 .spec-list li {
+                position: relative;
+                padding-left: 18px;
+                margin-bottom: 7px;
+                color: #e2e8f0;
+                line-height: 1.5;
+                font-size: 14.5px;
+            }
+            #s04 .spec-list li::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                color: #38bdf8;
+                font-weight: bold;
+                font-size: 1.1rem;
+                top: -1px;
+            }
+            #s04 .spec-list li:last-child {
+                margin-bottom: 0;
+            }
+
+            /* 3. 幻燈片容器安全高度 */
+            #s04 .carousel-item {
+                transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+                height: 60vh;
+                min-height: 480px;
+            }
+            #s04 .carousel-indicators button.active {
+                background-color: #38bdf8 !important;
+            }
+
+            /* 4. 手機版 RWD 自適應 */
+            @media (max-width: 767.98px) {
+                #s04 .carousel-item {
+                    height: 520px !important;
+                    min-height: 520px !important;
+                }
+                #s04 .carousel-caption {
+                    display: block !important;
+                    top: 50% !important;
+                    left: 5% !important;
+                    right: 5% !important;
+                    width: 90% !important;
+                    padding: 1.1rem 1.2rem !important;
+                }
+                .spec-list li {
+                    font-size: 13.5px !important;
+                    line-height: 1.45 !important;
+                    margin-bottom: 6px !important;
+                }
+            }
+        </style>
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"
+            style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 40px rgba(74, 95, 124, 0.25); border: 1px solid rgba(255, 255, 255, 0.6);">
+            
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <!-- Slide 1：工作經驗 (已拔除不可靠的 wow，改由 CSS 控制) -->
+                <div class="carousel-item active" style="background-image: url(./images/landspace02.avif); background-size: cover; background-position: center;">
+                    <div class="carousel-caption custom-caption text-start">
+                        <h3 class="fw-bold mb-2 text-warning" style="font-size: 1.4rem;">💼 工作經驗</h3>
+                        <ul class="list-unstyled mb-0 spec-list">
+                            <li><strong>初級網頁前端工程師</strong> ｜ 勞動部勞動力發展署中彰投分署 參訓 (202609 - 至今)</li>
+                            <li>AI輔助全端網站程式設計與效能優化。</li>
+                            <li><strong>網頁設計師</strong> ｜ 個人工作室</li>
+                            <li>獨立完成超過 20 個響應式網頁（RWD）視覺與切版。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 2：專業技術 -->
+                <div class="carousel-item" style="background-image: url(./images/landspace01.avif); background-size: cover; background-position: center;">
+                    <div class="carousel-caption custom-caption text-start">
+                        <h3 class="fw-bold mb-2 text-info" style="font-size: 1.4rem;">🛠️ 專業技術</h3>
+                        <ul class="list-unstyled mb-0 spec-list">
+                            <li><strong>前端開發：</strong> HTML5 / CSS3 / JavaScript (ES6+)</li>
+                            <li><strong>框架工具：</strong> Vue.js / Bootstrap 5 / Tailwind CSS</li>
+                            <li><strong>後端與工具：</strong> Node.js / Git 版本控制 / Webpack</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 3：專案成就 -->
+                <div class="carousel-item" style="background-image: url(./images/landspace03.avif); background-size: cover; background-position: center;">
+                    <div class="carousel-caption custom-caption text-start">
+                        <h3 class="fw-bold mb-2 text-success" style="font-size: 1.4rem;">🏆 專案成就</h3>
+                        <ul class="list-unstyled mb-0 spec-list">
+                            <li><strong>Vue3 ✕ Tailwind：</strong>以 Vue3/Vite 開發全端系統，導入 Tailwind 切版，減少 40% 冗餘代碼、提升 30% 載入速度。</li>
+                            <li><strong>AI 提示詞工程：</strong>深度運用 AI 提示詞工程協作開發與組件重構，大幅縮短 50% 專案週期。</li>
+                            <li><strong>空軍紀律防衛代碼：</strong>將 20 年空軍紀律融入 Git 控管，針對複雜資料流設計嚴密防錯機制。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
+    </section>
+    
+<template>
     <section id="s04" style="background-color: #d6e1ec; padding: 40px 0;">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"
             style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 40px rgba(74, 95, 124, 0.25); border: 1px solid rgba(255, 255, 255, 0.6);">
@@ -714,14 +1458,178 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
-</section>
-
+        <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
+    </section>
+</template>
 
 
 
     <!-- section04>>section05 -- s05核心數據戰功牆 counterup數據遞增 可以量化的數據 AI生成的 -->
     <!-- section04>>section05 -- 核心數據戰功牆 s05 -->
+
+    <!-- section04>>section05 -- 核心數據戰功牆 s05 (動畫全補回 + 極速啟動版) -->
+    <section id="s05" style="background-color: #d6e1ec; padding: 40px 0;">
+        
+        <style>
+            /* 1. S05 專屬卡片懸停動態 */
+            #s05 .counter-card {
+                background: rgba(255, 255, 255, 0.45);
+                backdrop-filter: blur(8px);
+                border-radius: 14px;
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                box-shadow: 0 6px 16px rgba(74, 95, 124, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            #s05 .counter-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 10px 22px rgba(74, 95, 124, 0.2);
+            }
+
+            /* 2. 手機版 RWD 最佳化：縮減上方橫幅高度，避免數據被推到螢幕外 */
+            @media (max-width: 767.98px) {
+                #s05 .s05-banner-img {
+                    min-height: 220px !important;
+                    padding: 1.5rem !important;
+                }
+                #s05 .s05-content-area {
+                    padding: 2rem 1.25rem !important;
+                }
+            }
+        </style>
+
+        <!-- 90% 寬度、左緣精準對齊 s04 -->
+        <div style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 35px rgba(74, 95, 124, 0.15); border: 1px solid rgba(255, 255, 255, 0.6); background-color: #d6e1ec;">
+            <div class="row g-0 align-items-stretch">
+                
+                <!-- 【左側照片橫幅】：已精準補回由左向右滑入動畫 -->
+                <div class="col-md-5 position-relative d-flex flex-column justify-content-end p-4 p-lg-5 s05-banner-img"
+                    style="background-image: url(./images/landspace02.avif); background-size: cover; background-position: center; min-height: 440px;">
+                    
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%); z-index: 1;"></div>
+
+                    <div class="s05-visual-overlay position-relative" style="z-index: 2;">
+                        <span class="badge mb-2 px-3 py-1.5" style="background: rgba(56, 189, 248, 0.25); color: #0284c7; border: 1px solid rgba(56, 189, 248, 0.5); font-size: 12px; font-weight: bold; letter-spacing: 1px;">
+                            DATA / PERFORMANCE
+                        </span>
+                        
+                        <!-- 🔥 標題：已補回 wow animate__slideInLeft 動畫 -->
+                        <h2 class="fw-bold text-white mb-2 wow animate__slideInLeft" data-wow-duration="1.2s" data-wow-delay="0s" data-wow-iteration="1" style="line-height: 1.3; font-size: 1.85rem;">
+                            讓實力<br><span style="color: #38bdf8; text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);">被數據看見。</span>
+                        </h2>
+
+                        <!-- 🔥 副標題：已補回 wow animate__slideInLeft 動畫 (微延遲 0.2 秒帶階梯感) -->
+                        <p class="text-light mb-0 wow animate__slideInLeft" data-wow-duration="1.2s" data-wow-delay="0.2s" data-wow-iteration="1" style="font-size: 14.5px; opacity: 0.95;">
+                            不只完成任務，更要創造能被衡量的商業成果。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 【右側數據與文案】 -->
+                <div class="col-md-7 py-4 py-lg-5 px-4 px-lg-5 d-flex flex-column justify-content-center s05-content-area" style="background: transparent;">
+                    
+                    <div class="mb-4">
+                        <span class="badge bg-primary text-white mb-2 px-3 py-1 fw-bold">PROVEN RECORD</span>
+                        <h2 class="fw-bold mb-2" style="color: #1e293b; font-size: 1.85rem; letter-spacing: 0.5px;">
+                            全端解碼，<span style="color: #0284c7;">數據造就非凡</span>
+                        </h2>
+                        <p class="mb-0" style="color: #475569; font-size: 14.5px; line-height: 1.65;">
+                            超越傳統開發極限，我將每一次專案視為一場必須勝出的戰役。透過精準架構設計與優化，將複雜邏輯轉化為爆發性成長動能。
+                        </p>
+                    </div>
+
+                    <!-- 4大數據卡片區 -->
+                    <div class="row g-3">
+                        
+                        <!-- 卡片 1 -->
+                        <div class="col-6 col-lg-3">
+                            <div class="p-3 text-center h-100 counter-card" style="border-top: 3.5px solid #0284c7 !important;">
+                                <div class="mb-1" style="font-size: 12.5px; color: #475569; font-weight: 600;">核心淬鍊年資</div>
+                                <div class="fw-bold" style="font-size: 26px;">
+                                    <span class="counter01" style="color: #0284c7;">13</span>
+                                    <span style="font-size: 14px; color: #475569;">週+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 卡片 2 -->
+                        <div class="col-6 col-lg-3">
+                            <div class="p-3 text-center h-100 counter-card" style="border-top: 3.5px solid #ea580c !important;">
+                                <div class="mb-1" style="font-size: 12.5px; color: #475569; font-weight: 600;">商業專案引爆</div>
+                                <div class="fw-bold" style="font-size: 26px;">
+                                    <span class="counter02" style="color: #ea580c;">20</span>
+                                    <span style="font-size: 14px; color: #475569;">件+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 卡片 3 -->
+                        <div class="col-6 col-lg-3">
+                            <div class="p-3 text-center h-100 counter-card" style="border-top: 3.5px solid #16a34a !important;">
+                                <div class="mb-1" style="font-size: 12.5px; color: #475569; font-weight: 600;">代碼冗餘縮減</div>
+                                <div class="fw-bold" style="font-size: 26px;">
+                                    <span class="counter03" style="color: #16a34a;">40</span>
+                                    <span style="font-size: 14px; color: #475569;">%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 卡片 4 -->
+                        <div class="col-6 col-lg-3">
+                            <div class="p-3 text-center h-100 counter-card" style="border-top: 3.5px solid #9333ea !important;">
+                                <div class="mb-1" style="font-size: 12.5px; color: #475569; font-weight: 600;">系統零死機率</div>
+                                <div class="fw-bold" style="font-size: 26px;">
+                                    <span class="counter04" style="color: #9333ea;">100</span>
+                                    <span style="font-size: 14px; color: #475569;">%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
+
+        <!-- S05 專屬零延遲啟動 JS：門檻降為 0.15，速度 1.5 秒俐落起跑 -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const initCounters = () => {
+                    const counterUp = window.counterUp ? (window.counterUp.default || window.counterUp) : null;
+                    if (!counterUp) return;
+
+                    const callback = entries => {
+                        entries.forEach(entry => {
+                            const el = entry.target;
+                            if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                                counterUp(el, {
+                                    duration: 1500, // 1.5秒飆升，節奏流暢
+                                    delay: 16,
+                                });
+                                el.classList.add('is-visible');
+                            }
+                        });
+                    };
+
+                    // 露出 15% 立即啟動
+                    const IO = new IntersectionObserver(callback, { threshold: 0.5 });
+
+                    document.querySelectorAll('#s05 [class*="counter0"]').forEach(el => {
+                        IO.observe(el);
+                    });
+                };
+
+                if (window.counterUp) {
+                    initCounters();
+                } else {
+                    window.addEventListener('load', initCounters);
+                }
+            });
+        </script>
+    </section>
+
+<template>
     <!-- 2. 最後定稿時的「刪除規則」：
 如果最後決定留「舊版」：
 👉 直接把整段新版刪除即可，一切恢復原狀。
@@ -833,6 +1741,7 @@ HTML
         </div>
     <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
 </section>
+</template>
 
 
 
@@ -1172,6 +2081,239 @@ HTML
     4.產生完整指令給我copy -->
     <!-- section07>>Section08 -- 作品集 --AI生成的，(通常放最下面，因版面考量放這) -->
     <!-- 全封裝技術組件：Section 08 賽博朋克 3D 玻璃作品集檔案庫 (id="s08") -->
+<!-- section07>>Section08 -- 作品集 (S08 圖片完美置中填滿修正版) -->
+    <section id="s08"
+        style="background-color: #030712; padding: 60px 0; font-family: monospace; overflow: hidden; position: relative;">
+    
+        <style>
+            /* 3D 磨砂玻璃卡片基礎與過渡設定 */
+            #s08 .project-card-3d {
+                background: rgba(15, 23, 42, 0.65) !important;
+                border: 2px solid rgba(168, 85, 247, 0.25);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }    
+            #s08 .project-card-3d:hover {
+                transform: translateY(-8px) scale(1.01);
+                border-color: #00f0ff !important;
+                box-shadow: 0 15px 30px rgba(0, 240, 255, 0.2), 0 0 20px rgba(168, 85, 247, 0.2);
+            }    
+
+            /* ========================================================
+               🔥 核心修正：徹底消滅右側與下方空隙，圖片絕對滿版置中
+               ======================================================== */
+            #s08 .img-zoom-container {
+                width: 100% !important;
+                height: 180px !important;
+                overflow: hidden !important;
+                position: relative !important;
+                background-color: #0b1120;
+                border-bottom: 2px solid rgba(168, 85, 247, 0.2);
+            }
+            /* 讓超連結成為區塊，消除行內 baseline 隙縫 */
+            #s08 .img-zoom-container a {
+                display: block !important;
+                width: 100% !important;
+                height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            /* 強制圖片寬高 100% 咬合容器，正中裁切，無縫貼合 */
+            #s08 .img-zoom-container img {
+                width: 100% !important;
+                height: 100% !important;
+                display: block !important;
+                object-fit: cover !important;
+                object-position: center center !important;
+                transition: transform 0.5s ease;
+            }
+            #s08 .project-card-3d:hover .img-zoom-container img {
+                transform: scale(1.08) rotate(1deg);
+            }
+        </style>
+    
+        <!-- 背景微弱環境炫光 -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-950/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-950/10 rounded-full blur-[120px] pointer-events-none"></div>
+    
+        <div class="container" style="position: relative; z-index: 10;">
+    
+            <!-- 大標題區塊 -->
+            <div class="text-center mb-5">
+                <h2 class="display-4 font-black uppercase tracking-widest text-white mb-2"
+                    style="text-shadow: 0 0 15px rgba(0, 240, 255, 0.8); font-weight: 900;">
+                    [ 作品檔案數據庫 ]
+                </h2>
+                <p style="color: #00f0ff; font-weight: 700; letter-spacing: 2px;" class="fs-5">// FULL-STACK CORE
+                    REPOSITORY: 6 ACTIVE PROJECTS</p>
+            </div>
+    
+            <!-- 6大作品網格系統 -->
+            <div class="row g-4 align-items-stretch">
+    
+                <!-- ==================== 作品 01 ==================== -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="card project-card-3d rounded-xl w-100 d-flex flex-column p-0 overflow-hidden text-white">
+                        <div class="img-zoom-container">
+                            <a href="https://oldyaren.github.io/TravelFood/1150923-ex01Ai04room-rwd.html" target="_blank">
+                                <img src="images/s08-1.png" alt="響應式電商切版" class="card-img-top"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/600x360/0f172a/00f0ff?text=Project+01';">
+                            </a>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                            <span style="color: #00f0ff; font-weight: 700; font-size: 0.85rem;"
+                                class="mb-1 block uppercase tracking-wider">// PROJECT_01</span>
+                            <h3 class="h4 font-black mb-2 text-white" style="font-weight: 700;">自適應商業風格 WebApp</h3>
+                            <p style="color: #a855f7; font-weight: 600; font-size: 0.9rem;" class="mb-2">技術棧：HTML5 / CSS3 / RWD 媒體查詢</p>
+                            <p class="text-slate-300 small mb-4" style="font-size: 0.9rem; line-height: 1.6;">手寫原生 CSS 實作跨裝置自適應版面，完美操控 Media Queries 斷點。將桌面端傳統網格排版，於手機端流暢重構為高易讀性的商業卡片式 WebApp 佈局。</p>
+                            <a href="https://github.com/oldyaren/TravelFood/blob/main/1150923-ex01Ai04room-rwd.html" target="_blank"
+                                class="mt-auto btn w-100 py-2.5 font-bold uppercase tracking-wider text-center"
+                                style="background: transparent; color: #00f0ff; border: 1px solid #00f0ff; border-radius: 8px; font-weight: 700; transition: all 0.3s;"
+                                onmouseenter="this.style.backgroundColor='#00f0ff'; this.style.color='#000000';"
+                                onmouseleave="this.style.backgroundColor='transparent'; this.style.color='#00f0ff';">
+                                <i class="fa-solid fa-code-branch me-1"></i> 檢視原始碼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- ==================== 作品 02 (重點修正：正中滿版對齊) ==================== -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="card project-card-3d rounded-xl w-100 d-flex flex-column p-0 overflow-hidden text-white">
+                        <div class="img-zoom-container">
+                            <a href="https://oldyaren.github.io/TravelFood/1150929-javascript-travelfood-ai01.html" target="_blank">
+                                <img src="./images/s08-2.png" alt="互動網頁設計" class="card-img-top"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/600x360/0f172a/00f0ff?text=Project+02';">
+                            </a>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                            <span style="color: #00f0ff; font-weight: 700; font-size: 0.85rem;"
+                                class="mb-1 block uppercase tracking-wider">// PROJECT_02</span>
+                            <h3 class="h4 font-black mb-2 text-white" style="font-weight: 700;">非同步開放資料渲染系統</h3>
+                            <p style="color: #a855f7; font-weight: 600; font-size: 0.9rem;" class="mb-2">技術棧：JavaScript ES6 / Fetch API / jQuery / 外部 API 串接</p>
+                            <p class="text-slate-300 small mb-4" style="font-size: 0.9rem; line-height: 1.6;">運用原生 JavaScript 進行非同步邏輯開發，串接政府 Open Data API。透過 jQuery 迴圈高效率解析大數據，實現在地端動態渲染高易讀性的地方美食卡片系統。</p>
+                            <a href="https://github.com/oldyaren/TravelFood/blob/main/1150929-javascript-travelfood-ai01.html" target="_blank"
+                                class="mt-auto btn w-100 py-2.5 font-bold uppercase tracking-wider text-center"
+                                style="background: transparent; color: #00f0ff; border: 1px solid #00f0ff; border-radius: 8px; font-weight: 700; transition: all 0.3s;"
+                                onmouseenter="this.style.backgroundColor='#00f0ff'; this.style.color='#000000';"
+                                onmouseleave="this.style.backgroundColor='transparent'; this.style.color='#00f0ff';">
+                                <i class="fa-solid fa-code-branch me-1"></i> 檢視原始碼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- ==================== 作品 03 ==================== -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="card project-card-3d rounded-xl w-100 d-flex flex-column p-0 overflow-hidden text-white">
+                        <div class="img-zoom-container">
+                            <a href="https://oldyaren.github.io/TravelFood/1151006-table.html" target="_blank">
+                                <img src="./images/s08-3.png" alt="資料庫應用" class="card-img-top"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/600x360/0f172a/00f0ff?text=Project+03';">
+                            </a>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                            <span style="color: #00f0ff; font-weight: 700; font-size: 0.85rem;"
+                                class="mb-1 block uppercase tracking-wider">// PROJECT_03</span>
+                            <h3 class="h4 font-black mb-2 text-white" style="font-weight: 700;">AJAX 非同步資料渲染與 RWD 自適應表格系統</h3>
+                            <p style="color: #a855f7; font-weight: 600; font-size: 0.9rem;" class="mb-2">技術棧：JavaScript ES6 / jQuery AJAX / Bootstrap 5 / 斷點響應式表格</p>
+                            <p class="text-slate-300 small mb-4" style="font-size: 0.9rem; line-height: 1.6;">運用 jQuery AJAX 串接政府開放資料 API，實作非同步大數據載入。搭配 CSS 偽元素 attr(data-th)，將傳統複雜表格在手機端重構為易讀的自適應響應式佈局。</p>
+                            <a href="https://github.com/oldyaren/TravelFood/blob/main/1151006-table.html" target="_blank"
+                                class="mt-auto btn w-100 py-2.5 font-bold uppercase tracking-wider text-center"
+                                style="background: transparent; color: #00f0ff; border: 1px solid #00f0ff; border-radius: 8px; font-weight: 700; transition: all 0.3s;"
+                                onmouseenter="this.style.backgroundColor='#00f0ff'; this.style.color='#000000';"
+                                onmouseleave="this.style.backgroundColor='transparent'; this.style.color='#00f0ff';">
+                                <i class="fa-solid fa-code-branch me-1"></i> 檢視原始碼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- ==================== 作品 04 ==================== -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="card project-card-3d rounded-xl w-100 d-flex flex-column p-0 overflow-hidden text-white">
+                        <div class="img-zoom-container">
+                            <a href="https://oldyaren.github.io/TravelFood/1151008-ex02.html" target="_blank">
+                                <img src="./images/s08-4.png" alt="全端系統開發" class="card-img-top"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/600x360/0f172a/00f0ff?text=Project+04';">
+                            </a>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                            <span style="color: #00f0ff; font-weight: 700; font-size: 0.85rem;"
+                                class="mb-1 block uppercase tracking-wider">// PROJECT_04</span>
+                            <h3 class="h4 font-black mb-2 text-white" style="font-weight: 700;">非同步本地數據串接與動態字串優化系統</h3>
+                            <p style="color: #a855f7; font-weight: 600; font-size: 0.9rem;" class="mb-2">技術棧：JavaScript ES6 / jQuery AJAX / Bootstrap 5 / 字串截斷邏輯</p>
+                            <p class="text-slate-300 small mb-4" style="font-size: 0.9rem; line-height: 1.6;">運用 jQuery AJAX 串接本地端資料庫 API，實作非同步大數據載入。並透過 JS 條件運算子與 substring 函數，優化長文本截斷，確保 RWD 畫面美觀不跑版。</p>
+                            <a href="https://github.com/oldyaren/TravelFood/blob/main/1151008-ex02.html" target="_blank"
+                                class="mt-auto btn w-100 py-2.5 font-bold uppercase tracking-wider text-center"
+                                style="background: transparent; color: #00f0ff; border: 1px solid #00f0ff; border-radius: 8px; font-weight: 700; transition: all 0.3s;"
+                                onmouseenter="this.style.backgroundColor='#00f0ff'; this.style.color='#000000';"
+                                onmouseleave="this.style.backgroundColor='transparent'; this.style.color='#00f0ff';">
+                                <i class="fa-solid fa-code-branch me-1"></i> 檢視原始碼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== 作品 05 ==================== -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="card project-card-3d rounded-xl w-100 d-flex flex-column p-0 overflow-hidden text-white">
+                        <div class="img-zoom-container">                            
+                            <a href="https://oldyaren.github.io/TravelFood/1151013-ch7-flex-ex01.html" target="_blank">
+                                <img src="./images/s08-5.png" alt="全端系統開發" class="card-img-top"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/600x360/0f172a/00f0ff?text=Project+05';">
+                            </a>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                            <span style="color: #00f0ff; font-weight: 700; font-size: 0.85rem;"
+                                class="mb-1 block uppercase tracking-wider">// PROJECT_05</span>
+                            <h3 class="h4 font-black mb-2 text-white" style="font-weight: 700;">Flexbox 交錯式動態時間軸佈局系統</h3>
+                            <p style="color: #a855f7; font-weight: 600; font-size: 0.9rem;" class="mb-2">技術棧：HTML5 / CSS3 偽元素 / Bootstrap 5 / RWD 響應式佈局</p>
+                            <p class="text-slate-300 small mb-4" style="font-size: 0.9rem; line-height: 1.6;">運用 CSS 偽元素手寫精準的中央軸線與錨點圓圈，搭配 Bootstrap 的反轉流（flex-row-reverse），實作兼具視覺導向與自適應 RWD 結構的雙向交錯式網頁時間軸。</p>
+                            <a href="https://github.com/oldyaren/TravelFood/blob/main/1151013-ch7-flex-ex01.html" target="_blank"
+                                class="mt-auto btn w-100 py-2.5 font-bold uppercase tracking-wider text-center"
+                                style="background: transparent; color: #00f0ff; border: 1px solid #00f0ff; border-radius: 8px; font-weight: 700; transition: all 0.3s;"
+                                onmouseenter="this.style.backgroundColor='#00f0ff'; this.style.color='#000000';"
+                                onmouseleave="this.style.backgroundColor='transparent'; this.style.color='#00f0ff';">
+                                <i class="fa-solid fa-code-branch me-1"></i> 檢視原始碼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== 作品 06 ==================== -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="card project-card-3d rounded-xl w-100 d-flex flex-column p-0 overflow-hidden text-white">
+                        <div class="img-zoom-container">
+                            <a href="https://oldyaren.github.io/TravelFood/1151015-ch8-forms-EX01.html" target="_blank">
+                                <img src="./images/s08-6.png" alt="全端系統開發" class="card-img-top"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/600x360/0f172a/00f0ff?text=Project+06';">
+                            </a>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                            <span style="color: #00f0ff; font-weight: 700; font-size: 0.85rem;"
+                                class="mb-1 block uppercase tracking-wider">// PROJECT_06</span>
+                            <h3 class="h4 font-black mb-2 text-white" style="font-weight: 700;">多欄位即時驗證與快取回復表單系統</h3>
+                            <p style="color: #a855f7; font-weight: 600; font-size: 0.9rem;" class="mb-2">技術棧：JavaScript ES6 / RegExp / LocalStorage 快取 / SweetAlert2 彈窗</p>
+                            <p class="text-slate-300 small mb-4" style="font-size: 0.9rem; line-height: 1.6;">整合正規表達式實作多欄位即時狀態驗證，並運用 LocalStorage 機制阻斷網頁重新整理導致的資料遺失。成功整合外掛彈窗與一次性 DOM 渲染優化。</p>
+                            <a href="https://github.com/oldyaren/TravelFood/blob/main/1151015-ch8-forms-EX01.html" target="_blank"
+                                class="mt-auto btn w-100 py-2.5 font-bold uppercase tracking-wider text-center"
+                                style="background: transparent; color: #00f0ff; border: 1px solid #00f0ff; border-radius: 8px; font-weight: 700; transition: all 0.3s;"
+                                onmouseenter="this.style.backgroundColor='#00f0ff'; this.style.color='#000000';"
+                                onmouseleave="this.style.backgroundColor='transparent'; this.style.color='#00f0ff';">
+                                <i class="fa-solid fa-code-branch me-1"></i> 檢視原始碼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
+    </section>
+
+<template>
     <section id="s08"
         style="background-color: #030712; padding: 60px 0; font-family: monospace; overflow: hidden; position: relative;">
     
@@ -1414,7 +2556,7 @@ HTML
         </div>
     <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
 </section>
-
+</template>    
 
 
 
@@ -3472,6 +4614,7 @@ HTML
     </section>
 </template>
 
+<template>
     <!-- Section 14：第三區塊深灰紫 (#362d53)，90% 對齊大框 + 赤腳丫地圖 + 親切輸入提示 -->
     <section id="s14" style="position: relative; overflow: hidden; padding: 50px 0; background-color: #362d53;">
         
@@ -3615,6 +4758,219 @@ HTML
         </div>
     <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(56, 189, 248, 0.3);"></div>
 </section>
+</template>
+
+<!-- Section 14：聯絡我 (Email 真實發送 + LINE 一鍵直傳版) -->
+    <section id="s14" style="position: relative; overflow: hidden; padding: 50px 0; background-color: #362d53;">
+        
+        <style>
+            #s14 .s14-main-title {
+                font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+                font-weight: 900;
+                background: linear-gradient(135deg, #ffffff 30%, #38bdf8 65%, #c084fc 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 0.5rem;
+            }
+            #s14 .s14-input {
+                background: rgba(15, 12, 24, 0.65) !important;
+                border: 1px solid rgba(255, 255, 255, 0.15) !important;
+                color: #f8fafc !important;
+                border-radius: 10px;
+                padding: 0.75rem 1rem;
+                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(74, 95, 124, 0.1);
+                transition: all 0.3s ease;
+            }
+            #s14 .s14-input:focus {
+                border-color: #38bdf8 !important;
+                background: rgba(20, 16, 32, 0.85) !important;
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 12px rgba(56, 189, 248, 0.35) !important;
+            }
+            #s14 .s14-input::placeholder {
+                color: #94a3b8 !important;
+                opacity: 0.75;
+                font-size: 0.92rem;
+            }
+            #s14 .form-label {
+                font-size: 0.92rem;
+                font-weight: 700;
+                color: #e2e8f0;
+                margin-bottom: 0.35rem;
+            }
+            #s14 select.s14-input option {
+                background-color: #1a1626;
+                color: #f8fafc;
+            }
+        </style>
+
+        <div style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 45px rgba(10, 8, 20, 0.45), 0 0 25px rgba(168, 85, 247, 0.15); border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(24, 20, 36, 0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 3rem 2.5rem; position: relative; z-index: 2;">
+            
+            <div class="text-center mb-4 pb-2">
+                <span class="badge mb-2 px-3 py-2" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); font-size: 13px; letter-spacing: 1.5px; font-weight: bold;">
+                    ✦ GET IN TOUCH
+                </span>
+                <h2 class="s14-main-title">聯絡我 CONTACT ME</h2>
+                <p class="text-secondary mb-0" style="color: #94a3b8 !important; font-size: 0.95rem;">
+                    歡迎面試邀約、專案合作洽詢，我會在 24 小時內儘速回覆您！
+                </p>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                
+                <div class="col-lg-6 d-flex flex-column justify-content-between">
+                    
+                    <!-- ⚠️ 註冊 Formspree 後，把 action 裡的網址換成您真實的專屬網址即可收到信 -->
+                    <form id="s14ContactForm" action="https://formspree.io/f/您的ID" method="POST" class="h-100 d-flex flex-column justify-content-between">
+                        
+                        <!-- 1. 姓名 -->
+                        <div class="mb-3">
+                            <label class="form-label">✦ 您的姓名 / 公司職稱 <span class="text-danger">*</span></label>
+                            <input type="text" name="name" class="form-control s14-input" placeholder="例如：王小明 經理 / HR 張小姐" required>
+                        </div>
+
+                        <!-- 2. 電子信箱 -->
+                        <div class="mb-3">
+                            <label class="form-label">✦ 電子信箱 (Email) <span class="text-danger">*</span></label>
+                            <input type="email" name="email" class="form-control s14-input" placeholder="例如：hr-contact@company.com.tw" required>
+                        </div>
+
+                        <!-- 3. 洽詢主題 -->
+                        <div class="mb-3">
+                            <label class="form-label">✦ 洽詢主題</label>
+                            <select name="subject" class="form-select s14-input">
+                                <option value="面試邀約與職缺洽談" selected>💼 面試邀約與職缺洽談（優先處理）</option>
+                                <option value="專案全端委託開發">🚀 專案全端委託開發</option>
+                                <option value="技術交流與跨界諮詢">☕ 技術交流與跨界諮詢</option>
+                                <option value="其他事項">📝 其他事項</option>
+                            </select>
+                        </div>
+
+                        <!-- 4. 訊息內容 -->
+                        <div class="mb-3">
+                            <label class="form-label">✦ 訊息內容 <span class="text-danger">*</span></label>
+                            <textarea name="message" class="form-control s14-input" rows="5" placeholder="例如：您好，我們在評估全端工程師職缺，想邀請您進行面試交流..." required></textarea>
+                        </div>
+
+                        <!-- 按鈕組：重填、LINE直傳、Email送出 -->
+                        <div class="d-flex flex-wrap justify-content-end align-items-center gap-2 mt-4">
+                            <button type="reset" class="btn btn-outline-light px-3 py-2" style="border-radius: 8px; font-size: 0.9rem; border-color: rgba(255,255,255,0.25);">
+                                重填
+                            </button>
+                            
+                            <!-- 🔥 新增：LINE 直傳按鈕（把表單文字打包，直接傳到您的 LINE！） -->
+                            <button type="button" id="s14LineBtn" class="btn fw-bold px-3 py-2 text-white shadow-sm"
+                                    style="background-color: #06c755; border: none; border-radius: 8px; font-size: 0.9rem;">
+                                <i class="fa-brands fa-line me-1"></i> LINE 送出
+                            </button>
+
+                            <!-- Email 送出按鈕 -->
+                            <button type="submit" id="s14SubmitBtn" class="btn px-4 py-2 fw-bold text-dark shadow-sm"
+                                    style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); border: none; border-radius: 8px; font-size: 0.92rem;">
+                                送出信件 🚀
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 地圖區 -->
+                <div class="col-lg-6 d-flex flex-column">
+                    <div class="h-100 position-relative" style="min-height: 440px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+                        <iframe
+                            src="https://maps.google.com/maps?q=%E8%B5%A4%E8%85%B3%E4%B8%AB%E7%94%9F%E6%85%8B%E8%BE%B2%E8%8E%8A&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%" height="100%" style="border:0; min-height: 380px;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+
+                        <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); border-radius: 10px; padding: 10px 14px; border: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div class="fw-bold text-white" style="font-size: 13.5px;">📍 赤腳丫生態農莊</div>
+                                <div class="text-secondary" style="font-size: 12px; color: #94a3b8 !important;">台中市大雅區雅潭路三段500號</div>
+                            </div>
+                            <a href="https://maps.google.com/?q=%E8%B5%A4%E8%85%B3%E4%B8%AB%E7%94%9F%E6%85%8B%E8%BE%B2%E8%8E%8A" target="_blank"
+                            class="btn btn-sm btn-outline-info text-nowrap" style="font-size: 11.5px; border-radius: 6px;">
+                                開啟地圖 ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(56, 189, 248, 0.3);"></div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const form = document.getElementById("s14ContactForm");
+                const lineBtn = document.getElementById("s14LineBtn");
+                if (!form) return;
+
+                // 1. LINE 一鍵傳送功能：打包表單內容，直接跳轉 LINE 私訊給您！
+                if (lineBtn) {
+                    lineBtn.addEventListener("click", function () {
+                        if (!form.checkValidity()) {
+                            form.reportValidity();
+                            return;
+                        }
+                        const name = form.querySelector('[name="name"]').value;
+                        const email = form.querySelector('[name="email"]').value;
+                        const subject = form.querySelector('[name="subject"]').value;
+                        const msg = form.querySelector('[name="message"]').value;
+
+                        // 組合整齊的文字訊息
+                        const lineText = `【履歷網站洽詢通知】\n✦ 姓名/公司：${name}\n✦ 電子信箱：${email}\n✦ 洽詢主題：${subject}\n✦ 訊息內容：\n${msg}`;
+                        
+                        // 喚起 LINE 分享傳送
+                        const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineText)}`;
+                        window.open(lineUrl, '_blank');
+                    });
+                }
+
+                // 2. Email 送出功能 (Formspree)
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+
+                    const name = form.querySelector('[name="name"]').value;
+                    const email = form.querySelector('[name="email"]').value;
+                    const action = form.getAttribute("action");
+                    const submitBtn = document.getElementById("s14SubmitBtn");
+
+                    if (action && !action.includes("您的ID")) {
+                        const originalText = submitBtn.innerHTML;
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = "傳送中...";
+
+                        fetch(action, {
+                            method: "POST",
+                            body: new FormData(form),
+                            headers: { 'Accept': 'application/json' }
+                        }).then(response => {
+                            if (response.ok) {
+                                alert(`🚀 郵件已真實送出！\n\n感謝 ${name} 的聯繫，信件已送達信箱，我會在 24 小時內回覆您！`);
+                                form.reset();
+                            } else {
+                                alert("傳送失敗，請確認 Formspree ID 是否正確，或直接點選綠色「LINE 送出」與我聯繫！");
+                            }
+                        }).catch(() => {
+                            alert("網路連線錯誤，建議直接點選綠色「LINE 送出」與我聯繫！");
+                        }).finally(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalText;
+                        });
+                    } else {
+                        // 提示尚未填入真實 ID
+                        alert(`【目前為展示模式】\n\n您輸入的訊息（姓名：${name}）已通過前端驗證！\n\n💡 真正收到信的步驟：\n請至 formspree.io 免費註冊取得專屬 ID，填入 S14 的 action 網址即可！\n\n👉 您也可以直接點選綠色的「LINE 送出」，會立刻把這段話透過 LINE 傳送給我喔！`);
+                    }
+                });
+            });
+        </script>
+    </section>
+
 
 
 
