@@ -364,6 +364,63 @@
             box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4) !important;
         }
 
+
+        /* ========================================================
+        2026 改版：三大區塊漸進配色與立體陰影
+        ======================================================== */
+
+        /* --- 第一區塊：排除 s02，只套用其他 Section --- */
+        #s01, #s03, #s04, #s05, #s06, #s07, #s08,
+        .section-s01, .section-s03, .section-s04, 
+        .section-s05, .section-s06, .section-s07, .section-s08 {
+            background-color: #d6e1ec !important;
+            color: #1e293b !important;
+        }
+        /* 第一區塊的卡片與按鈕立體陰影 (同樣排除 s02) */
+        #s01 .card, #s03 .card, #s04 .card, 
+        #s05 .card, #s06 .card, #s07 .card, #s08 .card,
+        #s01 .box01, #s03 .box01, #s04 .box01, #s05 .box01 {
+            box-shadow: 0 8px 20px rgba(74, 95, 124, 0.15) !important;
+            border-radius: 12px;
+        }
+
+        /* --- 第二區塊：Section 9 ~ 10 (中灰藍 #4a5f7c) --- */
+        #s09, #s10,
+        .section-s09, .section-s10 {
+            background-color: #4a5f7c !important;
+            color: #f8fafc !important;
+        }
+        /* 第二區塊文字反白、卡片深沉浮雕 */
+        #s09 h1, #s09 h2, #s09 h3, #s09 h4, #s09 h5, #s09 p,
+        #s10 h1, #s10 h2, #s10 h3, #s10 h4, #s10 h5, #s10 p {
+            color: #f8fafc !important;
+        }
+        #s09 .card, #s10 .card, #s09 .box01, #s10 .box01 {
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3) !important;
+            color: #ffffff !important;
+        }
+
+        /* --- 第三區塊：Section 11 ~ 15 (深灰紫 #362d53) --- */
+        #s11, #s12, #s13, #s14, #s15,
+        .section-s11, .section-s12, .section-s13, .section-s14, .section-s15 {
+            background-color: #362d53 !important;
+            color: #f1f5f9 !important;
+        }
+        /* 第三區塊標題與段落全面反白 */
+        #s11 h1, #s11 h2, #s11 h3, #s11 h4, #s11 h5, #s11 p,
+        #s12 h1, #s12 h2, #s12 h3, #s12 h4, #s12 h5, #s12 p,
+        #s13 h1, #s13 h2, #s13 h3, #s13 h4, #s13 h5, #s13 p,
+        #s14 h1, #s14 h2, #s14 h3, #s14 h4, #s14 h5, #s14 p,
+        #s15 h1, #s15 h2, #s15 h3, #s15 h4, #s15 h5, #s15 p {
+            color: #f1f5f9 !important;
+        }
+        /* 第三區塊文字次要顏色（淡紫灰） */
+        #s11 .text-muted, #s12 .text-muted, #s13 .text-muted, #s14 .text-muted, #s15 .text-muted {
+            color: #cbd5e1 !important;
+        }
+
     </style>
 </head>
 
@@ -391,7 +448,7 @@
     <section id="s02" class="bg-dark">
         <div class="container">
 
-            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <nav class="navbar navbar-expand bg-dark navbar-dark">
                 <div class="container-fluid">
 
 <!--                     <a class="navbar-brand" href="#">
@@ -403,12 +460,12 @@
                         <span class="navbar-toggler-icon"></span>
                     </button> -->
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle active py-0 d-inline-flex align-items-center" style="line-height: 1.2;" aria-current="page" href="#s03">
                                     <i class="fa-solid fa-user-gear fa-canvas-roomy" style="color: #b000b0; margin-right: 4px;"></i> 核心實戰特質
-                                    <i class="fa-solid fa-user-gear fa-canvas-roomy " style="color: #99004d; margin-right: 4px;"></i> 核心實戰特質
+<!--                                     <i class="fa-solid fa-user-gear fa-canvas-roomy " style="color: #99004d; margin-right: 4px;"></i> 核心實戰特質 -->
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
@@ -570,30 +627,47 @@
             </div>
         </div>
 
-    </section>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
+</section>
 
 
 
 
     <!-- section04 -- 幻燈片效果 carousel AI制作 -->
-    <section id="s04">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    
+<!--             如果決定留「新版 80%」（強烈建議！）
+        操作：
+        把原本**舊的整段舊的整段刪除<section id=“s04”>...</分段>
+        【關鍵一步】把新版的開頭：
+        HTML
+        <section id="s04-preview" ...>
+        把刪掉，改回-預告id=“s04”，長這樣即可：
+        HTML
+        <section id="s04" style="background-color: #d6e1ec; padding: 50px 0;">
+        為什麼要改回？id=“s04”
+        因為您剛才 Section 02 的導覽列裡有一條超連結：
+        <a class=“dropdown-item” href=“#s04”>軌跡價值定位</a>
+        只要把它改回 'id=“s04，訪客點擊選單時就能id=“s04”精準自動捲動跳轉到這個漂亮的新輪播！
+        （裡面的 輪播功能則完全不用動，依然會完美滑動切換）旋轉木馬新。 -->
+        <!-- 【新版 80% 預覽測試區塊】已更換獨立 ID，絕不與舊版衝突 -->
+    <section id="s04" style="background-color: #d6e1ec; padding: 40px 0;">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"
+            style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 40px rgba(74, 95, 124, 0.25); border: 1px solid rgba(255, 255, 255, 0.6);">
+            
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
 
             <div class="carousel-inner">
-                <!-- Slide 1: 工作經驗 -->
-                <div class="carousel-item active" style="background-image: url(./images/landspace02.avif); height: 85vh">
-                    <div class="carousel-caption custom-caption text-start d-none d-md-block p-4 rounded-3   wow animate__zoomInUp"
-                        data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <!-- Slide 1：已補回 wow animate__zoomInUp 動畫 -->
+                <div class="carousel-item active" style="background-image: url(./images/landspace02.avif); background-size: cover; background-position: center; height: 60vh;">
+                    <div class="carousel-caption custom-caption text-start d-none d-md-block p-4 rounded-3 wow animate__zoomInUp"
+                        data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"
+                        style="background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); border-radius: 16px; border: 1px solid rgba(255,255,255,0.15);">
                         <h3 class="fw-bold mb-3 text-warning">💼 工作經驗</h3>
-                        <ul class="list-unstyled mb-0 spec-list">
+                        <ul class="list-unstyled mb-0 spec-list" style="font-size: 15px; line-height: 1.8;">
                             <li><strong>初級網頁前端工程師</strong> ｜ 勞動部勞動力發展署中彰投分署 參訓 (202609 - 至今)</li>
                             <li>AI輔助全端網站程式設計與效能優化。</li>
                             <li><strong>網頁設計師</strong> ｜ 個人工作室</li>
@@ -602,12 +676,13 @@
                     </div>
                 </div>
 
-                <!-- Slide 2: 專業技術 -->
-                <div class="carousel-item" style="background-image: url(./images/landspace01.avif); height: 85vh">
-                    <div class="carousel-caption custom-caption text-start d-none d-md-block p-4 rounded-3   wow animate__zoomInUp"
-                        data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <!-- Slide 2：已補回 wow animate__zoomInUp 動畫 -->
+                <div class="carousel-item" style="background-image: url(./images/landspace01.avif); background-size: cover; background-position: center; height: 60vh;">
+                    <div class="carousel-caption custom-caption text-start d-none d-md-block p-4 rounded-3 wow animate__zoomInUp"
+                        data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"
+                        style="background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); border-radius: 16px; border: 1px solid rgba(255,255,255,0.15);">
                         <h3 class="fw-bold mb-3 text-info">🛠️ 專業技術</h3>
-                        <ul class="list-unstyled mb-0 spec-list">
+                        <ul class="list-unstyled mb-0 spec-list" style="font-size: 15px; line-height: 1.8;">
                             <li><strong>前端開發：</strong> HTML5 / CSS3 / JavaScript (ES6+)</li>
                             <li><strong>框架工具：</strong> Vue.js / Bootstrap 5 / Tailwind CSS</li>
                             <li><strong>後端與工具：</strong> Node.js / Git 版本控制 / Webpack</li>
@@ -615,145 +690,220 @@
                     </div>
                 </div>
 
-                <!-- Slide 3: 專案成就 -->
-                <div class="carousel-item" style="background-image: url(./images/landspace03.avif); height: 85vh">
-                    <div class="carousel-caption custom-caption text-start d-none d-md-block p-4 rounded-3   wow animate__zoomInUp"
-                        data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <!-- Slide 3：已補回 wow animate__zoomInUp 動畫 -->
+                <div class="carousel-item" style="background-image: url(./images/landspace03.avif); background-size: cover; background-position: center; height: 60vh;">
+                    <div class="carousel-caption custom-caption text-start d-none d-md-block p-4 rounded-3 wow animate__zoomInUp"
+                        data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1"
+                        style="background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); border-radius: 16px; border: 1px solid rgba(255,255,255,0.15);">
                         <h3 class="fw-bold mb-3 text-success">🏆 專案成就</h3>
-                        <ul class="list-unstyled mb-0 spec-list">
+                        <ul class="list-unstyled mb-0 spec-list" style="font-size: 15px; line-height: 1.8;">
                             <li><strong>Vue3 ✕ Tailwind：</strong>以 Vue3/Vite 開發全端系統，導入 Tailwind 切版，減少 40% 冗餘代碼、提升 30% 載入速度。</li>
-                            <li><strong>AI 提示詞工程：</strong>深度運用 AI 提示詞工程協作開發與組件重構，大幅縮短 50% 專案週期，具備高效技術裝備力。</li>
-                            <li><strong>空軍紀律防衛代碼：</strong>將 20 年空軍紀律融入 Git 控管，針對複雜資料流設計嚴密防錯機制，確保系統零死機。</li>
+                            <li><strong>AI 提示詞工程：</strong>深度運用 AI 提示詞工程協作開發與組件重構，大幅縮短 50% 專案週期。</li>
+                            <li><strong>空軍紀律防衛代碼：</strong>將 20 年空軍紀律融入 Git 控管，針對複雜資料流設計嚴密防錯機制。</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </section>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
+</section>
 
 
 
 
     <!-- section04>>section05 -- s05核心數據戰功牆 counterup數據遞增 可以量化的數據 AI生成的 -->
     <!-- section04>>section05 -- 核心數據戰功牆 s05 -->
-    <section id="s05" class="cyber-section overflow-hidden"><!-- cyber-section上面是黑色， overflow-hidden隱藏超出區塊範圍的內容 -->
-        <div class="container-fluid p-0"><!-- container-fluid全寬容器，通常佔滿父層可用寬度的 100% -->
-            <div class="row g-0 align-items-center">
-                <!-- 左側背景圖（維持您的設定，高度設定為 100% 滿版或自訂） -->
-                <div class="col-md-5 bg-img"
-                    style="background-image: url(./images/landspace02.avif); min-height: 50vh; background-size: cover; background-position: center;">
+    <!-- 2. 最後定稿時的「刪除規則」：
+如果最後決定留「舊版」：
+👉 直接把整段新版刪除即可，一切恢復原狀。
+如果最後決定留「新版」（推薦）：
+👉 把舊版整段刪除。
+👉 ：把新版開頭的：【唯一要做的事】
+HTML
+<section id="s05-preview" ...>
+改回：
+HTML
+<section id="s05" ...>
+（拿掉 ，這樣 Section 02 導覽列點擊「量化數據」時，才會精準滑動跳轉到這個新卡片！）-預告 -->
+        <!-- ========================================================
+        【純淨淺色版 s05 預覽】
+        無深色填充、透出 s01~8 淺灰藍底色、微陰影、左緣精準對齊 s04
+        ======================================================== -->
+    <section id="s05" style="background-color: #d6e1ec; padding: 40px 0;">
+        <!-- 90% 寬度、左緣精準對齊 s04 -->
+        <div style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 35px rgba(74, 95, 124, 0.15); border: 1px solid rgba(255, 255, 255, 0.6); background-color: #d6e1ec;">
+            <div class="row g-0 align-items-stretch">
+                
+                <!-- 【左側照片】：補回 WOW 左側滑入動畫 -->
+                <div class="col-md-5 position-relative d-flex flex-column justify-content-end p-4 p-lg-5"
+                    style="background-image: url(./images/landspace02.avif); background-size: cover; background-position: center; min-height: 460px;">
+                    
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%); z-index: 1;"></div>
 
-                    <div class="s05-visual-overlay">
-                        <span class="s05-label">DATA / PERFORMANCE</span>
-                        <!-- //是行內元素（inline element），在 CSS 中是不支援寬度、高度以及動畫的。想動CSS須改為改為 inline-block 或 block。 -->
-                        <h2 class="wow animate__slideInLeft" data-wow-duration="5s" data-wow-delay="0s"
-                            data-wow-iteration="1">讓實力<br>被數據看見。</h2>
-                        <p class="wow animate__slideInLeft" data-wow-duration="3s" data-wow-delay="0s"
-                            data-wow-iteration="1">不只完成任務，更要創造能被衡量的成果。</p>
+                    <div class="s05-visual-overlay position-relative" style="z-index: 2;">
+                        <span class="badge mb-3 px-3 py-2" style="background: rgba(56, 189, 248, 0.25); color: #0284c7; border: 1px solid rgba(56, 189, 248, 0.5); font-size: 13px; font-weight: bold; letter-spacing: 1px;">
+                            DATA / PERFORMANCE
+                        </span>
+                        <h2 class="fw-bold text-white mb-2 wow animate__slideInLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1" style="line-height: 1.3;">
+                            讓實力<br><span style="color: #38bdf8; text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);">被數據看見。</span>
+                        </h2>
+                        <p class="text-light mb-0 wow animate__slideInLeft" data-wow-duration="2s" data-wow-delay="0.2s" data-wow-iteration="1" style="font-size: 14.5px; opacity: 0.95;">
+                            不只完成任務，更要創造能被衡量的商業成果。
+                        </p>
                     </div>
                 </div>
 
-                <!-- 右側數據與吸睛文案區 -->
-                <div class="col-md-7 py-5 px-4 px-lg-5 text-center text-md-start cyber-content-box">
-                    <!-- 1. 吸引目光的用詞（大標題與副標題） -->
-                    <h1 class="fw-black neon-text-green mb-0">全端解碼，數據造就非凡</h1>
-                    <h2 class="fw-bold text-white mb-3" style="font-size: 1.8rem;">用代碼征服挑戰，以技術刷新紀錄</h2>
-                    <p class="lead text-light-muted mb-4">
-                        超越傳統開發極限，我將每一次的專案視為一場必須勝出的戰役。透過精準的架構設計與優化，將複雜的商業邏輯轉化為爆發性的成長動能。
-                    </p>
+                <!-- 【右側數據與文案】：透出淺灰藍底色 -->
+                <div class="col-md-7 py-5 px-4 px-lg-5 d-flex flex-column justify-content-center" style="background: transparent;">
+                    
+                    <div class="mb-4">
+                        <span class="badge bg-primary text-white mb-2 px-3 py-1 fw-bold">PROVEN RECORD</span>
+                        <h2 class="fw-bold mb-2" style="color: #1e293b; font-size: 1.85rem; letter-spacing: 0.5px;">
+                            全端解碼，<span style="color: #0284c7;">數據造就非凡</span>
+                        </h2>
+                        <p class="mb-0" style="color: #475569; font-size: 14.5px; line-height: 1.7;">
+                            超越傳統開發極限，我將每一次專案視為一場必須勝出的戰役。透過精準架構設計與優化，將複雜邏輯轉化為爆發性成長動能。
+                        </p>
+                    </div>
 
-                    <!-- 2. 可量化的數據與全新標題 -->
-                    <div class="row mt-5 g-4">
-                        <div class="col-6 col-md-3 text-center">
-                            <div class="s05-counter-card p-3 rounded-3">
-                                <i></i>
-                                <h4 class="data-title">核心淬鍊年資</h4>
-                                <div class="data-number counter-card"><span
-                                        class="neon-text-orange counter01">13</span><span class="data-unit">週+</span>
+                    <!-- 數據卡片區：【已精準補回 counter01、counter02 數字增長暗號】 -->
+                    <div class="row g-3">
+                        
+                        <!-- 卡片 1：補回 counter01 -->
+                        <div class="col-6 col-lg-3">
+                            <div class="p-3 text-center h-100"
+                                style="background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(8px); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.6); border-top: 3px solid #0284c7; box-shadow: 0 6px 16px rgba(74, 95, 124, 0.1);">
+                                <div class="mb-1" style="font-size: 12.5px; color: #475569; font-weight: 600;">核心淬鍊年資</div>
+                                <div class="fw-bold" style="font-size: 26px;">
+                                    <span class="counter01" style="color: #0284c7;">13</span>
+                                    <span style="font-size: 14px; color: #475569;">週+</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 col-md-3 text-center">
-                            <div class="s05-counter-card p-3 rounded-3">
-                                <h4 class="data-title">商業專案引爆</h4>
-                                <div class="data-number"><span class="neon-text-orange counter02">20</span><span
-                                        class="data-unit">件+</span></div>
+
+                        <!-- 卡片 2：補回 counter02 -->
+                        <div class="col-6 col-lg-3">
+                            <div class="p-3 text-center h-100"
+                                style="background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(8px); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.6); border-top: 3px solid #ea580c; box-shadow: 0 6px 16px rgba(74, 95, 124, 0.1);">
+                                <div class="mb-1" style="font-size: 12.5px; color: #475569; font-weight: 600;">商業專案引爆</div>
+                                <div class="fw-bold" style="font-size: 26px;">
+                                    <span class="counter02" style="color: #ea580c;">20</span>
+                                    <span style="font-size: 14px; color: #475569;">件+</span>
+                                </div>
                             </div>
                         </div>
-<!--                         <div class="col-6 col-md-3 text-center">
-                            <div class="s05-counter-card p-3 rounded-3">
-                                <h4 class="data-title">跨國指標巨作</h4>
-                                <div class="data-number"><span class="neon-text-orange counter03">2</span><span
-                                        class="data-unit">案</span></div>
+
+                        <!-- 卡片 3：代碼冗餘縮減 -->
+                        <div class="col-6 col-lg-3">
+                            <div class="p-3 text-center h-100"
+                                style="background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(8px); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.6); border-top: 3px solid #16a34a; box-shadow: 0 6px 16px rgba(74, 95, 124, 0.1);">
+                                <div class="mb-1" style="font-size: 12.5px; color: #475569; font-weight: 600;">代碼冗餘縮減</div>
+                                <div class="fw-bold" style="font-size: 26px;">
+                                    <span class="counter03" style="color: #16a34a;">40</span>
+                                    <span style="font-size: 14px; color: #475569;">%</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-6 col-md-3 text-center">
-                            <div class="s05-counter-card p-3 rounded-3">
-                                <h4 class="data-title">獲獎核心專案</h4>
-                                <div class="data-number"><span class="neon-text-orange counter04">3</span><span
-                                        class="data-unit">項</span></div>
+
+                        <!-- 卡片 4：系統零死機率 -->
+                        <div class="col-6 col-lg-3">
+                            <div class="p-3 text-center h-100"
+                                style="background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(8px); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.6); border-top: 3px solid #9333ea; box-shadow: 0 6px 16px rgba(74, 95, 124, 0.1);">
+                                <div class="mb-1" style="font-size: 12.5px; color: #475569; font-weight: 600;">系統零死機率</div>
+                                <div class="fw-bold" style="font-size: 26px;">
+                                    <span class="counter04" style="color: #9333ea;">100</span>
+                                    <span style="font-size: 14px; color: #475569;">%</span>
+                                </div>
                             </div>
-                        </div> -->
+                        </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
-    </section>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
+</section>
 
 
 
 
     <!-- section05>>section06 -- 核心能力，在哪裡實踐了能力、你具體創造了什麼成效。 -->
-    <section id="s06" class="py-4"> <!-- 更換為 s06，並調大上下留白 -->
-    <div class="container">
-        <!-- 核心能力大標題 -->
-        <h2 class="text-center display-4 fw-bold my-3">核心能力</h2>
+
+    <!-- ========================================================
+     【柔和同色系 s06 預覽】
+     不搶眼、完美融入 #d6e1ec 底色、兩側 90% 邊界依然精準切齊
+     ======================================================== -->
+<section id="s06-preview" class="py-5" style="background-color: #d6e1ec;">
+    
+    <div class="text-center mb-4">
+<!--         <span class="badge bg-secondary px-3 py-2 shadow-sm">✨ 柔和同色系 s06：告別突兀白底，完美融入淺灰藍</span> -->
+    </div>
+
+    <!-- 關鍵對齊容器：寬度 90%、水平置中，與 s04、s05 精準貼齊！ -->
+    <div style="width: 90%; margin: 0 auto; padding: 0;">
         
-        <div class="row g-5 text-center align-items-stretch" style="margin-top: -45px !important;">
+        <!-- 核心能力大標題 -->
+        <h2 class="text-center display-5 fw-bold mb-5" style="color: #1e293b; letter-spacing: 1px;">核心能力</h2>
+        
+        <div class="row g-4 text-center align-items-stretch">
             
-            <!-- 區塊一：命理傳承 -->
-            <div class="col-md-6 text-center p-2">
-                <div class="h-100 p-2 shadow-sm rounded-3">
-                    <!-- 更換圖案：陰陽太極 (代表命理與推導) -->
-                    <div style="position: relative; width: 100%; height: 80px; margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center;">
-                        <i class="fa-solid fa-yin-yang fa-4x fa-flip"
-                            style="color: rgba(108, 117, 125, 0.3); position: absolute; transform: scale(1.1); animation-delay: 0.15s;"></i>
-                        <i class="fa-solid fa-yin-yang fa-4x fa-flip"
-                            style="color: #6c757d; position: absolute; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);"></i>
+            <!-- 區塊一：命理傳承 (微透晨霧灰藍卡片) -->
+            <div class="col-md-6">
+                <div class="h-100 p-4 p-lg-5 text-start d-flex flex-column justify-content-between"
+                     style="background: rgba(255, 255, 255, 0.32); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 8px 25px rgba(74, 95, 124, 0.09); border: 1px solid rgba(255, 255, 255, 0.55); transition: transform 0.3s ease;">
+                    
+                    <div>
+                        <!-- 圖案：陰陽太極 -->
+                        <div style="position: relative; width: 100%; height: 80px; margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center;">
+                            <i class="fa-solid fa-yin-yang fa-4x fa-flip"
+                                style="color: rgba(108, 117, 125, 0.2); position: absolute; transform: scale(1.15); animation-delay: 0.15s;"></i>
+                            <i class="fa-solid fa-yin-yang fa-4x fa-flip"
+                                style="color: #475569; position: absolute; text-shadow: 1px 2px 4px rgba(74, 95, 124, 0.2);"></i>
+                        </div>
+                        
+                        <h3 class="my-3 fw-bold text-center" style="color: #1e293b; font-size: 1.55rem;">
+                            廿二載命理研几實證｜傳承五術
+                        </h3>
                     </div>
-                    <h3 class="my-3 fw-bold">廿二載命理研几實證｜傳承五術</h3>
-                    <!-- fs-4 放大字體至 1.5 倍，內文去蕪存菁 -->
-                    <p class="fs-4 text-secondary lh-lg text-start px-2">
+
+                    <!-- 內文文字改為好閱讀的深石墨色 -->
+                    <p class="fs-5 lh-lg mb-0 px-2" style="color: #334155;">
                         具備主動釐清、拆解、推導並找出問題根源的極致邏輯。多年致力於正統易理智慧的實證致用與文化傳承，引領有緣人掌握論命核心。
                     </p>
                 </div>
             </div>
             
-            <!-- 區塊二：空軍淬鍊 -->
-            <div class="col-md-6 text-center p-2">
-                <div class="h-100 p-2 shadow-sm rounded-3">
-                    <!-- 更換圖案：噴射戰鬥機 (代表空軍精神與紀律) -->
-                    <div style="position: relative; width: 100%; height: 80px; margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center;">
-                        <i class="fa-solid fa-jet-fighter fa-4x fa-flip"
-                            style="color: rgba(13, 110, 253, 0.4); position: absolute; transform: scale(1.15); filter: blur(2px); animation-delay: 0.15s;"></i>
-                        <i class="fa-solid fa-jet-fighter fa-4x fa-flip"
-                            style="color: #0d6efd; position: absolute; text-shadow: 2px 3px 5px rgba(0,0,0,0.25);"></i>
+            <!-- 區塊二：空軍淬鍊 (微透晨霧灰藍卡片) -->
+            <div class="col-md-6">
+                <div class="h-100 p-4 p-lg-5 text-start d-flex flex-column justify-content-between"
+                     style="background: rgba(255, 255, 255, 0.32); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 8px 25px rgba(74, 95, 124, 0.09); border: 1px solid rgba(255, 255, 255, 0.55); transition: transform 0.3s ease;">
+                    
+                    <div>
+                        <!-- 圖案：噴射戰鬥機 -->
+                        <div style="position: relative; width: 100%; height: 80px; margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center;">
+                            <i class="fa-solid fa-jet-fighter fa-4x fa-flip"
+                                style="color: rgba(2, 132, 199, 0.2); position: absolute; transform: scale(1.15); filter: blur(1px); animation-delay: 0.15s;"></i>
+                            <i class="fa-solid fa-jet-fighter fa-4x fa-flip"
+                                style="color: #0284c7; position: absolute; text-shadow: 1px 2px 4px rgba(74, 95, 124, 0.2);"></i>
+                        </div>
+
+                        <h3 class="my-3 fw-bold text-center" style="color: #1e293b; font-size: 1.55rem;">
+                            二十載空軍淬鍊洗禮
+                        </h3>
                     </div>
 
-                    <h3 class="my-3 fw-bold">二十載空軍淬鍊洗禮</h3>
-                    <!-- fs-4 放大字體至 1.5 倍，內文去蕪存菁 -->
-                    <p class="fs-4 text-secondary lh-lg text-start px-2">
+                    <!-- 內文文字改為好閱讀的深石墨色 -->
+                    <p class="fs-5 lh-lg mb-0 px-2" style="color: #334155;">
                         身為退役空軍，將軍人的忠誠、正道與鋼鐵紀律帶入生命地圖。用軍人特有的溫暖與剛正，在亂流中精準解碼命運，尋找人生航向。
                     </p>
                 </div>
@@ -761,12 +911,13 @@
 
         </div>
     </div>
-    </section>
+<div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
+</section>
 
 
 
 
-
+<template>
     <!-- section06>>section07 -- 求職條件，在哪裡實踐了能力、你具體創造了什麼成效。 -->
     <section id="s07" style="position: relative; overflow: hidden; padding: 40px 0;">
     <!-- 在 Section 內部嵌入局部 <style>，保證不需動到外部 CSS 檔案 -->
@@ -886,6 +1037,128 @@
         injectMatrixAnimation(container);
     });
 </script>
+</section>
+</template>
+
+    <section id="s07" style="position: relative; overflow: hidden; padding: 40px 0; background-color: #d6e1ec;">
+        
+        <!-- 局部 Style：維持駭客任務數位雨動畫 -->
+        <style>
+            @keyframes matrixDrop {
+                0% {
+                    transform: translateY(-100px);
+                    opacity: 0;
+                    color: #00ff66;
+                    filter: blur(4px);
+                }
+                30% {
+                    opacity: 1;
+                    color: #00ff66;
+                    filter: blur(0px);
+                }
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                    color: inherit;
+                }
+            }
+            .matrix-char {
+                display: inline-block;
+                white-space: pre;
+                animation: matrixDrop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            }
+        </style>
+
+        <!-- 【關鍵外框】：90% 寬度（兩側對齊 s04~s06）、柔和陰影、同色系微透底色 -->
+        <div style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(74, 95, 124, 0.12); border: 1px solid rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(10px); position: relative; z-index: 2;">
+            
+            <!-- align-items-stretch 確保左右兩欄自動等高 -->
+            <div class="row g-0 align-items-stretch">
+                
+                <!-- 【左側內容區】：高度由文字內容自然撐開 -->
+                <div class="col-md-7 text-dark p-4 p-lg-5 d-flex flex-column justify-content-center" id="matrix-text-zone">
+                    <h2 class="display-6 fw-bold mb-4" style="color: #0284c7; letter-spacing: 0.5px;">求職條件與核心亮點</h2>
+
+                    <div class="fs-5 mb-2" style="line-height: 1.4;">
+                        <div class="fw-bold mb-1" style="color: #0369a1;">職務類別</div>
+                        <ul class="mb-0 text-secondary" style="color: #334155 !important;">
+                            <li>全端工程師 (Full-Stack Engineer)</li>
+                        </ul>
+                    </div>                
+                    <div class="fs-5 mb-2" style="line-height: 1.4;">
+                        <div class="fw-bold mb-1" style="color: #0369a1;">工作地點與性質</div>
+                        <ul class="mb-0 text-secondary" style="color: #334155 !important;">
+                            <li>工作地點：台中市 。</li>
+                            <li>工作性質：全職 (Full-Time)。</li>
+                        </ul>
+                    </div>                
+                    <div class="fs-5 mb-2" style="line-height: 1.4;">
+                        <div class="fw-bold mb-1" style="color: #0369a1;">上班時段與可上班日</div>
+                        <ul class="mb-0 text-secondary" style="color: #334155 !important;">
+                            <li>上班時段：日班（軟體業多為彈性工時）。</li>
+                            <li>可上班日：錄取後 [兩週內 / 面議] 即可報到。</li>
+                        </ul>
+                    </div>                
+                    <div class="fs-5 mb-2" style="line-height: 1.4;">
+                        <div class="fw-bold mb-1" style="color: #0369a1;">期望待遇</div>
+                        <ul class="mb-0 text-secondary" style="color: #334155 !important;">
+                            <li>面議（經常性薪資達 4.5 萬以上）。</li>
+                        </ul>
+                    </div>                
+                    <div class="fs-5 mb-0" style="line-height: 1.4;">
+                        <div class="fw-bold mb-1" style="color: #0369a1;">核心亮點</div>
+                        <ul class="mb-0 text-secondary" style="color: #334155 !important;">
+                            <li><strong>AI驅動開發：</strong>善用AI架構系統、重構除錯，高效開發</li>
+                            <li><strong>全端實作串接：</strong>具前後端與資料庫開發力，附線上作品</li>
+                            <li><strong>嚴謹邏輯思維：</strong>20年軍旅淬鍊，具精準除錯與高效協作力</li>
+                            <li><strong>痛點洞察特質：</strong>結合命理底蘊，精準將客戶需求轉化代碼</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 【右側形象圖區】：自動填滿高度，在任何螢幕寬度下都與左邊 100% 絕對同高！ -->
+                <div class="col-md-5 d-none d-md-block position-relative p-0" style="min-height: 100%;">
+                    <img src="./images/programmer-working01.avif" alt="工作形象圖" 
+                        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 駭客任務掉落 JS 引擎：原汁原味保留 -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const container = document.getElementById("matrix-text-zone");
+                
+                function injectMatrixAnimation(element) {
+                    if (element.hasChildNodes()) {
+                        element.childNodes.forEach(child => {
+                            if (child.nodeType === Node.TEXT_NODE) {
+                                const text = child.nodeValue;
+                                if (text.trim() === "") return;
+                                
+                                const fragment = document.createDocumentFragment();
+                                for (let i = 0; i < text.length; i++) {
+                                    const span = document.createElement("span");
+                                    span.textContent = text[i];
+                                    span.className = "matrix-char";
+                                    
+                                    const randomDelay = Math.random() * 0.8; 
+                                    span.style.animationDelay = `${randomDelay}s`;
+                                    
+                                    fragment.appendChild(span);
+                                }
+                                child.parentNode.replaceChild(fragment, child);
+                            } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== "STRONG") {
+                                injectMatrixAnimation(child);
+                            }
+                        });
+                    }
+                }
+                injectMatrixAnimation(container);
+            });
+        </script>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
 </section>
 
 
@@ -1109,6 +1382,7 @@
                         </div>
                     </div>
                 </div>
+<template>                
                 <!-- ==================== 作品 07 ==================== -->
                 <div class="col-md-6 col-lg-4 d-flex">
                     <div class="card project-card-3d rounded-xl w-100 d-flex flex-column p-0 overflow-hidden text-white">
@@ -1134,10 +1408,12 @@
                         </div>
                     </div>
                 </div>
+</template>                
 
             </div>
         </div>
-    </section>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(74, 95, 124, 0.25);"></div>
+</section>
 
 
 
@@ -1391,13 +1667,15 @@
 
             </div>
         </div>
-    </section>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(255, 255, 255, 0.2);"></div>
+</section>
 
 
 
 
     <!-- section10 -- AI生成 -->
-    <!-- section10 -- 關於我區塊 ，100~200字，這超難，用2層，本來第一層是5:7，字在上層用container包起來並定位，字靠右 -->    
+    <!-- section10 -- 關於我區塊 ，100~200字，這超難，用2層，本來第一層是5:7，字在上層用container包起來並定位，字靠右 -->
+<template>
     <section id="s10"
         style="position: relative; display: flex; align-items: center; width: 100%; min-height: 100vh; height: auto !important; max-height: none !important; box-sizing: border-box; padding: 2rem 0 !important; margin: 0 !important; background: linear-gradient(135deg, rgba(35, 25, 45, 0.45) 0%, rgba(55, 38, 65, 0.4) 50%, rgba(25, 18, 32, 0.5) 100%); overflow: hidden;">
         <style>
@@ -1601,12 +1879,158 @@
             </div>
         </div>
     </section>
+</template>     
+
+<!-- Section 10：所屬區塊中灰藍 (#4a5f7c)，上下留白 -->
+    <section id="s10" style="position: relative; overflow: hidden; padding: 50px 0; background-color: #4a5f7c;">
+        
+        <style>
+            /* ==============================
+            S10 卡片呼吸微光設計
+            ============================== */
+            #s10 .s10-feature-card {
+                background: rgba(45, 32, 55, 0.45);
+                border: 1px solid rgba(220, 190, 230, 0.25);
+                border-left: 4px solid #d8b4e2;
+                border-radius: 10px;
+                padding: 0.65rem 1rem !important;
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                box-shadow: 0 4px 12px rgba(15, 8, 20, 0.25);
+                animation: starryShadowGlow 5s ease-in-out infinite alternate;
+                transition: transform 0.3s ease, background 0.3s ease;
+            }
+            #s10 .s10-feature-card:hover {
+                transform: translateX(-4px);
+                background: rgba(70, 48, 80, 0.65);
+            }
+            #s10 .s10-feature-card:nth-child(1) { animation-delay: 0s; }
+            #s10 .s10-feature-card:nth-child(2) { animation-delay: 1.8s; }
+            #s10 .s10-feature-card:nth-child(3) { animation-delay: 3.6s; }
+
+            /* 卡片標題與文字微調 */
+            #s10 .s10-card-title {
+                font-size: 1.02rem;
+                font-weight: 700;
+                background: linear-gradient(135deg, #ecd6f0 0%, #e2bada 50%, #f6e6b4 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 0.2rem !important;
+                line-height: 1.3;
+            }
+            #s10 .s10-card-text {
+                font-size: 0.92rem !important;
+                line-height: 1.5 !important;
+                color: #e5daf0;
+                margin: 0 !important;
+            }
+            #s10 .s10-card-text strong {
+                color: #fce8ad;
+                font-weight: 700;
+            }
+
+            /* 主標題漸層 */
+            #s10 .s10-main-title {
+                font-size: clamp(1.4rem, 2.1vw, 1.85rem) !important;
+                line-height: 1.35 !important;
+                font-weight: 900;
+                background: linear-gradient(135deg, #f4e8f8 0%, #eac2e5 45%, #f7e8bc 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 0.4rem !important;
+            }
+
+            /* 呼吸微光動畫 */
+            @keyframes starryShadowGlow {
+                0% {
+                    box-shadow: 0 3px 10px rgba(25, 15, 35, 0.2), inset 0 0 0 rgba(220, 180, 220, 0);
+                }
+                100% {
+                    box-shadow: 0 6px 18px rgba(110, 60, 100, 0.35), inset 0 0 6px rgba(245, 215, 140, 0.15);
+                }
+            }
+        </style>
+
+        <!-- 【關鍵大框】：寬度 90% 對齊前方、透視中灰藍底色、柔和微光陰影、20px 圓角 -->
+        <div style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 45px rgba(15, 23, 42, 0.35), 0 0 25px rgba(216, 180, 226, 0.12); border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(30, 41, 59, 0.45); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; z-index: 2;">
+            
+            <!-- align-items-stretch 確保左側照片與右側文字高度 100% 絕對咬合 -->
+            <div class="row g-0 align-items-stretch">
+                
+                <!-- 【左側形象照】：隨右側內容等高延伸，在任何螢幕下都與右側頂到底、底對底！ -->
+                <div class="col-md-5 d-none d-md-block position-relative p-0" style="min-height: 100%;">
+                    <img src="./images/programmer-working01.avif" alt="關於我工作形象照"
+                        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.05) brightness(0.92);">
+                    <!-- 照片右緣微暗漸層，讓照片自然過渡融入右側內容 -->
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to right, transparent 75%, rgba(30, 41, 59, 0.6) 100%);"></div>
+                </div>
+
+                <!-- 【右側內容區】：字體微調、三大特色卡片、按鈕 -->
+                <div class="col-md-7 p-4 p-lg-5 d-flex flex-column justify-content-center">
+                    
+                    <!-- 副標題 -->
+                    <div class="fw-bold mb-2" style="font-size: 0.9rem; letter-spacing: 2px; color: #f3d687 !important;">
+                        ✦ 關於我 ABOUT ME
+                    </div>
+
+                    <!-- 主標題 -->
+                    <div class="fw-black s10-main-title mb-3">
+                        軍事級紀律 ✕ 22年系統解碼：用 AI 速度重塑全端體驗
+                    </div>
+
+                    <!-- 三大核心特色卡片 -->
+                    <div class="d-flex flex-column gap-2 mb-4">
+                        
+                        <div class="s10-feature-card">
+                            <div class="s10-card-title">
+                                ✦ 跨界思維 ✕ 嚴謹防禦架構
+                            </div>
+                            <p class="s10-card-text">
+                                融會<strong>20年空軍紀律</strong>與大數據解碼思維，將軍事級嚴謹度灌注於全端開發，於複雜邏輯中打造穩定防衛架構。
+                            </p>
+                        </div>
+
+                        <div class="s10-feature-card">
+                            <div class="s10-card-title">
+                                ✦ 演算法解碼 ✕ AI 雙引擎加速
+                            </div>
+                            <p class="s10-card-text">
+                                以<strong>大局觀與極致學習力</strong>掌握響應式佈局與 API；善用 AI 作為最強副駕駛，成倍加速代碼產出。
+                            </p>
+                        </div>
+
+                        <div class="s10-feature-card">
+                            <div class="s10-card-title">
+                                ✦ 同理心抗壓 ✕ 持續自我迭代
+                            </div>
+                            <p class="s10-card-text">
+                                兼具<strong>高抗壓危機處置與同理心</strong>，專注現代化框架核心，為團隊注入持續迭代的跨界戰力。
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- 探索旅程按鈕 -->
+                    <div>
+                        <a href="#s08" class="btn fw-bold py-2 px-4 shadow-sm text-dark d-inline-flex align-items-center gap-2"
+                            style="font-size: 0.92rem; background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%); border: none; border-radius: 8px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                            <span>探索我的技術旅程</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(255, 255, 255, 0.2);"></div>
+</section>
 
 
 
 
     <!-- section11 -- 學經歷介紹 Ai 生成，提示詞同前，(和section05>>08左右顛倒，整頁才平衡。用bootstrap5.3\content\typography\description list) -->
-
+<template>
     <section id="s11"
         style="position:relative;min-height:90vh;height:auto;padding:3vh 0 1rem!important;margin:0!important;box-sizing:border-box;background:linear-gradient(135deg,#f4f7fb 0%,#edf3f8 55%,#e5eef5 100%);overflow:hidden;">
         <style>
@@ -1916,6 +2340,183 @@
             <div class="col-md-5 bg-img d-none d-md-block s11-image-panel"></div>
         </div>
     </section>
+</template>
+
+    <!-- Section 11：正式進入第三區塊深灰紫 (#362d53)，上下留白 -->
+    <section id="s11" style="position: relative; overflow: hidden; padding: 50px 0; background-color: #362d53;">
+        
+        <style>
+            /* ==============================
+            S11 流光霓虹邊框動畫
+            ============================== */
+            #s11 .s11-experience-frame {
+                position: relative;
+                isolation: isolate;
+                overflow: hidden;
+                border-radius: 14px;
+                padding: 2px;
+                margin: 0;
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: 0 8px 25px rgba(10, 8, 20, 0.4);
+            }
+
+            /* 360 度旋轉流光邊線 (調和為深灰紫專屬的 青藍 ➔ 紫晶流光) */
+            #s11 .s11-experience-frame:before {
+                content: "";
+                position: absolute;
+                width: 180%;
+                height: 180%;
+                top: -40%;
+                left: -40%;
+                background: conic-gradient(from 0deg, transparent 0deg, transparent 200deg, #38bdf8 250deg, #818cf8 290deg, #c084fc 330deg, transparent 360deg);
+                animation: s11BorderFlow 6s linear infinite;
+                z-index: -1;
+            }
+
+            @keyframes s11BorderFlow {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+
+            /* 內部內容容器 (深色高質感毛玻璃底) */
+            #s11 .s11-frame-content {
+                position: relative;
+                z-index: 1;
+                background: rgba(24, 20, 36, 0.92);
+                backdrop-filter: blur(10px);
+                border-radius: 12px;
+                padding: 1.1rem 1.3rem;
+            }
+
+            #s11 .s11-frame-content dt {
+                font-size: 0.98rem;
+                font-weight: 800;
+                color: #f1f5f9 !important; /* 文字反白 */
+                line-height: 1.4;
+                padding: 0.35rem 0;
+            }
+
+            #s11 .s11-frame-content dd {
+                font-size: 0.92rem;
+                color: #cbd5e1 !important; /* 次要文字淡灰 */
+                line-height: 1.5;
+                margin-bottom: 0.6rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid rgba(168, 85, 247, 0.15); /* 微紫分割線 */
+            }
+
+            #s11 .s11-frame-content dd strong {
+                display: inline;
+                color: #38bdf8 !important; /* 強調標題青藍光 */
+                font-size: 0.94rem;
+                font-weight: 700;
+                margin-right: 4px;
+            }
+
+            #s11 .s11-frame-content dd:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0.1rem;
+            }
+
+            /* 標籤微光懸停 */
+            #s11 .s11-skills .badge {
+                padding: 0.35rem 0.55rem;
+                font-size: 0.72rem;
+                border-radius: 6px;
+                transition: all 0.25s ease;
+            }
+            #s11 .s11-skills .badge:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+            }
+
+            /* 主標題漸層光 */
+            #s11 .s11-main-title {
+                font-size: clamp(1.4rem, 2.1vw, 1.85rem) !important;
+                line-height: 1.35 !important;
+                font-weight: 900;
+                background: linear-gradient(135deg, #38bdf8 0%, #a78bfa 50%, #f472b6 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 0.3rem !important;
+            }
+        </style>
+
+        <!-- 【關鍵大框】：90% 寬度對齊前方、透視深灰紫底色、20px 圓角、柔和外光暈立體陰影 -->
+        <div style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 45px rgba(10, 8, 20, 0.45), 0 0 25px rgba(168, 85, 247, 0.15); border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(24, 20, 36, 0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; z-index: 2;">
+            
+            <!-- align-items-stretch 確保左側經歷與右側圖片 100% 絕對同高咬合 -->
+            <div class="row g-0 align-items-stretch">
+                
+                <!-- 【左側內容區】：經歷、標籤、旋轉流光框 -->
+                <div class="col-md-7 p-4 p-lg-5 d-flex flex-column justify-content-center">
+                    
+                    <!-- 副標題 -->
+                    <div class="fw-bold mb-1" style="font-size: 0.9rem; letter-spacing: 2px; color: #38bdf8 !important;">
+                        ✦ CAREER & BACKGROUND
+                    </div>
+
+                    <!-- 主標題 -->
+                    <div class="fw-black s11-main-title mb-3">
+                        跨界背景與實踐經歷
+                    </div>
+
+                    <!-- 經歷主框 (自帶旋轉霓虹邊條) -->
+                    <div class="s11-experience-frame">
+                        <div class="s11-frame-content">
+                            <dl class="row mb-0">
+                                <dt class="col-sm-3 fw-bold">核心特質與風格</dt>
+                                <dd class="col-sm-9">
+                                    20年空軍紀律淬鍊，結合22年命理研究的邏輯洞察與同理溝通能力，具備高抗壓、危機處理及持續自我迭代特質。
+                                </dd>
+
+                                <dt class="col-sm-3 fw-bold">系統邏輯資歷</dt>
+                                <dd class="col-sm-9">
+                                    <strong>22年命理學術研究與教授經驗</strong>
+                                    長期研究非線性資料與複雜邏輯，培養抽象思考及系統解碼能力，能快速理解 Vue 3 資料流、API 串接與技術架構。
+                                </dd>
+
+                                <dt class="col-sm-3 fw-bold">高壓與團隊資歷</dt>
+                                <dd class="col-sm-9">
+                                    <strong>20年空軍服務與體制歷練</strong>
+                                    熟悉嚴謹流程、跨部門協作與團隊紀律，具備緊急應變及穩定抗壓能力，能沉著面對敏捷開發與系統排錯。
+                                </dd>
+
+                                <dt class="col-sm-3 fw-bold">全端程式實踐</dt>
+                                <dd class="col-sm-9">
+                                    <strong>2026｜AI輔助全端程式設計培訓</strong>
+                                    投入現代化全端技術實踐，掌握 Vue 3、Vite、API 串接與 Git，善用 AI 協作開發、程式重構及高效除錯。
+                                    
+                                    <!-- 專業技能標籤 -->
+                                    <div class="s11-skills mt-2 d-flex flex-wrap gap-1">
+                                        <span class="badge" style="background: rgba(255,255,255,0.08); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.2);">HTML5 / CSS3</span>
+                                        <span class="badge" style="background: rgba(255,255,255,0.08); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.2);">JavaScript (ES6+)</span>
+                                        <span class="badge" style="background: rgba(255,255,255,0.08); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.2);">Bootstrap 5</span>
+                                        <span class="badge" style="background: rgba(66, 184, 131, 0.2); color: #42b883; font-weight: bold; border: 1px solid #42b883;">Vue 3 (Composition API)</span>
+                                        <span class="badge" style="background: rgba(189, 52, 254, 0.2); color: #c084fc; font-weight: bold; border: 1px solid #c084fc;">Vite</span>
+                                        <span class="badge" style="background: rgba(240, 80, 50, 0.2); color: #fb7185; border: 1px solid rgba(240, 80, 50, 0.4);">Git 版本控制</span>
+                                        <span class="badge" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-weight: bold; border: 1px solid #38bdf8;">AI Prompt Engineering</span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 【右側形象照】：隨左側經歷框等高延伸，在任何螢幕下都與左側頂到底、底對底！ -->
+                <div class="col-md-5 d-none d-md-block position-relative p-0" style="min-height: 100%;">
+                    <img src="./images/programmer-working01.avif" alt="實踐經歷形象照"
+                        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.05) brightness(0.9);">
+                    <!-- 照片左緣微漸層，讓照片自然融入左側暗夜紫內容 -->
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to left, transparent 75%, rgba(24, 20, 36, 0.7) 100%);"></div>
+                </div>
+
+            </div>
+        </div>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(56, 189, 248, 0.3);"></div>
+</section>
 
 
 
@@ -1967,7 +2568,7 @@
 
 
     <!-- section12 -- 自傳 求職條件，在哪裡實踐了能力、你具體創造了什麼成效。 -->
-
+<template>
     <section id="s12"
         style="position:relative;min-height:85vh;height:auto;padding:5vh 0;margin:0!important;box-sizing:border-box;background:radial-gradient(circle at 80% 20%,rgba(255,235,59,0.08),transparent 40%),radial-gradient(circle at 10% 80%,rgba(0,188,212,0.12),transparent 50%),#11091c;overflow:hidden;font-family:system-ui,-apple-system,sans-serif;color:#eae4f2;isolation:isolate;">
         <style>
@@ -2174,6 +2775,141 @@
             </div>
         </div>
     </section>
+</template>
+
+    <!-- Section 12：第三區塊深灰紫 (#362d53)，大框透視 + 流影 + 大文字理念金句 -->
+    <section id="s12" style="position: relative; overflow: hidden; padding: 50px 0; background-color: #362d53;">
+        
+        <style>
+            /* S12 標題漸層 */
+            #s12 .s12-main-title {
+                font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+                font-weight: 900;
+                line-height: 1.25;
+                background: linear-gradient(135deg, #ffffff 20%, #ffdd67 60%, #38bdf8 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 1.2rem;
+            }
+
+            /* 呼吸微光陰影卡片 */
+            #s12 .s12-bio-card {
+                background: rgba(24, 20, 36, 0.7);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 16px;
+                padding: 2rem;
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                box-shadow: 0 15px 35px rgba(10, 8, 20, 0.4), 0 0 25px rgba(168, 85, 247, 0.1);
+                transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            }
+            #s12 .s12-bio-card:hover {
+                border-color: rgba(56, 189, 248, 0.35);
+                box-shadow: 0 18px 40px rgba(10, 8, 20, 0.5), 0 0 30px rgba(56, 189, 248, 0.15);
+            }
+
+            /* 自傳內文排版 */
+            #s12 .s12-bio-text {
+                font-size: 1.05rem;
+                line-height: 1.85;
+                color: #cbd5e1;
+                margin: 0;
+                text-align: justify;
+                letter-spacing: 0.3px;
+            }
+            #s12 .s12-bio-text strong {
+                color: #fde047; /* 亮黃金重點標示 */
+                font-weight: 700;
+                border-bottom: 2px solid rgba(253, 224, 71, 0.3);
+                padding-bottom: 1px;
+            }
+
+            /* 核心價值膠囊標籤 */
+            #s12 .s12-chip {
+                font-size: 0.88rem;
+                font-weight: 600;
+                padding: 0.45rem 1rem;
+                border-radius: 30px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                color: #cbd5e1;
+                transition: all 0.25s ease;
+                display: inline-flex;
+                align-items: center;
+            }
+            #s12 .s12-chip:hover {
+                border-color: #38bdf8;
+                color: #38bdf8;
+                background: rgba(56, 189, 248, 0.1);
+                transform: translateY(-2px);
+            }
+
+            /* 左側大文字金句框 */
+            #s12 .s12-quote-box {
+                background: rgba(255, 255, 255, 0.04);
+                border-left: 3px solid #38bdf8;
+                border-radius: 0 12px 12px 0;
+                padding: 1rem 1.2rem;
+                margin-top: 1rem;
+            }
+        </style>
+
+        <!-- 【關鍵大框】：90% 寬度對齊前方、透視深灰紫底色、20px 圓角、立體流影 -->
+        <div style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 45px rgba(10, 8, 20, 0.45), 0 0 25px rgba(168, 85, 247, 0.15); border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(24, 20, 36, 0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; z-index: 2;">
+            
+            <div class="row g-0 align-items-center">
+                
+                <!-- 【左側大文字理念區】：替代照片的最佳解法，極具氣勢 -->
+                <div class="col-lg-5 p-4 p-lg-5 d-flex flex-column justify-content-center">
+                    
+                    <!-- 標籤 -->
+                    <span class="badge mb-3 px-3 py-2 align-self-start" 
+                        style="background: rgba(244, 63, 94, 0.18); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.35); font-size: 13px; letter-spacing: 1.5px; font-weight: bold;">
+                        ✦ VALUE PROPOSITION
+                    </span>
+
+                    <!-- 主標題 -->
+                    <h2 class="s12-main-title">
+                        自傳與<br>核心價值
+                    </h2>
+
+                    <!-- 大文字核心金句（取代照片，視覺平衡滿分） -->
+                    <div class="s12-quote-box">
+                        <p class="mb-0" style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.7; font-weight: 500;">
+                            「從混亂中梳理精密秩序，用軍旅淬鍊的頂級抗壓力，將複雜邏輯轉化為可靠代碼。」
+                        </p>
+                    </div>
+
+                    <div class="mt-3 text-secondary" style="font-size: 0.85rem; color: #94a3b8 !important;">
+                        ✦ 20年體制淬鍊 ✕ 22年系統解碼底蘊
+                    </div>
+                </div>
+
+                <!-- 【右側自傳卡片區】：乾淨排版 + 黃金重點標示 + 4 大價值膠囊標籤 -->
+                <div class="col-lg-7 p-4 p-lg-5">
+                    <div class="s12-bio-card">
+                        <!-- 自傳主文（已將 ** 換成高質感 strong 標籤） -->
+                        <p class="s12-bio-text">
+                            我擅長<strong>從混亂中梳理出精密秩序</strong>。20年空軍生涯鍛造了我對大型專案的<strong>頂級危機處理與抗壓推進力</strong>；而22年非線性資料的研究底蘊，則讓我擁有<strong>獨特的多維度思考視角</strong>。
+                        </p>
+                        <p class="s12-bio-text mt-3">
+                            我能敏銳洞察使用者痛點，在技術架構上追求極致的邏輯嚴謹，在介面開發上注入深刻的人性同理。投入全端開發，我不只交付高質量的代碼，更能站在<strong>商業營運與創新解題的角度</strong>，為團隊與產品帶來具備高度、廣度與適應力的長期變革價值。
+                        </p>
+
+                        <!-- 4 大核心價值膠囊標籤 -->
+                        <div class="d-flex flex-wrap gap-2 mt-4 pt-2 border-top" style="border-color: rgba(56, 189, 248, 0.3) !important;">
+                            <span class="s12-chip">💡 創新多維思考</span>
+                            <span class="s12-chip">⚡ 逆境高AQ解題</span>
+                            <span class="s12-chip">🎯 痛點直擊</span>
+                            <span class="s12-chip">🤝 商業價值思維</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(56, 189, 248, 0.3);"></div>
+</section>
 
 
 
@@ -2183,7 +2919,7 @@
     2.產生4筆
     3.不可以大幅修改版面配置，加入CSS亮藍色，幫我顏色配置
     4.產生完整指令給我copy -->
-
+<template>
     <section id="s13"
         style="position:relative;min-height:95vh;height:auto;padding:6vh 0;margin:0!important;box-sizing:border-box;background:radial-gradient(circle at 20% 20%,rgba(76,175,80,0.06),transparent 40%),radial-gradient(circle at 80% 80%,rgba(255,152,0,0.06),transparent 50%),#0b131a;overflow:hidden;font-family:system-ui,-apple-system,sans-serif;color:#e2e8f0;display:flex;align-items:center;isolation:isolate;">
         <style>
@@ -2453,10 +3189,247 @@
             </div>
         </div>
     </section>
+</template>
+
+<!-- Section 13：第三區塊深灰紫 (#362d53)，大框透視 + 左右 90% 切齊 + 下緣流影 -->
+    <section id="s13" style="position: relative; overflow: hidden; padding: 50px 0; background-color: #362d53;">
+        
+        <style>
+            /* ==============================
+            S13 專用卡片與動畫樣式
+            ============================== */
+            #s13 .s13-main-title {
+                text-align: center;
+                font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+                font-weight: 900;
+                margin-bottom: 2.5rem;
+                background: linear-gradient(135deg, #ffffff 30%, #38bdf8 65%, #4caf50 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            #s13 .s13-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            #s13 .s13-card {
+                position: relative;
+                background: rgba(24, 20, 36, 0.75);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 16px;
+                padding: 2.2rem;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+                backdrop-filter: blur(10px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                transition: transform .35s ease, box-shadow .35s ease;
+            }
+
+            #s13 .s13-card-green {
+                border-top: 4px solid #4caf50;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35), 0 0 20px rgba(76, 175, 80, 0.08);
+            }
+
+            #s13 .s13-card-orange {
+                border-top: 4px solid #ff9800;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 152, 0, 0.08);
+            }
+
+            #s13 .s13-card:hover {
+                transform: translateY(-5px);
+            }
+
+            #s13 .s13-card-green:hover {
+                box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(76, 175, 80, 0.2);
+                border-top-color: #66bb6a;
+            }
+
+            #s13 .s13-card-orange:hover {
+                box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 152, 0, 0.2);
+                border-top-color: #ffa726;
+            }
+
+            #s13 .s13-header {
+                margin-bottom: 1.2rem;
+            }
+
+            #s13 .s13-badge-title {
+                display: inline-block;
+                font-size: .8rem;
+                font-weight: 700;
+                padding: .25rem .6rem;
+                border-radius: 4px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: .5rem;
+            }
+
+            #s13 .s13-card-green .s13-badge-title {
+                background: rgba(76, 175, 80, 0.2);
+                color: #81c784;
+                border: 1px solid rgba(76, 175, 80, 0.4);
+            }
+
+            #s13 .s13-card-orange .s13-badge-title {
+                background: rgba(255, 152, 0, 0.2);
+                color: #ffb74d;
+                border: 1px solid rgba(255, 152, 0, 0.4);
+            }
+
+            #s13 .s13-h2 {
+                font-size: 1.55rem;
+                font-weight: 800;
+                color: #f8fafc;
+                margin: 0 0 .3rem;
+            }
+
+            #s13 .s13-h3 {
+                font-size: 1.05rem;
+                font-weight: 600;
+                color: #94a3b8;
+                margin: 0 0 1.2rem;
+            }
+
+            #s13 .s13-list {
+                list-style-type: square;
+                padding-left: 1.2rem;
+                margin: 0 0 2rem;
+                color: #cbd5e1;
+            }
+
+            #s13 .s13-list li {
+                margin-bottom: .65rem;
+                line-height: 1.7;
+                font-size: 0.98rem;
+            }
+
+            #s13 .s13-tech-badge {
+                font-size: .75rem;
+                padding: .2rem .45rem;
+                border-radius: 4px;
+                font-weight: 600;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 2px;
+            }
+
+            #s13 .s13-card-green .s13-tech-badge {
+                background: rgba(76, 175, 80, 0.25);
+                color: #a5d6a7;
+                border: 1px solid rgba(76, 175, 80, 0.35);
+            }
+
+            #s13 .s13-card-orange .s13-tech-badge {
+                background: rgba(255, 152, 0, 0.25);
+                color: #ffe0b2;
+                border: 1px solid rgba(255, 152, 0, 0.35);
+            }
+
+            #s13 .s13-btn {
+                display: block;
+                width: 100%;
+                padding: .75rem;
+                text-align: center;
+                font-weight: 700;
+                font-size: .95rem;
+                text-decoration: none;
+                border-radius: 8px;
+                transition: all .3s ease;
+                box-sizing: border-box;
+            }
+
+            #s13 .s13-card-green .s13-btn {
+                border: 1px solid rgba(76, 175, 80, 0.5);
+                color: #81c784;
+                background: rgba(76, 175, 80, 0.08);
+            }
+            #s13 .s13-card-green .s13-btn:hover {
+                background: rgba(76, 175, 80, 0.25);
+                color: #fff;
+                border-color: #4caf50;
+            }
+
+            #s13 .s13-card-orange .s13-btn {
+                border: 1px solid rgba(255, 152, 0, 0.5);
+                color: #ffb74d;
+                background: rgba(255, 152, 0, 0.08);
+            }
+            #s13 .s13-card-orange .s13-btn:hover {
+                background: rgba(255, 152, 0, 0.25);
+                color: #fff;
+                border-color: #ff9800;
+            }
+
+            @media (max-width:991.98px) {
+                #s13 .s13-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+                #s13 .s13-card {
+                    padding: 1.8rem;
+                }
+            }
+        </style>
+
+        <!-- 【關鍵大框】：90% 寬度（兩側貼齊前面）、透視深灰紫底色、20px 圓角、下緣微光流影 -->
+        <div style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 45px rgba(10, 8, 20, 0.45), 0 0 25px rgba(168, 85, 247, 0.15); border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(24, 20, 36, 0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 3rem 2.5rem; position: relative; z-index: 2;">
+            
+            <!-- 比照前面章節的統一大標題 -->
+            <div class="text-center">
+                <span class="badge mb-2 px-3 py-2" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); font-size: 13px; letter-spacing: 1.5px; font-weight: bold;">
+                    ✦ CAREER ROADMAP
+                </span>
+                <h2 class="s13-main-title">未來展望與職涯發展</h2>
+            </div>
+
+            <!-- 雙欄卡片佈局 -->
+            <div class="s13-grid">
+                
+                <!-- 卡片 1：綠光卡片 -->
+                <div class="s13-card s13-card-green">
+                    <div class="s13-header">
+                        <span class="s13-badge-title">Future & Growth</span>
+                        <h3 class="s13-h2">未來願景與自我增長</h3>
+                        <div class="s13-h3">深化前端核心與高效解題思維</div>
+                    </div>
+                    <ul class="s13-list">
+                        <li>核心框架精進：深入研習 <span class="s13-tech-badge">Vue 3</span> / React 建構高性能打包配置。</li>
+                        <li>程式碼規範化：全面落實 TypeScript 強型別標準與元件解耦。</li>
+                        <li>演算法思維：規律挑戰 <span class="s13-tech-badge">LeetCode</span> 訓練邏輯，提升卓越效能。</li>
+                        <li>工程效能提升：探討前端自動化測試，定期撰寫筆記沉澱踩坑經驗。</li>
+                    </ul>
+                    <a href="#s08" class="s13-btn">查看技術筆記與作品 →</a>
+                </div>
+
+                <!-- 卡片 2：橙光卡片 -->
+                <div class="s13-card s13-card-orange">
+                    <div class="s13-header">
+                        <span class="s13-badge-title">Career & Value</span>
+                        <h3 class="s13-h2">職涯發展與團隊價值</h3>
+                        <div class="s13-h3">擁抱 AI 技術與全端商業產品思維</div>
+                    </div>
+                    <ul class="s13-list">
+                        <li>全端工程邁進：深化 <span class="s13-tech-badge">Node.js</span> 與容器化部署，擴展技術疆界。</li>
+                        <li>AI 工具協作：靈活操作大模型與 Copilot 輔助，成倍增幅開發效能。</li>
+                        <li>商務邏輯洞察：從 <span class="s13-tech-badge">產品經理 PM</span> 視角出發，與 UI/UX 共同還原最佳用戶體驗。</li>
+                        <li>彈性解決方案：實踐 Git Flow 與團隊審查，面對突發技術債提供擴充架構。</li>
+                    </ul>
+                    <a href="#s14" class="s13-btn">與我聯絡了解更多 →</a>
+                </div>
+
+            </div>
+
+        </div>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(56, 189, 248, 0.3);"></div>
+</section>
 
 
 
     <!-- section14 -- 聯絡我 -->
+<template>
     <section id="s14">
         <div class="container py-4">
             <div class="h1 text-center section-title my-4">
@@ -2497,11 +3470,156 @@
             </div>
         </div>
     </section>
+</template>
+
+    <!-- Section 14：第三區塊深灰紫 (#362d53)，90% 對齊大框 + 赤腳丫地圖 + 親切輸入提示 -->
+    <section id="s14" style="position: relative; overflow: hidden; padding: 50px 0; background-color: #362d53;">
+        
+        <style>
+            /* S14 標題 */
+            #s14 .s14-main-title {
+                font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+                font-weight: 900;
+                background: linear-gradient(135deg, #ffffff 30%, #38bdf8 65%, #c084fc 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 0.5rem;
+            }
+
+            /* 輸入框淺灰立體陰影與暗底設計 */
+            #s14 .s14-input {
+                background: rgba(15, 12, 24, 0.65) !important;
+                border: 1px solid rgba(255, 255, 255, 0.15) !important;
+                color: #f8fafc !important;
+                border-radius: 10px;
+                padding: 0.75rem 1rem;
+                /* 淺灰內凹微陰影 + 外框微浮雕 */
+                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(74, 95, 124, 0.1);
+                transition: all 0.3s ease;
+            }
+            #s14 .s14-input:focus {
+                border-color: #38bdf8 !important;
+                background: rgba(20, 16, 32, 0.85) !important;
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 12px rgba(56, 189, 248, 0.35) !important;
+            }
+            /* 淺灰預設文字提示 (Placeholder) */
+            #s14 .s14-input::placeholder {
+                color: #94a3b8 !important;
+                opacity: 0.75;
+                font-size: 0.92rem;
+            }
+            #s14 .form-label {
+                font-size: 0.92rem;
+                font-weight: 700;
+                color: #e2e8f0;
+                margin-bottom: 0.35rem;
+            }
+
+            /* 下拉選單箭頭與選項樣式 */
+            #s14 select.s14-input option {
+                background-color: #1a1626;
+                color: #f8fafc;
+            }
+        </style>
+
+        <!-- 【關鍵大框】：90% 寬度對齊、深灰紫透視底色、20px 圓角、柔和流影 -->
+        <div style="width: 90%; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 45px rgba(10, 8, 20, 0.45), 0 0 25px rgba(168, 85, 247, 0.15); border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(24, 20, 36, 0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 3rem 2.5rem; position: relative; z-index: 2;">
+            
+            <!-- 頂部標題區 -->
+            <div class="text-center mb-4 pb-2">
+                <span class="badge mb-2 px-3 py-2" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); font-size: 13px; letter-spacing: 1.5px; font-weight: bold;">
+                    ✦ GET IN TOUCH
+                </span>
+                <h2 class="s14-main-title">聯絡我 CONTACT ME</h2>
+                <p class="text-secondary mb-0" style="color: #94a3b8 !important; font-size: 0.95rem;">
+                    歡迎面試邀約、專案合作洽詢，我會在 24 小時內儘速回覆您！
+                </p>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                
+                <!-- 【左側表單區】：為新人精簡規劃的友善欄位 -->
+                <div class="col-lg-6 d-flex flex-column justify-content-between">
+<!--                     <form onsubmit="event.preventDefault(); alert('訊息已模擬送出！');"> -->
+                    <form action="https://formspree.io/f/您的ID" method="POST"></form>
+                        
+                        <!-- 1. 姓名/稱呼 -->
+                        <div class="mb-3">
+                            <label class="form-label">✦ 您的姓名 / 公司職稱</label>
+                            <input type="text" class="form-control s14-input" placeholder="例如：王小明 經理 / HR 張小姐">
+                        </div>
+
+                        <!-- 2. 電子信箱 -->
+                        <div class="mb-3">
+                            <label class="form-label">✦ 電子信箱 (Email)</label>
+                            <input type="email" class="form-control s14-input" placeholder="例如：hr-contact@company.com.tw">
+                        </div>
+
+                        <!-- 3. 洽詢主題 (下拉選擇) -->
+                        <div class="mb-3">
+                            <label class="form-label">✦ 洽詢主題</label>
+                            <select class="form-select s14-input">
+                                <option value="面試邀約" selected>💼 面試邀約與職缺洽談（優先處理）</option>
+                                <option value="專案合作">🚀 專案全端委託開發</option>
+                                <option value="技術交流">☕ 技術交流與跨界諮詢</option>
+                                <option value="其它">📝 其他事項</option>
+                            </select>
+                        </div>
+
+                        <!-- 4. 訊息內容 -->
+                        <div class="mb-3">
+                            <label class="form-label">✦ 訊息內容</label>
+                            <textarea class="form-control s14-input" rows="5" placeholder="例如：您好，我們在評估前端/全端工程師職缺，看過您的 SPA 履歷非常讚賞，想邀請您進行面試交流..."></textarea>
+                        </div>
+
+                        <!-- 按鈕組 -->
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <button type="reset" class="btn btn-outline-light px-4 py-2" style="border-radius: 8px; font-size: 0.92rem; border-color: rgba(255,255,255,0.25);">
+                                重填
+                            </button>
+                            <button type="submit" class="btn px-4 py-2 fw-bold text-dark shadow-sm"
+                                    style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); border: none; border-radius: 8px; font-size: 0.95rem; transition: transform 0.2s ease;">
+                                送出訊息 🚀
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 【右側地圖區】：精準指向「赤腳丫生態農莊」 -->
+                <div class="col-lg-6 d-flex flex-column">
+                    <div class="h-100 position-relative" style="min-height: 440px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+                        
+                        <!-- 赤腳丫生態農莊 Google Maps 嵌入 -->
+                        <iframe
+                            src="https://maps.google.com/maps?q=%E8%B5%A4%E8%85%B3%E4%B8%AB%E7%94%9F%E6%85%8B%E8%BE%B2%E8%8E%8A&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%" height="100%" style="border:0; min-height: 380px;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+
+                        <!-- 地圖底部資訊卡片 -->
+                        <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); border-radius: 10px; padding: 10px 14px; border: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div class="fw-bold text-white" style="font-size: 13.5px;">📍 赤腳丫生態農莊</div>
+                                <div class="text-secondary" style="font-size: 12px; color: #94a3b8 !important;">台中市大雅區雅潭路三段500號</div>
+                            </div>
+                            <a href="https://maps.google.com/?q=%E8%B5%A4%E8%85%B3%E4%B8%AB%E7%94%9F%E6%85%8B%E8%BE%B2%E8%8E%8A" target="_blank"
+                            class="btn btn-sm btn-outline-info text-nowrap" style="font-size: 11.5px; border-radius: 6px;">
+                                開啟地圖 ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    <div style="width: 90%; margin: 40px auto 0; border-bottom: 1px solid rgba(56, 189, 248, 0.3);"></div>
+</section>
 
 
 
     <!-- section15 Footer 參考米洛網頁設計InIy化粧品有三種footer -->
-
+<template>
     <footer id="s15"
         style="position:relative;background:#060b0f;color:#94a3b8;padding:5rem 0 2rem;font-family:system-ui,-apple-system,sans-serif;overflow:hidden;border-top:1px solid rgba(255,255,255,0.05);isolation:isolate;">
         <style>
@@ -2730,7 +3848,85 @@
             </div>
         </div>
     </footer>
+</template>
 
+<!-- Section 15：第三區塊收尾，簡約大氣深灰紫頁尾 -->
+    <footer id="s15" style="position: relative; background-color: #19142b; color: #94a3b8; padding: 3.5rem 0 2rem; font-family: system-ui, -apple-system, sans-serif; overflow: hidden; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+        
+        <!-- 頂部高質感青紫流光細線 -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%); opacity: 0.85;"></div>
+
+        <!-- 90% 寬度對齊容器 -->
+        <div style="width: 90%; margin: 0 auto; padding: 0;">
+            
+            <div class="row g-4 justify-content-between align-items-start pb-4 border-bottom" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+                
+                <!-- 1. 品牌精神 (精簡俐落) -->
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="fw-black mb-2" style="font-size: 1.4rem; background: linear-gradient(135deg, #ffffff 40%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        FULL-STACK PORTFOLIO
+                    </h3>
+                    <p class="mb-0" style="font-size: 0.9rem; line-height: 1.7; color: #94a3b8;">
+                        空軍紀律淬鍊 ✕ 22年系統解碼底蘊。<br>
+                        堅持交付具備商業價值與穩定架構的高品質代碼。
+                    </p>
+                </div>
+
+                <!-- 2. 精選快捷導航 (保留 s03, s08 等核心) -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold text-white mb-3" style="font-size: 0.95rem; letter-spacing: 1px;">
+                        ✦ 快捷導航
+                    </h5>
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2" style="font-size: 0.9rem;">
+                        <li><a href="#s03" class="text-decoration-none" style="color: #cbd5e1; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#cbd5e1'">➔ 核心實戰特質 (S03)</a></li>
+                        <li><a href="#s08" class="text-decoration-none" style="color: #cbd5e1; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#cbd5e1'">➔ 全端成果專案庫 (S08)</a></li>
+                        <li><a href="#s11" class="text-decoration-none" style="color: #cbd5e1; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#cbd5e1'">➔ 跨界實踐經歷 (S11)</a></li>
+                        <li><a href="#s14" class="text-decoration-none" style="color: #cbd5e1; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#cbd5e1'">➔ 聯絡洽詢 (S14)</a></li>
+                    </ul>
+                </div>
+
+                <!-- 3. 聯絡方式與社交 -->
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="fw-bold text-white mb-3" style="font-size: 0.95rem; letter-spacing: 1px;">
+                        ✦ 快速聯絡
+                    </h5>
+                    <div class="d-flex flex-column gap-2" style="font-size: 0.9rem;">
+                        <div class="d-flex align-items-center gap-2">
+                            <span style="color: #38bdf8;">📍</span>
+                            <span style="color: #cbd5e1;">台灣 ｜ 台中市 (Taichung, Taiwan)</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span style="color: #38bdf8;">✉</span>
+                            <a href="mailto:your.email@example.com" class="text-decoration-none" style="color: #cbd5e1; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#cbd5e1'">
+                                聯絡信箱 (透過表單直接寄信)
+                            </a>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span style="color: #38bdf8;">🐙</span>
+                            <a href="https://github.com" target="_blank" class="text-decoration-none" style="color: #cbd5e1; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#cbd5e1'">
+                                GitHub 程式碼倉庫 ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 底部版權與滑順回頂端 -->
+            <div class="d-flex flex-wrap justify-content-between align-items-center pt-3 mt-2" style="font-size: 0.85rem; color: #64748b;">
+                <div>
+                    &copy; 2026 Full-Stack Engineer Resume. Crafted with Discipline & Code.
+                </div>
+                <div>
+                    <!-- 精準回滾到最上層 s01 -->
+                    <a href="#s01" class="text-decoration-none d-inline-flex align-items-center gap-1" style="color: #94a3b8; font-weight: 600; transition: color 0.2s;" onmouseover="this.style.color='#38bdf8'" onmouseout="this.style.color='#94a3b8'">
+                        ▲ 回到頂端 Back to Top
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 
     <!-- 這麼多section可因客戶不同，用section id="s11" class="d-done"，關掉不要給的 -->
 
@@ -2773,6 +3969,9 @@
 
         </div>        
     </section>
+</template>
+
+
 
 
 
@@ -2803,10 +4002,10 @@
         if (el01) IO.observe(el01)
         const el02 = document.querySelector('.counter02')
         if (el02) IO.observe(el02)
-/*         const el03 = document.querySelector('.counter03')
+        const el03 = document.querySelector('.counter03')
         IO.observe(el03)
         const el04 = document.querySelector('.counter04')
-        IO.observe(el04) */
+        IO.observe(el04)
 
         //wowjs
         new WOW().init();
